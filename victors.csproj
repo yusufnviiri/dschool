@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\SchoolAffairs\" />
     <Folder Include="Views\Student\" />
   </ItemGroup>
 

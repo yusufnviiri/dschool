@@ -114,11 +114,10 @@ namespace victors.Controllers
         }
 
 
-        [HttpGet("books")]
-        public async Task<IActionResult> GetBooks()
+        public async Task<IActionResult> GetAllBooks()
         {
             var books = await _affairs.GetallBooks(_db);
-            return Ok(books);
+            return View(books);
         }
 
         [HttpGet]
@@ -127,13 +126,13 @@ namespace victors.Controllers
 
             return View();
         }
-            [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Createbook(Book book)
         {
             if (ModelState.IsValid)
             {
                 var newBook = await _affairs.CreateBook(_db, book);
-                return RedirectToAction("GetBooks");
+                return RedirectToAction("GetAllBooks");
 
             }
             else
