@@ -115,11 +115,12 @@ if (student.fullUniform == true)
                         Cost = student.charge,
                         AcademicLevel = student.Section,
                     };
-                    var lastUniform = await _db.Uniforms.ToListAsync();
                     await _db.Uniforms.AddAsync(studentUniform);
                     await _db.SaveChangesAsync();
                     uniformList = await _db.Uniforms.ToListAsync();
                     var newUniform = uniformList.LastOrDefault();
+                    var lastUniform = await _db.Uniforms.ToListAsync();
+
                     uniformPayment.Amount = student.charge;
                     uniformPayment.UniformDetails = $"full uniform for {student.Section}";
                     uniformPayment.StudentId = lastStudent.StudentId;

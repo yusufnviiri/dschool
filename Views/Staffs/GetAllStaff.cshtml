@@ -1,0 +1,76 @@
+﻿@model ICollection<Staff>
+<table class="w-full m-auto text-lime-900  ">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th> Category</th>
+            <th>Job Title</th>
+            <th>Contact</th>
+            <th> Gender</th>
+            <th> Status</th>
+            <th> Residance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var staff in Model)
+        {
+            <tr class="   text-[0.7em] sm:text-[0.99em] ">
+                <td>
+                    @staff.StaffId
+
+
+                </td>
+                <td>
+                    @staff.FirstName
+
+                </td>
+                <td>
+                    @staff.LastName
+                </td>
+                <td class="table_hide">
+
+                    @staff.Category
+                </td>
+                <td>
+                    @staff.Contact
+
+                </td>
+                <td>
+
+                    @staff.Gender
+
+                </td>
+                <td>
+
+                    @staff.Status
+                </td>
+                <td>
+
+                    <span class="px-2">@staff.Village</span>
+                    <span class="px-2">,@staff.District</span>
+
+                </td>
+                <td>
+
+                    @staff.Status
+
+                </td>
+                <td class="table_hide">
+
+                    @staff.Village
+
+                </td>
+                <td>
+
+                    details
+
+                </td>
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>

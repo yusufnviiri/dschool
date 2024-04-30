@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Tailwind;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddCors(options =>
 {
@@ -62,5 +63,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+if (app.Environment.IsDevelopment())
+{
+    _ = app.RunTailwind("tailwind", "./");
+}
 
 app.Run();

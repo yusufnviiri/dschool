@@ -1,21 +1,18 @@
-﻿using victors.Actions;
+﻿using Microsoft.AspNetCore.Mvc;
+using victors.Actions;
 using victors.Models.Context;
 using victors.Models.Helper;
 using victors.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Cors;
 
 namespace victors.Controllers
 {
-
-    public class StudentController : Controller
+    public class StudentsController : Controller
     {
         private readonly ApplicationDbContext _db;
         public OdataManager odataManager { get; set; } = new();
         public StudentActions studentActions { get; set; } = new();
-        public StudentController(ApplicationDbContext db)
+        public StudentsController(ApplicationDbContext db)
         {
             _db = db;
         }
@@ -26,21 +23,35 @@ namespace victors.Controllers
         {
             var result = await studentActions.getStudents(_db);
 
-            return Ok(result);
+            return View(result);
         }
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> CreateStudent()
+        {
+            return View();
+        }
+
         [HttpPost]
 
-        public async Task<IActionResult> PostStudent(Student student)
+        public async Task<IActionResult> CreateStudent(Student student)
         {
-            if (student == null)
+            if (ModelState.IsValid)
             {
-                return BadRequest("student needed");
-            }
-            else
-            {
+
                 var newstudent = await studentActions.createSudents(student, _db);
                 return RedirectToAction("GetStudents");
             }
+            else
+            {
+                return View();
+
+            }
+
+
+
         }
 
         [HttpGet("Student/{id}")]
@@ -266,5 +277,4 @@ namespace victors.Controllers
 
         }
     }
-
 }

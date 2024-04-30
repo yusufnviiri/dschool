@@ -9,9 +9,9 @@ namespace victors.Controllers
 {
 
 
-    public class StaffController : Controller
+    public class StaffsController : Controller
     {
-        public StaffController(ApplicationDbContext db)
+        public StaffsController(ApplicationDbContext db)
         {
             _db = db;
         }
@@ -22,29 +22,32 @@ namespace victors.Controllers
         public OdataManager odataManager { get; set; } = new();
         public StudentActions studentActions { get; set; } = new();
         public StaffActions staffActions { get; set; } = new();
-
-
-        [HttpPost]
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+            [HttpPost]
 
         public async Task<IActionResult> Create(Staff staff)
         {
-            if (staff == null)
+            if (ModelState.IsValid)            
             {
-                return BadRequest();
+                var newStaff = await staffActions.CreateStaff(_db, staff);
+                return RedirectToAction("GetAllStaff");
             }
             else
             {
-                var newStaff = await staffActions.CreateStaff(_db, staff);
-                return Ok(newStaff);
+                return View();
             }
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAllStaff()
         {
             var result = await staffActions.GetAllStaff(_db);
 
-            return Ok(result);
+            return View(result);
         }
 
         [HttpGet("Staff/{id}")]
