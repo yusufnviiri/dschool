@@ -4,6 +4,7 @@ using victors.Models.Context;
 using victors.Models.Helper;
 using victors.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace victors.Controllers
 {
@@ -117,27 +118,44 @@ namespace victors.Controllers
             }
 
         }
-        [HttpPost("{id}/requirements")]
-        public async Task<IActionResult> payRequirement(Requirement requirement)
+        //pay school requirement
+        [HttpGet("{id}/payrequirements")]
+        public async Task<IActionResult> PayRequirement([FromRoute] int id)
         {
+            odataManager = await studentActions.findStudent(id, _db);
+            var requirementsInDb = await _db.requirements.ToListAsync();
+
+
+            StudentJoinRequirement studentJoinRequirement = new StudentJoinRequirement();
+            studentJoinRequirement.Student=odataManager.student;
+            studentJoinRequirement.Requirements=requirementsInDb;
+            return View(studentJoinRequirement);
+        
+        }
+            [HttpPost("{id}/payrequirements")]
+        public async Task<IActionResult> PayRequirement(StudentJoinRequirement data)
+        {
+            var requirement = data.Requirement;
+            requirement.StudentId=data.Student.StudentId;
+          
             if (requirement == null)
             {
-                return BadRequest("No Input");
+                return View(data);
 
             }
             else
             {
                 var payment = await studentActions.payschoolRequirement(requirement, _db);
-                return Ok(payment);
+                return RedirectToAction("GetStudents");
             }
         }
 
 
-        [HttpGet("newRequirement")]
+        [HttpGet("new_requirement")]
         public async Task<IActionResult> NewSchoolRequirement()
         { return View(); }
 
-            [HttpPost("newRequirement")]
+        [HttpPost("new_requirement")]
         public async Task<IActionResult> NewSchoolRequirement(Requirement requirement)
         {
             var newRequirement = await studentActions.NewRequirement(requirement, _db);

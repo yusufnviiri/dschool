@@ -25,17 +25,17 @@
             School Fees
             </a>
             <a class=" text-white  bg-orange-600 px-2 rounded "
-               asp-controller="Students" asp-action="CreateStudent" >
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PayRequirement">
         
             Requirements
             </a>
             <a class=" text-white  bg-orange-600 px-2 rounded "
-               asp-controller="Students" asp-action="CreateStudent">
-           
-            Uniform
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PayRequirement">
+
+                Uniform
             </a>
             <a class=" text-white  bg-orange-600 px-2 rounded "
-               asp-controller="Students" asp-action="CreateStudent">
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PayRequirement">
 
                 Assessement
             </a>
@@ -45,7 +45,7 @@
             
             </a>
             <a class=" text-white  bg-orange-600 px-2 rounded " asp-route-id="@Model.student.StudentId"
-               asp-controller="Students" asp-action="CreateGuardian">
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PayRequirement">
 
        
             Add Guardian
