@@ -1,0 +1,95 @@
+﻿@model StudentJoinUniform
+
+      <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em] 
+ text-center  " >
+    <a asp-controller="Students" asp-action="GetStudents"> HOME</a>
+
+
+        <h4 class=" "> UINFORM CREATION FORM</h4>
+
+      
+
+    <a asp-controller="Students" asp-action="GetStudents"> UNIFORMS</a>
+
+
+      </div>
+
+      <div class="w-[40%] m-auto mt-7 requirement_form">
+    <form method="post" action="AddUniform">
+
+          <div class="mb-1">             
+            <label asp-for="uniform.Item"  class="font-bold text-[0.97em]  ml-2 block">Item</label>
+            <input  required
+             asp-for="uniform.Item"
+              class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
+              type="text"
+            />
+          </div>
+          <div class="mb-1">
+            <label asp-for="uniform.AcademicLevel" class="font-bold text-[0.97em]  ml-2 block">
+              Academic Level
+            </label>
+            <select
+              required
+                    asp-for="uniform.AcademicLevel"            
+              class="  w-full text-center "   >
+              <option value="">select</option>
+              <option>Kindergarten</option>
+              <option>Lower Primary</option>
+              <option>Upper Primary</option>
+              <option>High School</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <label asp-for="uniform.Cost" class="font-bold text-[0.97em]  ml-2 block">Cost</label>
+            <input
+              required
+                   asp-for="uniform.Cost"
+                   type="number"
+              placeholder="charge"
+              class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
+            />
+          </div>
+
+          <div
+            class="mt-3 text-white   font-bold w-full m-auto submit
+    text-center  bg-green-700 rounded hover:bg-slate-700"
+          >
+            <input
+              class="uppercase text-yellow-100  w-[20%]"
+              type="submit"
+            />
+          </div>
+        </form>
+        @if(Model.uniforms.Count==0){
+            <p>No Uniform</p>
+        } else{
+
+    <table class="w-full mt-11 m-auto text-black ">
+        <thead>
+            <tr class=" ">
+                <th>ID</th>
+                <th>Item</th>
+                <th>Designation</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>          
+                @foreach (var data in Model.uniforms)
+                {
+                <tr >
+                    <td>@data.UniformId</td>
+
+                <td>@data.Item </td>
+                <td>@data.AcademicLevel</td>
+                <td>     @data.Cost   <span>/=</span>
+                </td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+    }
+
+
+      </div>

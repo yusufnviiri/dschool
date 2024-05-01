@@ -121,8 +121,6 @@ namespace victors.Controllers
         {
             odataManager = await studentActions.findStudent(id, _db);
             var requirementsInDb = await _db.requirements.ToListAsync();
-
-
             StudentJoinRequirement studentJoinRequirement = new StudentJoinRequirement();
             studentJoinRequirement.Student=odataManager.student;
             studentJoinRequirement.Requirements=requirementsInDb;
@@ -275,19 +273,34 @@ namespace victors.Controllers
                 return Ok();
             }
         }
-        [HttpPost("uniform")]
-        public async Task<IActionResult> AddUniform(Uniform uniform)
+
+
+        [HttpGet("uniform/{id}")]
+        public async Task<IActionResult> AddUniform()
         {
+            var uniforms = await studentActions.GetUniformTypes(_db);
+            StudentJoinUniform studentJoinUniform = new StudentJoinUniform();
+            studentJoinUniform.uniforms = uniforms;
+
+            return View(studentJoinUniform);
+        }
+            [HttpPost("uniform/{id}")]
+        public async Task<IActionResult> AddUniform(StudentJoinUniform data)
+        {
+            var uniform = data.uniform;
             if (ModelState.IsValid)
             {
                 var result = await studentActions.NewUniform(uniform, _db);
-                return Ok(result);
+                return RedirectToAction("GetStudents");
 
             }
-            else { return BadRequest(); }
+            else
+            {
+                return View(data);
+            }
 
         }
-        [HttpPost("payuniform")]
+        [HttpPost("payuniform/{id}")]
         public async Task<IActionResult> PayUniform(UniformPayment payment)
         {
             //var uniform = await _db.Uniforms.Where(k => k.UniformId == payment.Uniform.UniformId).ToListAsync();
