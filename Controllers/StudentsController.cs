@@ -131,11 +131,17 @@ namespace victors.Controllers
                 return Ok(payment);
             }
         }
-        [HttpPost("newRequirement")]
+
+
+        [HttpGet("newRequirement")]
+        public async Task<IActionResult> NewSchoolRequirement()
+        { return View(); }
+
+            [HttpPost("newRequirement")]
         public async Task<IActionResult> NewSchoolRequirement(Requirement requirement)
         {
             var newRequirement = await studentActions.NewRequirement(requirement, _db);
-            return Ok(newRequirement);
+            return View(newRequirement);
         }
         [HttpGet("allrequirements")]
         public async Task<IActionResult> AllRequirements()
