@@ -31,22 +31,22 @@
                 </div>
                 <label  className="font-bold ml-2 block">Requirement</label>
 
-                @foreach(var item in Model.Requirements)
-                {
-                    <select required
-                            asp-for="Requirement.RequirementId"
+              <select 
+              required  asp-for="Requirement.RequirementId"
                             class=" w-full text-center ">
                         <option value="select">select</option>
 
-                      
-                        <option 
-                                value=@item.RequirementId}>
+                       @foreach(var item in Model.Requirements)
+                {
+                    
+                        <option value=@item.RequirementId>
                             @item.Name
                         </option>
-                     
+                       
+                }
                     </select>
                     
-                }
+               
 
 
                 @if (Model.Requirements.Count == 0)
@@ -54,12 +54,6 @@
                     <a asp-controller="Students" class="underline underline-offset-2  text-[1.2em] " asp-action="NewSchoolRequirement">New Requirement</a>
 
                 }
-
-
-
-
-
-
                 <div class="mb-2">
                     <label asp-for="Requirement.Amount" class="font-bold ml-2 block"> Amount Paid</label>
                     <input asp-for="Requirement.Amount" type="number"
@@ -89,14 +83,20 @@
                            type="text" />
                 </div>
 
-                <div class="sm:mb-9 mb-3">
-                    <label asp-for="Requirement.RecievedBy" class="font-bold ml-2 block">Recieved By</label>
+                            <div class="">
+                    <label asp-for="Requirement.RecievedBy" class="font-bold ml-2 block">  RecievedBy</label>
+                    <input asp-for="Requirement.RecievedBy" type="text"
+                           class="w-full text-center " />
+                </div>
+                <div class="sm:mb-8 mb-3">
+                    <label asp-for="Requirement.Reason" class="font-bold ml-2 block">Reason</label>
                     <input required
-                           asp-for="Requirement.RecievedBy"
+                           asp-for="Requirement.Reason"
                            type="text"
+                           value="Shool Requirement"
                            class=" w-full text-center " />
                 </div>
-                <div class=" mt-5 text-white   font-bold w-full m-auto
+                <div class=" mt-2 text-white   font-bold w-full m-auto
     text-center  bg-green-700 rounded hover:bg-slate-700">
                     <input class="uppercase text-yellow-100" type="submit" />
                 </div>

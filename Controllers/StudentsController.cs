@@ -49,11 +49,7 @@ namespace victors.Controllers
             {
                 return View();
 
-            }
-
-
-
-        }
+            }        }
 
         [HttpGet("Student/{id}")]
         //[HttpGet("{id}"), Authorize(Roles = "parent,admin")]
@@ -119,7 +115,8 @@ namespace victors.Controllers
 
         }
         //pay school requirement
-        [HttpGet("{id}/payrequirements")]
+        [HttpGet("payrequirements/{id}")]
+
         public async Task<IActionResult> PayRequirement([FromRoute] int id)
         {
             odataManager = await studentActions.findStudent(id, _db);
@@ -132,7 +129,7 @@ namespace victors.Controllers
             return View(studentJoinRequirement);
         
         }
-            [HttpPost("{id}/payrequirements")]
+            [HttpPost("payrequirements/{id}")]
         public async Task<IActionResult> PayRequirement(StudentJoinRequirement data)
         {
             var requirement = data.Requirement;
@@ -149,23 +146,24 @@ namespace victors.Controllers
                 return RedirectToAction("GetStudents");
             }
         }
-
-
-        [HttpGet("new_requirement")]
-        public async Task<IActionResult> NewSchoolRequirement()
-        { return View(); }
-
-        [HttpPost("new_requirement")]
+        [HttpPost("newrequirement/{id}")]
         public async Task<IActionResult> NewSchoolRequirement(Requirement requirement)
         {
             var newRequirement = await studentActions.NewRequirement(requirement, _db);
-            return View(newRequirement);
+            return RedirectToAction("GetStudents");
         }
+
+        [HttpGet("newrequirement/{id}")]
+        public async Task<IActionResult> NewSchoolRequirement()
+        { return View();
+        }
+
+     
         [HttpGet("allrequirements")]
         public async Task<IActionResult> AllRequirements()
         {
             var requirementsInDb = await _db.requirements.ToListAsync();
-            return View(requirementsInDb);
+            return RedirectToAction("GetStudents");
         }
         [HttpGet("{id}/requirements")]
         public async Task<IActionResult> requirements([FromRoute] int id)
