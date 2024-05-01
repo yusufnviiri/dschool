@@ -1,0 +1,66 @@
+﻿@model ICollection<StudentJoinUniform>
+
+@if (Model.Count == 0)
+{
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+    </div>
+}
+else
+{
+    <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+
+        <h4 class=" "> SCHOOL FEES</h4>
+        <a class=" text-white  bg-orange-600 px-2 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>  
+    </div>
+
+
+
+    <table class="w-full m-auto text-lime-900  ">
+        <thead>
+            <tr className=" ">
+                <th>ID</th>
+                <th>Student</th>
+                <th>Item</th>
+                <th>Designation</th>
+                <th>Term</th>
+                <th>Cost</th>
+                <th>Amount Paid</th>
+                <th>Date</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model)
+            {
+                <tr >
+                    <td>@data.uniformPayment.UniformPaymentId</td>
+                    <td>
+                        @data.student.FirstName  @data.student.LastName
+                    </td>
+                    <td>@data.uniform.Item </td>
+                    <td>@data.uniform.AcademicLevel</td>
+                    <td>@data.student.Term</td>
+                    <td>
+                        @data.uniform.Cost
+                        <span>/=</span>
+                    </td>
+                    <td>
+                        @data.uniformPayment.Amount
+                        <span>/=</span>
+                    </td>
+                    <td>@data.uniformPayment.DateOfPayment</td>
+                    <td>
+                        
+                </td>
+                </tr>
+            }
+              
+            </tbody>
+          </table>
+
+
+}

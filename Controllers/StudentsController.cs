@@ -335,7 +335,7 @@ namespace victors.Controllers
         public async Task<IActionResult> GetAllPaidUniforms()
         {
             var result = await studentActions.GetUniformPayments(_db);
-            return Ok(result);
+            return View(result);
 
         }
     }
