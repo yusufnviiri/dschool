@@ -36,13 +36,13 @@
             </a>
             <a class=" text-white  bg-orange-600 px-2 rounded "
                asp-controller="Students" asp-action="CreateStudent">
-            
-            student info
+
+                Assessement
             </a>
             <a class=" text-white  bg-orange-600 px-2 rounded "
-               asp-controller="Students" asp-action="CreateStudent">
-               
-            Assessement
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PromoteStudent">
+                student info
+            
             </a>
             <a class=" text-white  bg-orange-600 px-2 rounded " asp-route-id="@Model.student.StudentId"
                asp-controller="Students" asp-action="CreateGuardian">

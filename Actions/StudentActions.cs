@@ -320,6 +320,20 @@ if (student.fullUniform == true)
 
             // check if uniform item exists
         }
+        public Promotion StudenttoPromoted(Student student)
+        { var promoted=new Promotion();
+
+            promoted.StudentId = student.StudentId;
+            promoted.contact=student.Contact;
+            promoted.Section=student.Section;
+            promoted.Stream=student.Stream;
+            promoted.SchoolFees=student.SchoolFees;
+            promoted.Grade=student.Grade;
+            promoted.Village= student.Village;
+            promoted.Term=student.Term;        
+
+            return promoted;
+        }
 
     }
 }

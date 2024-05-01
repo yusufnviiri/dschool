@@ -70,15 +70,23 @@ namespace victors.Controllers
             }
 
         }
+        [HttpGet("{id}/promote")]
 
+        public async Task<IActionResult> PromoteStudent(int id)
+        {
+             odataManager = await studentActions.findStudent(id, _db);
+
+
+            return View(odataManager.student);
+        }
         [HttpPost("{id}/promote")]
 
-        public async Task<IActionResult> PromoteStudent(Promotion student)
+        public async Task<IActionResult> PromoteStudent(Student studentdata)
         {
+            var student = studentActions.StudenttoPromoted(studentdata);
             var promotedStudent = await studentActions.PromoteStudent(student, _db);
 
-
-            return Ok(promotedStudent);
+            return RedirectToAction("GetStudents");
         }
 
         [HttpGet("{id}/PaySchoolFees")]

@@ -11,15 +11,11 @@
     </div>
 }
 else{
-
-
 <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
  text-center  ">
 
-
     <h4 class=" "> SCHOOL FEES</h4>
-    <a class=" text-white  bg-orange-600 px-2 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
-  
+    <a class=" text-white  bg-orange-600 px-2 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>  
 </div>
 
     <table class="w-full m-auto text-lime-900  ">
@@ -32,14 +28,11 @@ else{
             <th>Balance Due</th>
             <th>details</th>
         </tr>
-    </thead>
-
-     
+    </thead>     
         
             <tbody>
             @foreach (var item in Model)
             {
-
                 <tr>
                     <td> </td>
 
@@ -64,9 +57,7 @@ else{
                         </a>
                     </td>
 
-                </tr>
-}
-
+                </tr>}
                 
             </tbody>
             </table>
