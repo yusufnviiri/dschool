@@ -22,52 +22,9 @@
                 </div>
                 <input hidden asp-for="Student.StudentId" />
 
-                <div class="mb-2">
-                    <label asp-for="Student.Term" class="font-bold ml-2 block">Term</label>
-                    <input asp-for="Student.Term"
-                           disabled
-                           class="bg-sky-100 w-full text-center "
-                           type="text" />
-                </div>
-                <label  className="font-bold ml-2 block">Requirement</label>
-
-              <select 
-              required  asp-for="Requirement.RequirementId"
-                            class=" w-full text-center ">
-                        <option value="select">select</option>
-
-                       @foreach(var item in Model.Requirements)
-                {
-                    
-                        <option value=@item.RequirementId>
-                            @item.Name
-                        </option>
-                       
-                }
-                    </select>
-                    
-               
 
 
-                @if (Model.Requirements.Count == 0)
-                {
-                    <a asp-controller="Students" class="underline underline-offset-2  text-[1.2em] " asp-action="NewSchoolRequirement">New Requirement</a>
 
-                }
-                <div class="mb-2">
-                    <label asp-for="Requirement.Amount" class="font-bold ml-2 block"> Amount Paid</label>
-                    <input asp-for="Requirement.Amount" type="number"
-                           class="w-full text-center " />
-                </div>
-                <div class="sm:mb-2">
-                    <label class="font-bold ml-2 block"> Balance Due</label>
-                    <input asp-for="Requirement.Balance"
-                           type="number"
-                           class=" w-full text-center "
-                           disabled />
-                </div>
-            </div>
-            <div class="sm:w-[45%]">
                 <div class="mb-1">
                     <label asp-for="Student.LastName" class="font-bold  ml-2 block">Last Name</label>
                     <input disabled
@@ -81,6 +38,58 @@
                            asp-for="Student.Grade"
                            class="bg-sky-100 w-full text-center "
                            type="text" />
+                </div>
+
+                <div class="">
+                    <label asp-for="Student.Term" class="font-bold ml-2 block">Term</label>
+                    <input asp-for="Student.Term"
+                           disabled
+                           class="bg-sky-100 w-full text-center "
+                           type="text" />
+                </div>
+
+
+              
+            
+                <div class="sm:mb-2">
+                    <label class="font-bold ml-2 block"> Balance Due</label>
+                    <input asp-for="Requirement.Balance"
+                           type="number"
+                           class=" w-full text-center "
+                           disabled />
+                </div>
+            </div>
+            <div class="sm:w-[45%]">
+                <label class="font-bold ml-2 block">Requirement</label>
+
+                <select required asp-for="Requirement.RequirementId"
+                        class=" w-full text-center ">
+                    <option value="select">select</option>
+
+                    @foreach (var item in Model.Requirements)
+                    {
+
+                        <option value=@item.RequirementId>
+                            @item.Name
+                        </option>
+
+                    }
+                </select>
+
+
+
+
+                @if (Model.Requirements.Count == 0)
+                {
+                    <a asp-controller="Students" class="underline underline-offset-2  text-[1.2em] " asp-action="NewSchoolRequirement">New Requirement</a>
+
+                }
+
+
+                <div class="mb-2">
+                    <label asp-for="Requirement.Amount" class="font-bold ml-2 block"> Amount Paid</label>
+                    <input asp-for="Requirement.Amount" type="number"
+                           class="w-full text-center " />
                 </div>
 
                             <div class="">

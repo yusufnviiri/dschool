@@ -247,8 +247,8 @@ if (student.fullUniform == true)
                 // PaidBy = student.FirstName + student.LastName,                
                 RecievedBy = requirement.RecievedBy,
                 RequirementId = requirement.RequirementId,
-                Term = requirement.Term,
-                Grade = requirement.Grade,
+                Term = student.Term,
+                Grade = student.Grade,
             };
 
             await _db.RequirementsPayment.AddAsync(requirementPayment);

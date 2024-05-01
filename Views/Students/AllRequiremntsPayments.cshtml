@@ -1,0 +1,71 @@
+﻿@model List<RequirementPayment>
+@if (Model.Count == 0)
+{
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+    </div>
+}
+else
+{
+    <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+
+        <h4 class=" "> SCHOOL FEES</h4>
+        <a class=" text-white  bg-orange-600 px-2 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
+    </div>
+    <table class="w-full m-auto text-lime-900  ">
+        <thead>
+            <tr class=" ">
+                <th></th>
+                <th>student</th>
+                <th> Description</th>
+                <th>Term</th>
+                <th>Date</th>
+                <th>Grade</th>
+                <th>Amount</th>
+                <th>Recieved By</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> </td>
+
+                    <td>
+                        @item.PaidBy 
+                    </td>
+                    <td>
+                        @item.RequiremntName 
+                    </td>
+
+                    <td>
+                        @item.Term
+                   
+                    </td>
+                    <td>
+                        @item.DateOfPayment
+                      
+                    </td>
+                    <td>
+                        @item.Grade
+
+                    </td>
+                    <td>
+                        @item.Amount
+                        <span>/=</span>
+                    </td>
+                    <td>
+                        @item.RecievedBy
+
+                    </td>
+                
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
