@@ -1,0 +1,87 @@
+﻿@model FeesJoinStudent
+@{
+    ViewData["Title"] = "school fees payment";
+}
+
+
+<div class=" mt-7 mx-auto w-[70%] ">
+    <form method="post" action="PaySchoolFees" class="h-25  row">
+          <div class="flex  flex-col sm:flex-row  w-[70%] gap-6 flex-auto flex-grow-1 m-auto">
+            <div class="sm:w-[45%]">
+                <div class="mb-1">
+                <label asp-for="Student.FirstName" class="font-bold ml-2 block">First Name</label>
+                <input
+                 asp-for="Student.FirstName"
+                  class="bg-sky-100 w-full text-center"
+                  type="text"                
+                  disabled
+                />
+              </div>
+              <input hidden asp-for="Student.StudentId" />
+
+              <div class="mb-2">
+                <label asp-for="Student.Term" class="font-bold ml-2 block">Term</label>
+                <input
+             asp-for="Student.Term"        
+             disabled
+                  class="bg-sky-100 w-full text-center "
+                  type="text"
+                />
+              </div>
+
+              <div class="mb-2">
+                <label  asp-for="SchoolFees.Amount" class="font-bold ml-2 block"> Amount Paid</label>
+                <input
+asp-for="SchoolFees.Amount"                  type="number"
+                 
+                  class="w-full text-center "
+                />
+              </div>
+              <div class="sm:mb-2">
+                <label class="font-bold ml-2 block"> Balance Due</label>
+                <input
+                asp-for="SchoolFees.Balance"
+                  type="number"
+                  class=" w-full text-center "
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="sm:w-[45%]">
+              <div class="mb-1">
+                <label asp-for="Student.LastName" class="font-bold  ml-2 block">Last Name</label>
+                <input
+                  disabled
+              asp-for="Student.LastName"
+                  class="bg-sky-100 w-full text-center"
+                  type="text"
+                />
+              </div>
+              <div class="mb-2  ">
+                <label class="font-bold ml-2 block"> Class</label>
+                <input
+                  disabled
+          asp-for="Student.Grade"              
+          class="bg-sky-100 w-full text-center "
+                  type="text"
+                />
+              </div>
+
+              <div class="sm:mb-9 mb-3">
+                <label  asp-for="SchoolFees.RecievedBy" class="font-bold ml-2 block">Recieved By</label>
+                <input
+                  required
+                 asp-for="SchoolFees.RecievedBy"
+                  type="text"
+                  class=" w-full text-center "
+                />
+              </div>
+              <div  class=" mt-5 text-white   font-bold w-full m-auto  
+    text-center  bg-green-700 rounded hover:bg-slate-700"
+              >
+                <input class="uppercase text-yellow-100" type="submit" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>

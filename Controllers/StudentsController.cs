@@ -80,20 +80,34 @@ namespace victors.Controllers
 
             return Ok(promotedStudent);
         }
-        [HttpPost("{id}/schoolfees")]
-        public async Task<IActionResult> paySchoolFees(SchoolFees schoolFees)
+
+        [HttpGet("{id}/PaySchoolFees")]
+        public async Task<IActionResult> PaySchoolFees(int id)
         {
-            var Fees = new SchoolFees();
-            if (schoolFees == null)
+            odataManager = await studentActions.findStudent(id, _db);
+            var fees = await _db.schoolFees.Where(p => p.StudentId == id).ToListAsync();
+            SchoolFees payment = new SchoolFees ();
+            payment.Balance = fees.LastOrDefault().Balance;
+                FeesJoinStudent feesJoinStudent = new (){ Student=odataManager.student,SchoolFees=payment};
+
+            return View(feesJoinStudent);
+
+        }
+            [HttpPost("{id}/PaySchoolFees")]
+        public async Task<IActionResult> PaySchoolFees(FeesJoinStudent data)
+        {
+            data.SchoolFees.StudentId = data.Student.StudentId;
+           if (ModelState.IsValid)
             {
-                return BadRequest(schoolFees);
+              await studentActions.saveStudentSchFees(data.SchoolFees, _db);
+                return RedirectToAction("GetStudents");
+
             }
-            else if (ModelState.IsValid)
+            else
             {
-                Fees = await studentActions.saveStudentSchFees(schoolFees, _db);
+                return View(data);
             }
 
-            return Ok(Fees);
         }
         [HttpPost("{id}/requirements")]
         public async Task<IActionResult> payRequirement(Requirement requirement)

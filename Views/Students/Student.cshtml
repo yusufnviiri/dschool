@@ -21,7 +21,7 @@
         <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4   m-auto  sm:text-[0.61em] md:text-[0.76em] lg:text-[0.96em]   text-[0.51em]
  text-center  ">
             <a class=" text-white  bg-orange-600 px-2 rounded "
-                asp-controller="Students" asp-action="CreateStudent" >
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PaySchoolFees">
             School Fees
             </a>
             <a class=" text-white  bg-orange-600 px-2 rounded "
