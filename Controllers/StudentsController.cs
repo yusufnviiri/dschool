@@ -70,16 +70,16 @@ namespace victors.Controllers
             }
 
         }
-        [HttpGet("{id}/promote")]
+        [HttpGet("promote/{studentId}")]
 
-        public async Task<IActionResult> PromoteStudent(int id)
+        public async Task<IActionResult> PromoteStudent([FromRoute]int studentId)
         {
-             odataManager = await studentActions.findStudent(id, _db);
+             odataManager = await studentActions.findStudent(studentId, _db);
 
 
             return View(odataManager.student);
         }
-        [HttpPost("{id}/promote")]
+        [HttpPost("promote/{studentId}")]
 
         public async Task<IActionResult> PromoteStudent(Student studentdata)
         {

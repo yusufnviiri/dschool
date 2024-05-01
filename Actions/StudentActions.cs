@@ -330,6 +330,7 @@ if (student.fullUniform == true)
             promoted.SchoolFees=student.SchoolFees;
             promoted.Grade=student.Grade;
             promoted.Village= student.Village;
+            promoted.Status=student.Status;
             promoted.Term=student.Term;        
 
             return promoted;

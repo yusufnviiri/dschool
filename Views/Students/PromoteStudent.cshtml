@@ -10,8 +10,6 @@
 </div>
 
 <form method="post" action="PromoteStudent">
-
-
     <div class="flex sm:flex-row flex-col  w-[90%] md:w-[90%] gap-6 flex-auto flex-grow-1 m-auto">
         <div class="sm:w-[45%]">
             <div class="mb-1">
@@ -28,7 +26,7 @@
                        class=" w-full text-center"
                        type="text" />
             </div>
-
+            <input hidden asp-for="StudentId"/>
             <div class="flex justify-between gap-2  w-full">
                 <div class="mb-1 w-[80%]">
                     <label asp-for="Gender" class="font-bold ml-2 block">Gender</label>
