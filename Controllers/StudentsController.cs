@@ -66,7 +66,7 @@ namespace victors.Controllers
             else
             {
                 odataManager = await studentActions.findStudent(id, _db);
-                return Ok(odataManager);
+                return View(odataManager);
             }
 
         }
