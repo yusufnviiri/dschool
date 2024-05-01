@@ -225,14 +225,9 @@ namespace victors.Controllers
                             SchoolFees = item,
                             Student = students.Where(k => k.StudentId == item.StudentId).ToList().FirstOrDefault()
                         }).ToList();
-            if (data.Any())
-            {
-                return Ok(data);
-            }
-            else
-            {
-                return Ok();
-            }
+            
+                return View(data);
+           
         }
         [HttpGet("requirentsPaid")]
         public async Task<IActionResult> AllRequiremntsPayments()
