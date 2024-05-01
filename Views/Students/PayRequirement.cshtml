@@ -61,7 +61,6 @@
             </div>
             <div class="sm:w-[45%]">
                 <label class="font-bold ml-2 block">Requirement</label>
-
                 <select required asp-for="Requirement.RequirementId"
                         class=" w-full text-center ">
                     <option value="select">select</option>
@@ -75,9 +74,6 @@
 
                     }
                 </select>
-
-
-
 
                 @if (Model.Requirements.Count == 0)
                 {
