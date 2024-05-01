@@ -1,0 +1,70 @@
+﻿@model List<Guardian>
+
+@{
+    ViewData["Title"] = "parents list";
+}
+
+
+@if (Model.Count == 0)
+{
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+    </div>
+}
+else
+{
+
+    <table class="w-full m-auto text-lime-900  ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Village</th>
+                <th> District</th>
+                <th> Contact</th>
+                <th> Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var parent in Model)
+            {
+                <tr class="   text-[0.7em] sm:text-[0.99em] ">
+                    <td>
+                        @parent.GuardianId
+                    </td>
+                    <td>
+                      
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @parent.StudentId">        @parent.FirstName</a>
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @parent.StudentId">        @parent.LastName</a>
+                    </td>
+                    <td class="">
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @parent.StudentId">
+                            @parent.Village
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id="  @parent.StudentId">           @parent.District</a>
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id="   @parent.StudentId">     @parent.Contact</a>
+
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id="   @parent.StudentId">            @parent.Email</a>
+                    </td>
+                  
+              
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}

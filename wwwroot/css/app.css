@@ -60,6 +60,7 @@ thead {
     font-size: larger;
     text-transform: capitalize;
 }
+td>a{text-transform:capitalize}
 
 th,
 td,

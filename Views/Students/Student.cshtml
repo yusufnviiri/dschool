@@ -1,1 +1,150 @@
-﻿@model OdataManager 
+﻿@{
+    ViewData["Title"] = "student details";
+}
+
+@model OdataManager
+
+
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+
+
+    <h4 class=" ">STUDENT DETAILS</h4>
+
+    <a class=" text-white  bg-orange-600 px-2 rounded " asp-controller="Students" asp-action="CreateStudent">
+    Add Student
+    </a>
+</div>
+<div class="">
+  
+    <div >
+        <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4   m-auto  sm:text-[0.61em] md:text-[0.76em] lg:text-[0.96em]   text-[0.51em]
+ text-center  ">
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+                asp-controller="Students" asp-action="CreateStudent" >
+            School Fees
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Students" asp-action="CreateStudent" >
+        
+            Requirements
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Students" asp-action="CreateStudent">
+           
+            Uniform
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Students" asp-action="CreateStudent">
+            
+            student info
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Students" asp-action="CreateStudent">
+               
+            Assessement
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded " asp-route-id="@Model.student.StudentId"
+               asp-controller="Students" asp-action="CreateGuardian">
+
+       
+            Add Guardian
+            </a>
+        </div>
+    </div>
+
+
+    <div class="mt-1  mx-2 flex flex-col lg:flex-row    justify-between w-full  gap-4">
+        <div class="  w-full lg:w-[40%]  ">
+         
+         
+                <div class="    capitalize">
+                    <div class="flex pt-2 md:text-[0.7299em]   text-[0.899em] xl:text-[0.99em] ">
+                    <img src="/css/assets/avator.png" class="w-[150px] h-[150px] mr-4" />
+                        <div class="  grow   ">
+                        <div class="flex bg-teal-900 text-yellow-500    ">
+                                <p class="w-[33%]  font-normal  ">Name: </p>
+                                <p class="grow  ">
+                                    @Model.student.FirstName  <span class="px-2">   @Model.student.LastName</span>
+                                  
+                                </p>
+                            </div>
+                            <div class="flex  ">
+                                <p class="w-[33%]  font-normal">Age: </p>
+                                <p class="grow">   @Model.student.Age </p>
+                            </div>
+                            <div class="flex  ">
+                                <p class="w-[33%]  font-normal">Nationality: </p>
+                                <p class="">   @Model.student.Nationality </p>
+                            </div>
+                            <div class="flex  ">
+                                <p class="w-[33%] font-normal">Section: </p>
+                                <p class="">   @Model.student.Section </p>
+                            </div>
+                            <div class="flex   ">
+                                <p class="w-[33%] font-normal ">Class: </p>
+                                <p class="">   @Model.student.Stream</p>
+                            </div>
+                            <div class="flex   ">
+                                <p class="w-[33%]  font-normal">Grade: </p>
+                                <p class="data">   @Model.student.Grade</p>
+                            </div>
+                            <div class="flex   ">
+                                <p class="w-[33%]  font-normal ">Term: </p>
+                                <p class="">   @Model.student.Term</p>
+                            </div>
+                            <div class="flex   ">
+                                <p class="w-[33%]  font-normal ">Gender: </p>
+                                <p class="">   @Model.student.Gender</p>
+                            </div>
+                            <div class="flex  ">
+                                <p class="w-[33%] font-normal ">Status: </p>
+                                <p class="">   @Model.student.Status </p>
+                            </div>
+                            <div class="flex   ">
+                                <p class="w-[33%] font-normal ">Contact: </p>
+                                <p class="data">   @Model.student.Contact </p>
+                            </div>
+                            <div class="flex  ">
+                                <p class="w-[33%] font-normal ">District: </p>
+                                <p class="">   @Model.student.District </p>
+                            </div>
+                            <div class="flex   ">
+                                <p class="w-[33%] font-normal ">Village: </p>
+                                <p class="">   @Model.student.Village </p>
+                            </div>
+                            <div class="flex   ">
+                                <p class="w-[33%]  font-normal ">School Fees: </p>
+                                <p class="">
+                                    @Model.student.SchoolFees
+                                    <span>/=</span>
+                                </p>
+                            </div>
+                            <div class="flex ">
+                                <p class="w-[33%]  font-normal ">Birth Date: </p>
+                                <p class="">   @Model.student.birthDateString </p>
+                            </div>
+                        </div>
+                   
+                </div>
+            </div>
+         
+        </div>
+
+        <div class=" mt-1 flex justify-between gap-3 lg:w-[60%]">
+            <div class=" w-[50%]  px-3 text-white  bg-teal-900">
+                <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
+                    ACADEMIC SUMMARY
+                </h4>
+
+            </div>
+            <div class="mt-1 w-[50%]  px-3  text-white  bg-teal-900">
+                <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
+                    GUARDIAN
+                </h4>
+
+              
+            </div>
+        </div>
+    </div>
+</div>

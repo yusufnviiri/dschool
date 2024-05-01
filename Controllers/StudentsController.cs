@@ -143,23 +143,31 @@ namespace victors.Controllers
                 return Ok(items);
             }
         }
-
-
-        [HttpPost("{id}/guardian")]
-        public async Task<IActionResult> CreateGuardian(Guardian guardian)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> CreateGuardian(int id)
         {
+            odataManager = await studentActions.findStudent(id, _db);
+            StudentJoinGuardian studentJoinGuardian = new ();
+            studentJoinGuardian.Student = odataManager.student;
+            return View(studentJoinGuardian);
+        }
+        [HttpPost("{id}")]
+        public async Task<IActionResult> CreateGuardian(StudentJoinGuardian data)
+        {var guardian = data.Guardian;
+            guardian.StudentId = data.Student.StudentId;
             if (ModelState.IsValid)
             {
                 await _db.guardians.AddAsync(guardian);
                 await _db.SaveChangesAsync();
-                return Ok(guardian);
+                return RedirectToAction("GetStudents");
+
             }
 
-            return Ok(guardian);
+            return RedirectToAction("AllGuardian");
         }
 
         [HttpGet("{id}/guardians")]
-        public async Task<IActionResult> GetGuardian([FromRoute] int id)
+        public async Task<IActionResult> GetGuardians([FromRoute] int id)
         {
             string[] items = new string[1];
             var guardians = await _db.guardians.Where(p => p.StudentId == id).ToListAsync();
@@ -179,14 +187,9 @@ namespace victors.Controllers
         public async Task<IActionResult> AllGuardian()
         {
             var guardians = await _db.guardians.ToListAsync();
-            if (guardians.Any())
-            {
-                return Ok(guardians);
-            }
-            else
-            {
-                return Ok();
-            }
+           
+               return View(guardians);
+          
         }
         [HttpGet("schoolfees")]
         public async Task<IActionResult> AllFeesPayments()
