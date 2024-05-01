@@ -147,7 +147,7 @@ namespace victors.Controllers
         public async Task<IActionResult> AllRequirements()
         {
             var requirementsInDb = await _db.requirements.ToListAsync();
-            return Ok(requirementsInDb);
+            return View(requirementsInDb);
         }
         [HttpGet("{id}/requirements")]
         public async Task<IActionResult> requirements([FromRoute] int id)
@@ -162,14 +162,9 @@ namespace victors.Controllers
         {
             string[] items = new string[1];
             var fees = await _db.schoolFees.Where(p => p.StudentId == id).ToListAsync();
-            if (fees.Any())
-            {
-                return Ok(fees);
-            }
-            else
-            {
-                return Ok(items);
-            }
+          
+                return View(fees);
+           
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> CreateGuardian(int id)
