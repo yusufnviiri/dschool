@@ -1,0 +1,48 @@
+﻿@model ICollection<PettyCash>
+
+
+
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+  
+
+    <h4 class=" "> DAILY EXPENSES</h4>
+
+  
+
+    <a class=" text-white  bg-orange-600 px-2 rounded  "
+       asp-controller="SchoolAffairs" asp-action="CreateExpense">New Expense</a>
+
+</div>
+
+
+<table class="w-full m-auto text-black ">
+    <thead>
+        <tr class=" ">
+            <th>ID</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th> Description</th>
+
+            <th>Amount</th>
+            <th> Recieved By</th>
+            <th>Issued By</th>
+        </tr>
+    </thead>
+    <tbody>
+      @foreach(var item in Model){
+        <tr >
+            <td>@item.PettyCashId</td>
+                <td> @item.dateString</td>
+            <td>@item.Category</td>
+            <td>@item.Description</td>
+            <td>
+                @item.Amount
+                <span>/=</span>
+            </td>
+            <td>@item.RecievedBy}</td>
+            <td>@item.PaidBy}</td>}
+        </tr>
+       
+    </tbody>
+</table>

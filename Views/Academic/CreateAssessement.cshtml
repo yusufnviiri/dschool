@@ -1,0 +1,90 @@
+﻿@model AssessementJoinCourseJoinStudent
+@{
+    ViewData["Title"] = "assessement";
+}
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+    <h4 class=" "> ASSESSEMENT FORM</h4>
+
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Academic" asp-action="GetAllAssessements">ASSESSEMENTS</a>
+</div>
+</div>
+
+<div class="sm:w-[60%]   w-[80%] m-auto  mt-7 requirement_form">
+    <form method="post" action="CreateAssessement" class="h-25  row">
+
+        <div class="flex flex-col sm:flex-row  w-[70%] gap-6 flex-auto flex-grow-1 m-auto">
+            <div class="sm:w-[45%]">
+             
+                <input hidden asp-for="course.CourseId" />
+                <input hidden asp-for="PromotedStudent.StudentId" />
+
+                <div class="mb-2">
+                    <label asp-for="PromotedStudent.Term" class="font-bold ml-2 block">Term</label>
+                    <input asp-for="PromotedStudent.Term"
+                           disabled
+                           class="bg-sky-100 w-full text-center "
+                           type="text" />
+                </div>
+                <div class="mb-1">
+                    <label asp-for="PromotedStudent.Section" class="font-bold ml-2 block">Section</label>                   
+                    <input asp-for="PromotedStudent.Section"
+                           class="bg-sky-100 w-full text-center"
+                           type="text"
+                    disabled
+                    />
+                </div>
+              
+
+                <div class="mb-1">
+                    <label asp-for="assessement.PaceNumber" class="font-bold ml-2 block"> Pace Number</label>
+                    <input required
+                           asp-for="assessement.PaceNumber"
+                           type="text"
+                   
+                    class="w-full text-center "
+                    />
+                </div>
+                <div class="mb-1">
+                    <label asp-for="assessement.PaceScore" class="font-bold ml-2 block"> Pace Score</label>
+                    <input required
+                           asp-for="assessement.PaceScore" type="number"
+                   
+                    class="w-full text-center "
+                    />
+                </div>
+            </div>
+            <div class="sm:w-[45%]">
+            
+                <div class="mb-2  ">
+                    <label asp-for="PromotedStudent.Grade" class="font-bold ml-2 block"> Class</label>
+                    <input disabled
+                           asp-for="PromotedStudent.Grade" class="bg-sky-100 w-full text-center "
+                           type="text" />
+                </div>
+
+                <div class="mb-2">
+                    <label asp-for="course.Name" class="font-bold ml-2 block">Subject Name </label>
+                    <input disabled
+                           asp-for="course.Name"
+                    type="text"
+                    class=" w-full text-center "
+                    />
+                </div>
+                <div class="mb-2">
+                    <label asp-for="course.Code" class="font-bold ml-2 block">Subject Code </label>
+                    <input disabled
+                           asp-for="course.Code"
+                    type="text"
+                    class=" w-full text-center "
+                    />
+                </div>
+                <div class="mt-6 text-white   font-bold w-full m-auto submit
+    text-center  bg-green-700 rounded hover:bg-slate-700">
+                    <input class="uppercase text-yellow-100  w-[20%]"
+                           type="submit" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

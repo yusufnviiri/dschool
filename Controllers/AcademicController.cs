@@ -3,6 +3,7 @@ using victors.Models.Context;
 using victors.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using victors.Models.Helper;
 
 namespace victors.Controllers
 {
@@ -37,17 +38,53 @@ namespace victors.Controllers
             var data = await _academicaffairs.GetAllCourse(_db);
             return View(data);
         }
-
-        [HttpPost("assessement")]
-        public async Task<IActionResult> CreateAssessement(Assessement assessement)
+        [HttpGet]
+        public async Task<IActionResult> CreateAssessement()
         {
-            var data = await _academicaffairs.CreateAssessement(assessement, _db);
-            return Ok(data);
+            var examCaches = await _db.ExamCache.ToListAsync();
+            var students = await _db.promotions.Where(p => p.StudentId == examCaches.LastOrDefault().StudentId).ToListAsync();
+            var course = await _db.Courses.FindAsync(examCaches.LastOrDefault().CourseId);
+            
+            AssessementJoinCourseJoinStudent assessementJoinCourseJoin = new AssessementJoinCourseJoinStudent();
+            assessementJoinCourseJoin.course = course;
+            assessementJoinCourseJoin.PromotedStudent = students.LastOrDefault();
+            return View(assessementJoinCourseJoin);
+        
+        }
+
+            [HttpPost]
+        public async Task<IActionResult> CreateAssessement(AssessementJoinCourseJoinStudent data)
+        {
+            Assessement assessement = data.assessement;
+            var examCaches = await _db.ExamCache.ToListAsync();
+            var studentd = await _db.Students.FindAsync(examCaches.LastOrDefault().StudentId);
+            var students = await _db.promotions.Where(p => p.StudentId == examCaches.LastOrDefault().StudentId).ToListAsync();
+            if (examCaches.Any())
+            {
+                assessement.CourseId = examCaches.LastOrDefault().CourseId;
+                assessement.StudentId = examCaches.LastOrDefault().StudentId;
+                assessement.Section = students.LastOrDefault().Section;
+                assessement.Stream = students.LastOrDefault().Stream;
+                assessement.Year = students.LastOrDefault().Year;
+                assessement.Grade = students.LastOrDefault().Grade;
+                assessement.Term = students.LastOrDefault().Term;
+
+              
+                 await _academicaffairs.CreateAssessement(assessement, _db);
+                _db.RemoveRange(examCaches);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("GetAllCourse");
+            }
+            else
+            {
+          return View(data);
+            }
+
         }
         [HttpGet("assessements")]
 
 
-        public async Task<IActionResult> getAllAssessements()
+        public async Task<IActionResult> GetAllAssessements()
         {
             var data = await _academicaffairs.GetAllAssessements(_db);
             return Ok(data);
@@ -71,7 +108,9 @@ namespace victors.Controllers
             {
                 ExamCache exam = new()
                 {
-                    Student = student,
+                    StudentId = student.StudentId,
+                    ExamSession = true,
+
                 };
             await _db.ExamCache.AddAsync(exam);
                 await _db.SaveChangesAsync();
@@ -82,7 +121,8 @@ namespace victors.Controllers
                 await _db.SaveChangesAsync();
                 ExamCache exam = new()
                 {
-                    Student = student,
+                    StudentId = student.StudentId,
+                    ExamSession = true,
                 };
                 await _db.ExamCache.AddAsync(exam);
                 await _db.SaveChangesAsync();
@@ -94,10 +134,29 @@ namespace victors.Controllers
 
         public async Task<IActionResult> StoreExamCourse(int id)
         {
-            var examCache = await _db.ExamCache.ToListAsync();
+
+            var examCaches = await _db.ExamCache.ToListAsync();
             var course = await _db.Courses.FindAsync(id);
-            examCache.LastOrDefault().Course = course;
-            await _db.SaveChangesAsync(); return RedirectToAction("CreateAssessement");
+
+            ExamCache examCache = new ExamCache();
+            if (examCaches.Any())
+            {
+                examCache = examCaches.LastOrDefault();
+                examCache.ExamSession = false;
+                examCache.CourseId = course.CourseId;
+                await _db.SaveChangesAsync(); 
+                return RedirectToAction("CreateAssessement");
+
+            }
+            else
+            {
+                
+                return RedirectToAction("GetAllCourse");
+
+            }
+
+
+
 
 
         }

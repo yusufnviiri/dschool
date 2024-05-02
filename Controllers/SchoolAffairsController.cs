@@ -19,27 +19,34 @@ namespace victors.Controllers
         {
             _db = db;
         }
-        [HttpPost]
-        public async Task<IActionResult> Create(PettyCash pettyCash)
+
+        [HttpGet]
+        public async Task<IActionResult> CreateExpense()
+        {
+            return View();
+        }
+
+            [HttpPost]
+        public async Task<IActionResult> CreateExpense(PettyCash pettyCash)
         {
             if (ModelState.IsValid)
             {
                 var postedTrans = await _affairs.AddPettyCash(_db, pettyCash);
-                return Ok(postedTrans);
+                return RedirectToAction("GetExpenses");
 
             }
             else
             {
-                return BadRequest();
+                return View(pettyCash);
 
             }
 
         }
-        [HttpGet("expenses")]
+        [HttpGet("allexpenses")]
         public async Task<IActionResult> GetExpenses()
         {
             var expenses = await _affairs.GetPettyCash(_db);
-            return Ok(expenses);
+            return View(expenses);
         }
         [HttpGet("notice/{id}")]
         public async Task<IActionResult> CreateNotice(int id)

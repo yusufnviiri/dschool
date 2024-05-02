@@ -6,5 +6,6 @@
         public Student student { get; set; }= new ();
         public Assessement assessement { get; set; } = new();
         public Course course { get; set; } = new(); 
+        public Promotion PromotedStudent { get; set; }=new Promotion();
     }
 }

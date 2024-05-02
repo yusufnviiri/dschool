@@ -25,10 +25,23 @@ namespace victors.Actions
             await _db.SaveChangesAsync();
             return course;
         }
-        public async Task<ICollection<Course>> GetAllCourse (ApplicationDbContext _db)
+        public async Task<CourseJoinExamCache> GetAllCourse (ApplicationDbContext _db)
         {
            Courses = await _db.Courses.ToListAsync();
-            return Courses;
+            List<ExamCache> examCaches= await _db.ExamCache.ToListAsync();
+            ExamCache ExamCache = new ExamCache();
+            if (examCaches.Any())
+            {
+                ExamCache = examCaches.LastOrDefault();
+            }
+            CourseJoinExamCache courseJoinExamCache = new CourseJoinExamCache()
+            {
+                courses = Courses,
+                examCache = ExamCache,
+
+            };
+
+            return courseJoinExamCache;
         }
     
 
