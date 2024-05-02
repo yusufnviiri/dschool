@@ -1,0 +1,58 @@
+﻿@model List<Wage>
+
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+  
+
+    <h4 class=" "> STAFF SALARIES</h4>
+
+    <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto" asp-controller="Staffs" asp-action="Create"> Add Staff</a>
+</div>
+
+@if(Model.Count == 0)
+{
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+
+<a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto" asp-controller="Staffs" asp-action="Create">Click to Add Staff....</a>
+    </div>
+}else {
+<table class="w-full m-auto text-lime-900 ">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th> Name</th>
+            <th> Category</th>
+            <th>Job Title</th>
+            <th> Status</th>
+            <th>Gross Pay</th>
+            <th>Net Pay</th>
+            <th>pay month</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach ( var item in Model)           
+{                <tr class="text-[0.7em] sm:text-[0.99em]">
+            <td>@item.SalaryDate</td>
+
+            <td>
+                @item.Staff.FirstName  @item.Staff.LastName
+            </td>
+            <td>@item.Staff.Category</td>
+
+            <td>@item.Staff.JobTitle</td>
+            <td>@item.Staff.Status</td>
+            <td>
+               @item.Amount
+                <span class="font-bold">/=</span>
+            </td>
+            <td>
+                @item.NetPay
+                <span class="font-bold">/= </span>
+            </td>
+            <td>@item.PayMonth</td>            
+        </tr>
+      }
+    </tbody>
+</table>
+}

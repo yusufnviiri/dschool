@@ -52,7 +52,7 @@ namespace victors.Controllers
 
         [HttpGet("Staff/{id}")]
 
-        public async Task<IActionResult> Getstaff(int id)
+        public async Task<IActionResult>Staff(int id)
         {
             if (id == 0)
             {
@@ -61,12 +61,19 @@ namespace victors.Controllers
             else
             {
                 var result = await staffActions.GetStaff(_db, id);
-                return Ok(result);
+                return View(result);
             }
 
         }
+        [HttpGet("update/{id}")]
+        
+        public async Task<IActionResult> UpdateStaff(int id)
+        {
+            var staff = await _db.staffs.FindAsync(id);
+            return View(staff);
+        }
 
-        [HttpPost("{id}/update")]
+            [HttpPost("update/{id}")]
 
         public async Task<IActionResult> UpdateStaff(Staff staff)
         {
@@ -77,35 +84,45 @@ namespace victors.Controllers
             else
             {
                 var result = await staffActions.UpdateStaff(_db, staff);
-                return Ok(result);
+                return RedirectToAction("GetAllStaff");
             }
 
         }
 
-        [HttpPost("wages")]
+        [HttpGet("wages/{id}")]
 
-        public async Task<IActionResult> PayWages(Wage wage)
+        public async Task<IActionResult> PayWages(int id)
         {
+            var staff = await _db.staffs.FindAsync(id);
+            StaffJoinWage staffJoinWage= new StaffJoinWage();
+            staffJoinWage.Staff = staff;
 
-            if (wage == null)
+            return View(staffJoinWage);
+        }
+
+            [HttpPost("wages/{id}")]
+
+        public async Task<IActionResult> PayWages(StaffJoinWage data)
+        {
+            data.Wage.StaffId=data.Staff.StaffId;
+
+            if (data.Wage == null)
             {
-                return BadRequest();
+                return View(data);
             }
             else
             {
-                var newStaffWage = await staffActions.payStaffWages(_db, wage);
-                return Ok(newStaffWage);
+                var newStaffWage = await staffActions.payStaffWages(_db, data.Wage);
+                return RedirectToAction("GetAllStaff");
             }
         }
-        [HttpGet("wages")]
+        [HttpGet("staff_wages")]
 
         public async Task<IActionResult> GetAllWages()
         {
             // var wages = await _db.wages.Include(k => k.Staff).GroupBy(h => h.PayMonth).ToListAsync();
             var wages = await _db.wages.Include(k => k.Staff).ToListAsync();
-
-
-            return Ok(wages);
+            return View(wages);
         }
 
 

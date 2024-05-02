@@ -9,6 +9,7 @@
         public string Grade { get; set; } = string.Empty;
         public string Stream { get; set; } = string.Empty;
         public string Section { get; set; } = string.Empty;
+        
 
         public void stringToUpperCase(string str)
         {

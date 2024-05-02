@@ -1,0 +1,85 @@
+﻿@model StaffJoinWage
+
+
+
+      <div class="ml-5  text-[10px]">
+        <h4  class=" my-2 font-bold  underline-offset-2 underline 
+     text-[1.6em] text-center font-sans "
+        >
+          STAFF SALARY PAYMENT FORM
+        </h4> </div>
+        <form  method="post" action="PayWages" class="h-25  row">
+          <div class="flex  flex-col sm:flex-row  w-[70%] gap-6 flex-auto flex-grow-1 m-auto">      
+            <div class="w-[45%]">
+              <div class="mb-1">
+       <label asp-for="Staff.FirstName" class="font-bold ml-2 block">First Name</label>
+                <input     class="bg-sky-100 w-full text-center"
+                  type="text"
+                 asp-for="Staff.FirstName"
+                  disabled
+                />
+              </div>
+              <input hidden asp-for="Staff.StaffId" />
+              <div class="mb-1">
+                <label  asp-for="Staff.JobTitle" class="font-bold  ml-2 block">Job Title</label>
+                <input
+                  disabled
+                asp-for="Staff.JobTitle"  class="bg-sky-100 w-full text-center"
+                  type="text"
+                />
+              </div>
+
+              <div class="mb-2">
+                <label asp-for="Wage.Balance" class="font-bold ml-2 block"> Balance Due</label>
+                <input asp-for="Wage.Balance"  type="number" 
+                  class=" w-full text-center "
+                  disabled
+                />
+              </div>
+              <div class="mb-2">
+                <label  asp-for="Wage.Amount" class="font-bold ml-2 block"> Amount Paid</label>
+                <input asp-for="Wage.Amount"     type="number"
+                  class="w-full text-center "
+                />
+              </div>
+            </div>
+            <div class="w-[45%]">
+              <div class="mb-1">
+           <label asp-for="Staff.LastName" class="font-bold  ml-2 block">Last Name</label>
+                <input
+                  disabled
+                  asp-for="Staff.LastName"
+                  class="bg-sky-100 w-full text-center"
+                  type="text"
+                />
+              </div>
+
+              <div class="mb-2  ">
+                <label  asp-for="Staff.Salary" class="font-bold ml-2 block"> Salary</label>
+                <input
+                  disabled asp-for="Staff.Salary"
+                  class="bg-sky-100 w-full text-center "
+                  type="text"
+                />
+              </div>
+              <div class="mb-1">
+                <label asp-for="Wage.Reason"  class="font-bold ml-2 block">Reason</label>
+                <select  asp-for="Wage.Reason"  required               
+                  class=" w-full text-center"
+                >
+                  <option value="select">select</option>
+                  <option>Salary</option>
+                  <option>Advance</option>
+                </select>
+              </div>
+
+              <div
+                class="mt-7 text-white   font-bold w-full m-auto  
+    text-center  bg-green-700 rounded hover:bg-slate-700"
+              >
+                <input class="uppercase text-yellow-100" type="submit" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>

@@ -1,0 +1,36 @@
+﻿@model ICollection<Notice>
+@{
+    ViewData["Title"] = "notices";
+}
+
+
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center ">
+   
+
+    <h4 class=" "> NOTICE BOARD</h4>
+  
+    <a class=" text-white  bg-orange-600 px-2 rounded  "
+       asp-controller="SchoolAffairs" asp-action="CreateNotice">New Notice</a>
+</div>
+
+                    @foreach(var item in Model)
+    {
+<div  class="px-8 py-2 my-5 bg-neutral-100 rounded">
+    <h5 class="text-[0.88em]   font-bold">
+        <span class="mr-3 font-semibold text-red-900">
+            Due Date:
+        </span>
+        @item.dueDateString
+    </h5>
+    <h5 class="text-[0.78em] py-1  pl-1 text-violet-800 font-semibold">
+        Posted By:
+        <span class="pr-1 font-semibold  text-red-900 ">
+            @item.Postedby</span>
+        <span class="pr-1 font-semibold">On: </span> @item.NoticeDate    </h5>
+
+    <p class="text-[0.8818em] px-1  font-thin">
+        @item.Description
+    </p>
+</div>
+}

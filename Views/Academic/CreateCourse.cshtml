@@ -1,0 +1,128 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "new course";
+}
+
+
+     <div
+        class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em] 
+ text-center  "
+      >
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Home</a>
+
+        <h4 class=" "> SUBJECT CREATION FORM</h4>
+
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Academic" asp-action="GetAllCourse">Subjects</a>
+      </div>
+
+      <div class="sm:w-[60%]   w-[80%] m-auto  mt-7 requirement_form">
+    <form method="post" action="CreateCourse" class="h-25  row">
+
+          <div class="flex  flex-col sm:flex-row w-full gap-5">
+            <div class="sm:w-[50%]">
+              <div class="mb-1">
+                <label asp-for="Name" class="font-bold text-[0.97em]  ml-2 block">
+                  Subject Name
+                </label>
+                <input
+                  required
+                 asp-for="Name"
+                  class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
+                  type="text"
+                />
+              </div>
+              <div class="mb-1">
+                <label  asp-for="Code" class="font-bold text-[0.97em]  ml-2 block">
+                  Subject Code
+                </label>
+                <input
+                  required
+               asp-for="Code"
+                  class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
+                  type="text"
+                />
+              </div>
+              <div class="mb-1">
+                <label  asp-for="Section" class="font-bold text-[0.97em]  ml-2 block">
+                  Section
+                </label>
+                <select
+                  required
+                asp-for="Section"
+                  class=" w-full text-center"
+                >
+                  <option value="">select</option>
+                  <option>Kindergarten</option>
+                  <option>Lower Primary</option>
+                  <option>Upper Primary</option>
+                  <option>High School</option>
+                </select>
+              </div>
+            </div>
+            <div class="sm:w-[50%]">
+              <div class="mb-1">
+                <label asp-for="Stream" class="font-bold text-[0.97em]  ml-2 block">
+                  Stream
+                </label>
+
+                <select
+                  required
+                  asp-for="Stream"                 
+                  class=" w-full text-center ">
+                  <option value="">select</option>
+                  <option>Glorious</option>
+                  <option>Precious</option>
+                  <option>Gracious</option>
+                </select>
+              </div>
+              <div class="mb-1">
+                <label asp-for="Term" class="font-bold text-[0.97em]  ml-2 block">
+                  Academic Term
+                </label>
+                <select
+                  required
+                 asp-for="Term"
+                  class=" w-full text-center "
+                >
+                  <option value="">select</option>
+                  <option>Term One</option>
+                  <option>Term Two</option>
+                  <option>Term Three</option>
+                </select>
+              </div>
+              <div class="mb-2">
+                <label  asp-for="Grade" class="font-bold text-[0.97em]  ml-2 block">
+                  Subject Grade
+                </label>
+                <select
+                  required
+                  asp-for="Grade"
+                  class="  w-full text-center "
+                >
+                  <option value="">select</option>
+                  <option>Day care</option>
+                  <option>Step-by Step</option>
+                  <option>Reading Readiness</option>
+                  <option>ABC</option>
+                  <option>Grade One</option>
+                  <option>Grade Two</option>
+                  <option>Grade Three</option>
+                  <option>Grade Four</option>
+                  <option>Grade Five</option>
+                  <option>Grade Six</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-3 sm:mt-8 text-white   font-bold w-full m-auto submit
+    text-center  bg-green-700 rounded hover:bg-slate-700"
+          >
+            <input
+              class="uppercase text-yellow-100  w-[20%]"
+              type="submit"
+            />
+          </div>
+        </form>
+      </div>

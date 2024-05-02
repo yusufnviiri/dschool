@@ -1,0 +1,190 @@
+﻿@{
+    ViewData["Title"] = "upadate staff";
+}
+
+
+@model Staff
+
+<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-6 ">
+    <h4 class=" "> STAFF INFORMATION</h4>
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Staffs" asp-action="GetAllStaff">Staffs</a>
+</div>
+
+<form method="post" action="Create" class="h-25  row">
+    <div class="flex sm:flex-row flex-col  w-[90%] md:w-[90%] gap-6 flex-auto flex-grow-1 m-auto">
+        <div class="sm:w-[45%]">
+            <div class="mb-1">
+                <label asp-for="FirstName" class="font-bold ml-2 block">First Name</label>
+                <input required 
+                       asp-for="FirstName"
+                       class=" w-full text-center"
+                       type="text" />
+            </div>
+            <input asp-for="StaffId" hidden/>
+            <div class="mb-1">
+                <label asp-for="LastName" class=" font-bold  ml-2 block ">Last Name</label>
+                <input required 
+                       asp-for="LastName"
+                       class=" w-full text-center"
+                       type="text" />
+            </div>
+
+
+            <div class="flex justify-between gap-2  w-full">
+                <div class="mb-1 w-[80%]">
+                    <label asp-for="Gender" class="font-bold ml-2 block">Gender</label>
+                    <select required
+                            asp-for="Gender"
+                            class=" w-full text-center ">
+                        <option value="">select</option>
+                        <option>Male</option>
+
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="mb-2  justify-self-end w-[50%] ">
+                    <label asp-for="Birthdate" class="font-bold block ">Birth Date</label>
+                    <input required
+                           asp-for="Birthdate"
+                           type="date"
+                           class="  w-full  text-center" />
+                </div>
+            </div>
+
+
+            <div class="flex justify-between gap-2 w-full">
+                <div class="mb-1 w-[80%]">
+                    <label asp-for="Contact" class="font-bold ml-2 block"> Contact</label>
+                    <input required
+                           asp-for="Contact"
+                           class=" w-full text-center "
+                           type="number" />
+                </div>
+
+                <div class="mb-2  justify-self-end w-[50%] ">
+                    <label asp-for="Status" class="font-bold ml-2 block">Status</label>
+                    <select required
+                            asp-for="Status"
+                            class=" w-full text-center ">
+                        <option value="">select</option>
+                        <option>Active</option>
+                        <option>Former</option>
+                    </select>
+                </div>
+            </div>
+            <div class="flex justify-between gap-2 w-full">
+                <div class="mb-1 w-[80%]">
+                    <label asp-for="Category" class="font-bold  ml-2 block">Category</label>
+
+                    <select required
+                            asp-for="Category"
+                            class="  w-full text-center ">
+                        <option value="">select</option>
+                        <option>Teaching Staff</option>
+                        <option>Non Teaching Staff</option>
+                        <option>Administrator</option>
+                        <option>Director</option>
+                    </select>
+                </div>
+                <div class="mb-2  justify-self-end w-[50%] ">
+                    <label asp-for="MaritalStatus" class="font-bold  ml-2 block">Marital Status</label>
+
+                    <select required
+                            asp-for="MaritalStatus"
+                            class=" w-full text-center ">
+                        <option value="">select</option>
+                        <option>Married</option>
+                        <option>Single</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="mb-1">
+                <label asp-for="Email" class="font-bold  ml-2 block"></label>
+                <input required
+                       asp-for="Email"
+                       class=" w-full text-center"
+                       type="email`" />
+            </div>
+
+            <div class="mb-1 ">
+                <label asp-for="Salary" class="font-bold ml-2 block"></label>
+                <input required
+                       asp-for="Salary"
+                       type="number"
+                       class=" w-full text-center " />
+
+
+
+            </div>
+        </div>
+        <div class="sm:w-[45%]">
+            <div class="mb-1">
+                <label asp-for="Nationality" class="font-bold ml-2 block">Nationality</label>
+                <input required
+                       asp-for="Nationality"
+                       class=" w-full text-center " />
+            </div>
+            <div class="mb-1">
+                <label asp-for="District" class="font-bold ml-2 block">
+
+                    District Of Residence
+                </label>
+                <input required
+                       asp-for="District"
+                       class=" w-full text-center"
+                       type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label asp-for="Village" class="font-bold ml-2 block">Village</label>
+                <input required
+                       asp-for="Village"
+                       class=" w-full text-center "
+                       type="text" />
+            </div>
+            <div class="mb-2">
+                <label asp-for="Religion" class="font-bold ml-2 block">Religion</label>
+                <input asp-for="Religion"
+                       class=" w-full text-center "
+                       type="text" />
+            </div>
+
+
+
+            <div class="mb-1 ">
+                <label asp-for="Qualification" class="font-bold ml-2 block"></label>
+                <select required
+                        asp-for="Qualification"
+                        class=" w-full text-center">
+                    <option value="">select</option>
+                    <option>Bachelors Degree</option>
+                    <option>Diploma</option>
+                    <option>Certificate</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="mb-1 ">
+                <label asp-for="JobTitle" class="font-bold  ml-2 block"></label>
+
+                <input required
+                       asp-for="JobTitle"
+                       class=" w-full text-center"
+                       type="text" />
+            </div>
+
+
+            <div class="mt-3 sm:mt-8 text-white   font-bold w-full m-auto submit
+    text-center  bg-green-700 rounded hover:bg-slate-700">
+                <input  value="UPDATE" class="  px-4 uppercase text-yellow-100  w-[30%]"
+                       type="submit" />
+            </div>
+        </div>
+    </div>
+
+
+
+</form>

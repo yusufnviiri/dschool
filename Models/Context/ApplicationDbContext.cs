@@ -35,6 +35,7 @@ namespace victors.Models.Context
         public DbSet<Book> Books { get; set; }
         public DbSet<PaceScores> PaceScores { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<ExamCache> ExamCache { get; set; }
         //seeding data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

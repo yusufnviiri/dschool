@@ -41,19 +41,27 @@ namespace victors.Controllers
             var expenses = await _affairs.GetPettyCash(_db);
             return Ok(expenses);
         }
-        [HttpPost("notice")]
+        [HttpGet("notice/{id}")]
+        public async Task<IActionResult> CreateNotice(int id)
+        {
+            return View();
+        }
+
+
+
+            [HttpPost("notice/{id}")]
         public async Task<IActionResult> CreateNotice(Notice notice)
         {
             if (ModelState.IsValid)
             {
                 notice.SetDate(notice.DueDate);
                 var postedNotice = await _affairs.postNotice(_db, notice);
-                return Ok(postedNotice);
+                return RedirectToAction("GetNotices");
 
             }
             else
             {
-                return BadRequest();
+                return View(notice);
 
             }
 
@@ -76,7 +84,7 @@ namespace victors.Controllers
         public async Task<IActionResult> GetNotices()
         {
             var notices = await _affairs.getAllNotice(_db);
-            return Ok(notices);
+            return View(notices);
         }
         [HttpGet("{id}/notice")]
         public async Task<IActionResult> FindNotices(int id)

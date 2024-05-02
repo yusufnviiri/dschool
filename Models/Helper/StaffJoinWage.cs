@@ -3,6 +3,7 @@
     public class StaffJoinWage
     {
         public Staff Staff { get; set; } = new Staff();
-        public List<Wage> Wages { get; set; } = new List<Wage>();
+        public List<Wage>? Wages { get; set; } = new List<Wage>();
+        public Wage Wage { get; set; }= new Wage();
     }
 }

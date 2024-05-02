@@ -1,0 +1,120 @@
+﻿@model StaffJoinWagesJoinSaving
+
+@{
+    ViewData["Title"] = "staff details";
+}
+
+
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+
+
+    <h4 class=" ">STUDENT DETAILS</h4>
+
+    <a class=" text-white  bg-orange-600 px-2 rounded " asp-controller="Students" asp-action="CreateStudent">
+        Add Student
+    </a>
+</div>
+<div class="">
+
+    <div>
+        <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4   m-auto  sm:text-[0.61em] md:text-[0.76em] lg:text-[0.96em]   text-[0.51em]
+ text-center  ">
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Staffs" asp-route-id="@Model.Staff.StaffId" asp-action="PayWages">
+               Pay Salary
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Staffs" asp-route-id="@Model.Staff.StaffId" asp-action="UpdateStaff">
+
+                Staff Information
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Staffs" asp-action="Create">New Staff</a>
+           
+        </div>
+    </div>
+    <div class="mt-1  mx-2 flex flex-col lg:flex-row    justify-between w-full  gap-4">
+        <div class="  w-full lg:w-[40%]  ">
+
+
+            <div class="    capitalize">
+                <div class="flex pt-2 md:text-[0.7299em]   text-[0.899em] xl:text-[0.99em] ">
+                    <img src="/css/assets/avator.png" class="w-[150px] h-[150px] mr-4" />
+                    <div class="  grow   ">
+                        <div class="flex bg-teal-900 text-yellow-500    ">
+                            <p class="w-[33%]  font-normal  ">Name: </p>
+                            <p class="grow  ">
+                                @Model.Staff.FirstName  <span class="px-2">   @Model.Staff.LastName</span>
+
+                            </p>
+                        </div>
+                        <div class="flex  ">
+                            <p class="w-[33%]  font-normal">Age: </p>
+                            <p class="grow">   @Model.Staff.Age </p>
+                        </div>
+                        <div class="flex  ">
+                            <p class="w-[33%]  font-normal">Nationality: </p>
+                            <p class="">   @Model.Staff.Nationality </p>
+                        </div>
+                        <div class="flex  ">
+                            <p class="w-[33%] font-normal">Gender: </p>
+                            <p class="">   @Model.Staff.Gender </p>
+                        </div>
+                      
+                       
+                        <div class="flex   ">
+                            <p class="w-[33%]  font-normal ">Email: </p>
+                            <p class="">   @Model.Staff.Email</p>
+                        </div>
+                        <div class="flex  ">
+                            <p class="w-[33%] font-normal ">Status: </p>
+                            <p class="">   @Model.Staff.Status </p>
+                        </div>
+                        <div class="flex   ">
+                            <p class="w-[33%] font-normal ">Contact: </p>
+                            <p class="data">   @Model.Staff.Contact </p>
+                        </div>
+                        <div class="flex  ">
+                            <p class="w-[33%] font-normal ">District: </p>
+                            <p class="">   @Model.Staff.District </p>
+                        </div>
+                        <div class="flex   ">
+                            <p class="w-[33%] font-normal ">Village: </p>
+                            <p class="">   @Model.Staff.Village </p>
+                        </div>
+                        <div class="flex   ">
+                            <p class="w-[33%]  font-normal ">Salary: </p>
+                            <p class="">
+                                @Model.Staff.Salary
+                                <span>/=</span>
+                            </p>
+                        </div>
+                        <div class="flex ">
+                            <p class="w-[33%]  font-normal ">Birth Date: </p>
+                            <p class="">   @Model.Staff.Birthdate </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class=" mt-1 flex justify-between gap-3 lg:w-[60%]">
+            <div class=" w-[50%]  px-3 text-white  bg-teal-900">
+                <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
+                    SALARY
+                </h4>
+
+            </div>
+            <div class="mt-1 w-[50%]  px-3  text-white  bg-teal-900">
+                <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
+                    SAVINGS
+                </h4>
+
+
+            </div>
+        </div>
+    </div>
+</div>

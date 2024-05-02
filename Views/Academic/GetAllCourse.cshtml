@@ -1,0 +1,53 @@
+﻿@model ICollection<Course>
+
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+   
+
+    <h4 class=" "> ACADEMIC COURSES</h4>
+
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Academic" asp-action="CreateCourse">New Subject</a>
+</div>
+
+@if(Model.Count ==0)
+{
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Staffs" asp-action="Create">Click to Add Staff....</a>
+    </div>
+}else{
+
+<table class="w-full m-auto text-black ">
+    <thead>
+        <tr class=" ">
+            <th>ID</th>
+            <th>Name</th>
+            <th> Code</th>
+            <th>Grade</th>
+            <th>Stream</th>
+            <th> Section</th>
+            <th>ASSESS</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CourseId</td>
+
+            <td> @item.Name</td>
+            <td>@item.Code</td>
+            <td>@item.Grade</td>
+            <td>@item.Stream</td>
+            <td>@item.Section</td>    
+            <td>
+   <a class=" text-white  bg-orange-600 px-4 rounded  "  asp-route-id="@item.CourseId" asp-controller="Academic" asp-action="StoreExamCourse">SELECT</a>
+                        
+            </td>
+           
+        </tr>}        
+    </tbody>
+</table>
+}

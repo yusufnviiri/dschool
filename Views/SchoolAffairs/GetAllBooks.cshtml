@@ -1,11 +1,47 @@
 ﻿@model ICollection<Book> 
-<h3>Books</h3>
-    <div>
-    @foreach(var book in Model)
-    {
-        <h1 class="text-yellow-700 bg-red-100 ">@book.Title</h1
-            <h4>@book.Author</h4>
-                        <h4>@book.Category</h4>
 
-    }
-</div>
+
+
+
+
+       <div
+        class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em] 
+ text-center  "
+      >
+        
+        <h4 class=" "> LIBRARY BOOKS</h4>
+    <a class=" text-white  bg-orange-600 px-2 rounded  "
+       asp-controller="SchoolAffairs" asp-action="Createbook">New Book</a>
+
+      
+      </div>
+
+
+        <table class="w-full m-auto text-black ">
+            <thead>
+              <tr class=" ">
+                <th>ID</th>
+                <th> Author</th>
+
+                <th>Title</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody>
+                  @foreach(var book in Model)
+    {
+     
+                                <tr>
+                      <td>@book.BookId</td>
+
+                      <td> @book.Author</td>
+                      <td>@book.Title</td>
+
+                      <td>@book.Category</td>
+                    </tr>
+              }
+            </tbody>
+          </table>
+
+
+

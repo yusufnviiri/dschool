@@ -25,6 +25,7 @@
             <th> Gender</th>
             <th> Status</th>
             <th> Residance</th>
+<th>DETAILS</th>
         </tr>
     </thead>
     <tbody>
@@ -33,50 +34,47 @@
             <tr class="   text-[0.7em] sm:text-[0.99em] ">
                 <td>
                     @staff.StaffId
-
-
                 </td>
                 <td>
-                    @staff.FirstName
-
-                </td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">   @staff.FirstName</a>
+                    </td>
                 <td>
-                    @staff.LastName
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">    @staff.LastName</a>                 
                 </td>
                 <td class="table_hide">
-
-                    @staff.Category
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
+                            @staff.Category
+                        </a>
                 </td>
+                    <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">        @staff.JobTitle</a>
+
+                    </td>
                 <td>
-                    @staff.Contact
-
-                </td>
-                <td>
-
-                    @staff.Gender
-
-                </td>
-                <td>
-
-                    @staff.Status
-                </td>
-                <td>
-
-                    <span class="px-2">@staff.Village</span>
-                    <span class="px-2">,@staff.District</span>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">        @staff.Contact</a>              
 
                 </td>
                 <td>
-
-                    @staff.Status
-
-                </td>
-                <td class="table_hide">
-
-                    @staff.Village
-
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
+                            @staff.Gender
+                        </a>
                 </td>
                 <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">   @staff.Status </a>
+                 
+                </td>
+                    <td class="table_hide">
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
+                            <span class="px-2">@staff.Village</span>
+                            <span class="px-2">,@staff.District</span>
+                        </a>               
+
+                </td>
+              
+              
+                <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId"> </a>
+
 
                     details
 
