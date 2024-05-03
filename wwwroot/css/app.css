@@ -110,17 +110,17 @@ option {
     padding-top: 4px;
 }
 
-nav a {
+/*nav a {
     color: #fef9c3;
     text-transform: capitalize;
-}
+}*/
 
-nav div {
+/*nav div {
     margin-bottom: 0.45em;
     background-color: rgb(4, 43, 44);
     border: 2px solid wheat;
     border-radius: 2em;
-}
+}*/
 
 option:first-child {
     text-align: center;
@@ -304,6 +304,8 @@ canvasjs-chart-canvas svg,
     }
 }
 
+
+
 @media (min-width: 1300px) {
     thead {
         font-size: 19px;
@@ -316,3 +318,60 @@ canvasjs-chart-canvas svg,
         font-size: 15px;
     }
 }
+/* site.css */
+
+
+.navbar {
+    display: flex;
+    width: 100%;
+    background-color: darkcyan;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction:row;
+    width: max-content;
+}
+.main-nav li:hover {
+    background-color:rebeccapurple;
+}
+#xmark {
+    display: none;
+}
+
+.hide_bars {
+    display:none;
+}
+.show_bars {
+    display: block;
+    color: yellow;
+}
+.show_cross {
+    display: block;
+    color:yellow;
+}
+.hide_cross {
+}
+    @media (max-width: 640px) {
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            width: max-content;
+        }
+
+        .navbar-toggle {
+            display: flex;
+            align-content: baseline;
+            justify-content: space-between;
+        }
+
+        .noel {
+            color: red;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }

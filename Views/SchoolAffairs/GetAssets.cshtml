@@ -1,0 +1,49 @@
+﻿@model ICollection<Asset>
+@{
+    ViewData["Title"] = "assets";
+}
+
+
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center ">
+
+
+    <h4 class=" "> ASSETS</h4>
+
+    <a class=" text-white  bg-orange-600 px-2 rounded  "
+       asp-controller="SchoolAffairs" asp-action="CreateAsset">New Asset</a>
+</div>
+
+
+<table class="w-full m-auto text-black ">
+    <thead>
+        <tr class=" ">
+            <th>ID</th>
+            <th>Name</th>
+            <th> Description</th>
+            <th>Supplier</th>
+            <th>Supplier Contact</th>
+            <th> Purchase Value</th>
+            <th>Date Purchased</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr >
+                <td>@item.Assetid</td>
+            <td> @item.Name</td>
+
+            <td>@item.Description</td>
+            <td>@item.Supplier</td>
+
+            <td>
+                @item.AssetValue
+                <span>/=</span>
+            </td>
+            <td>@item.SupplierContact</td>
+            <td> @item.Date</td>
+        </tr>
+        }
+    </tbody>
+</table>

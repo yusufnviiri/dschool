@@ -99,18 +99,25 @@ namespace victors.Controllers
             var notice = await _affairs.FindNotice(_db, id);
             return Ok(notice);
         }
-        [HttpPost("asset")]
+
+        [HttpGet("asset/{id}")]
+        public async Task<IActionResult> CreateAsset()
+        {
+            return View();
+        }
+
+            [HttpPost("asset/{id}")]
         public async Task<IActionResult> CreateAsset(Asset asset)
         {
             if (ModelState.IsValid)
             {
                 var postedAsset = await _affairs.postAsset(_db, asset);
-                return Ok(postedAsset);
+                return RedirectToAction("GetAssets");
 
             }
             else
             {
-                return BadRequest();
+                return View(asset);
 
             }
 
@@ -119,7 +126,7 @@ namespace victors.Controllers
         public async Task<IActionResult> GetAssets()
         {
             var assets = await _affairs.getAllAssets(_db);
-            return Ok(assets);
+            return View(assets);
         }
         [HttpGet("{id}/asset")]
         public async Task<IActionResult> FindAsset(int id)

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="navbar">
+        <a class="nav-link" asp-controller="SchoolAffairs" asp-action="Createbook">HOME</a>
+
+        <div class="navbar-toggle bg-blue-700 text-white">
+            <button onclick="showCross()" id="xmark">
+                <heroicon class="ml-2 -mr-0.5 h-4 w-4  show_cross hide_cross" kind="Solid" name="XMark" />
+        </button>
+
+            <button onclick="showBars()" id="bars">
+            <heroicon class="ml-2 -mr-0.5 h-4 w-4  show_bars hide_bars" kind="Solid" name="Bars4" />
+        </button>
+        </div>
+        <ul class="main-nav" >
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="SchoolAffairs" asp-action="Createbook">New Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Students" asp-action="AllRequiremntsPayments">Paid Requirements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Students" asp-route-id="0" asp-action="NewSchoolRequirement">New Requirement</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" asp-controller="Students" asp-action="AllFeesPayments">Fees Payment</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Students" asp-action="AllGuardian">Parents</a>
+
+
+            </li>
+        </ul>
+    </div>
+    <h6 id="devo"></h6>
+
+    <button onclick="noe()">set color</button>
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script>
+        document.getElementById('js-navbar-toggle').addEventListener('click', function () {
+            var menu = document.getElementById('js-menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

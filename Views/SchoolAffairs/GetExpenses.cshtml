@@ -30,9 +30,10 @@
         </tr>
     </thead>
     <tbody>
-      @foreach(var item in Model){
-        <tr >
-            <td>@item.PettyCashId</td>
+        @foreach (var item in Model)
+        {
+            <tr >
+                <td>@item.PettyCashId</td>
                 <td> @item.dateString</td>
             <td>@item.Category</td>
             <td>@item.Description</td>
@@ -40,9 +41,9 @@
                 @item.Amount
                 <span>/=</span>
             </td>
-            <td>@item.RecievedBy}</td>
-            <td>@item.PaidBy}</td>}
-        </tr>
+            <td>@item.RecievedBy</td>
+            <td>@item.PaidBy</td>
+        </tr>}
        
     </tbody>
 </table>
