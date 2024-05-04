@@ -12,16 +12,15 @@
     <div class="navbar">
         <a class="navbar-brand" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
 
-     
-            
-            <button onclick="showCross()" id="bars">
-            <heroicon class="ml-2 -mr-0.5 h-4 w-4   " kind="Solid" name="Bars4" />
-        </button>
-   <div class="header">
+
+
+   
+   <div id="header" class="header">
 
             <div class="dropdown" data-dropdown>
-                <button data-dropdown-button class="link ">  Students 
-                    <heroicon class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" /> 
+                <button data-dropdown-button class="link ">  Students
+                    <heroicon id="chevDown" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
+                    <heroicon id="chevRight" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronRight" />
                     </button>
                 <div class="dropdown-menu">
           
@@ -54,7 +53,9 @@
        </div>
             <div class="dropdown" data-dropdown>
                 <button data-dropdown-button class="link">
-                    Staff                      <heroicon class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
+                    Staff
+                    <heroicon id="chevDown" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
+                    <heroicon id="chevRight" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronRight" />
                 </button>
                 <div class="dropdown-menu">
                     <ul class=" ">
@@ -76,7 +77,8 @@
 
             <div class="dropdown" data-dropdown>
                 <button data-dropdown-button class="link">
-                    School                      <heroicon class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
+                    School                      <heroicon id="chevDown" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
+                    <heroicon id="chevRight" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronRight" />
                 </button>
                 <div class="dropdown-menu">
                     <ul class=" ">
@@ -120,7 +122,10 @@
             </div>
             <div class="dropdown" data-dropdown>
                 <button data-dropdown-button class="link">
-                    Academics                      <heroicon class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
+                    Academics
+
+                    <heroicon id="chevDown" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
+                    <heroicon id="chevRight" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronRight" />
                 </button>
                 <div class="dropdown-menu">
                     <ul class=" ">
@@ -186,6 +191,11 @@
 
 
         </div>
+
+
+        <button onclick="toggleHeader()" id="bars" class="bars">
+            <heroicon class="ml-2 -mr-0.5 h-4 w-4 " kind="Solid" name="Bars4" />
+        </button>
 
     </div>
 

@@ -329,6 +329,7 @@ canvasjs-chart-canvas svg,
     padding: .5rem;
     gap: 1rem;
     padding-right:1rem;
+    z-index:1;
  
 }
 
@@ -365,7 +366,13 @@ canvasjs-chart-canvas svg,
 /*.dropdown-menu.active{
     opacity:1;
 }*/
+#chevRight {
+    display: none;
+}
 
+#chevDown {
+    display: inline;
+}
 .dropdown.active > .link + .dropdown-menu {
     opacity: 1;
     transform: translateY(0);
@@ -374,4 +381,44 @@ canvasjs-chart-canvas svg,
 
 .navbar{
     display:flex;
-    justify-content:space-between;align-items:baseline}
+    justify-content:space-between;align-items:baseline;}
+.bars{
+    display:none;
+}
+
+@media (max-width: 700px) {
+    .bars {
+        display: block;
+    }
+     .header{
+                display:none;
+            }
+
+        .header.active {
+            background-color: #F3F3F3;
+            display: flex;
+            align-items: baseline;
+            padding: .5rem;
+            gap: 1rem;
+            padding-right: 1rem;
+            flex-direction:column;
+            z-index:1000;
+        }
+    .dropdown-menu {
+        position: absolute;
+        left:7.5em;
+        top: calc(100%+ .25rem);
+        background-color: red;
+        padding: 0.75rem;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.3); 
+        opacity: 0;
+        transform: translateY(-40px);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    }
+    #chevRight {
+        display: inline;
+    }
+ #chevDown{
+     display:none;
+ }
+}

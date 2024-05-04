@@ -18,3 +18,12 @@ document.addEventListener('click', e => {
     })
 })
 
+const bar = document.getElementById('bars');
+const menu = document.getElementById('header')
+const dropDownLists = document.getElementsByClassName('dropdown-menu')
+
+function toggleHeader() {
+    menu.classList.toggle('active')
+    console.log(dropDownLists)
+    
+}
