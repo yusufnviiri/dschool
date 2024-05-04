@@ -322,23 +322,24 @@ canvasjs-chart-canvas svg,
 
 
 
-.header{
-    background-color:#F3F3F3;
-    display:flex;
-    align-items:baseline;
-    padding:.5rem;
-    gap:1rem;
-} 
+.header {
+    background-color: #F3F3F3;
+    display: flex;
+    align-items: baseline;
+    padding: .5rem;
+    gap: 1rem;
+    padding-right:1rem;
+ 
+}
 
-.link{
-    background:none;
-    border:none;
-    text-decoration:none;
-    color:#777;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    cursor:pointer;
-    padding:0;
-
+.link {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #44403c;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    padding: 0;
 }
 .dropdown.active > .link,
 .link:hover{
@@ -346,6 +347,7 @@ canvasjs-chart-canvas svg,
 }
 .dropdown{
     position:relative;
+
 }
 .dropdown-menu {
     position: absolute;
@@ -369,3 +371,7 @@ canvasjs-chart-canvas svg,
     transform: translateY(0);
     pointer-events: auto;
 }
+
+.navbar{
+    display:flex;
+    justify-content:space-between;align-items:baseline}
