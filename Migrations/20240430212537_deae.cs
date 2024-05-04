@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace victors.Migrations
 {
     /// <inheritdoc />
-    public partial class war : Migration
+    public partial class deae : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -456,30 +456,6 @@ namespace victors.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ExamCache",
-                columns: table => new
-                {
-                    ExamCacheId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CourseId = table.Column<int>(type: "int", nullable: true),
-                    StudentId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ExamCache", x => x.ExamCacheId);
-                    table.ForeignKey(
-                        name: "FK_ExamCache_Courses_CourseId",
-                        column: x => x.CourseId,
-                        principalTable: "Courses",
-                        principalColumn: "CourseId");
-                    table.ForeignKey(
-                        name: "FK_ExamCache_Students_StudentId",
-                        column: x => x.StudentId,
-                        principalTable: "Students",
-                        principalColumn: "StudentId");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AuditTrails",
                 columns: table => new
                 {
@@ -516,16 +492,6 @@ namespace victors.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ExamCache_CourseId",
-                table: "ExamCache",
-                column: "CourseId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ExamCache_StudentId",
-                table: "ExamCache",
-                column: "StudentId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_wages_StaffId",
                 table: "wages",
                 column: "StaffId");
@@ -550,7 +516,7 @@ namespace victors.Migrations
                 name: "Books");
 
             migrationBuilder.DropTable(
-                name: "ExamCache");
+                name: "Courses");
 
             migrationBuilder.DropTable(
                 name: "guardians");
@@ -583,6 +549,9 @@ namespace victors.Migrations
                 name: "schoolFees");
 
             migrationBuilder.DropTable(
+                name: "Students");
+
+            migrationBuilder.DropTable(
                 name: "UniformPayments");
 
             migrationBuilder.DropTable(
@@ -593,12 +562,6 @@ namespace victors.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
-
-            migrationBuilder.DropTable(
-                name: "Courses");
-
-            migrationBuilder.DropTable(
-                name: "Students");
 
             migrationBuilder.DropTable(
                 name: "staffs");

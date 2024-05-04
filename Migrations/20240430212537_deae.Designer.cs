@@ -12,8 +12,8 @@ using victors.Models.Context;
 namespace victors.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240502184308_warytr")]
-    partial class warytr
+    [Migration("20240430212537_deae")]
+    partial class deae
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -270,28 +270,6 @@ namespace victors.Migrations
                     b.HasKey("CourseId");
 
                     b.ToTable("Courses");
-                });
-
-            modelBuilder.Entity("victors.Models.ExamCache", b =>
-                {
-                    b.Property<int>("ExamCacheId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExamCacheId"));
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("ExamSession")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ExamCacheId");
-
-                    b.ToTable("ExamCache");
                 });
 
             modelBuilder.Entity("victors.Models.Guardian", b =>

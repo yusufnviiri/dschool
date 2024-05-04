@@ -2,41 +2,18 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-var teste = document.getElementById("devo");
-teste.innerHTML = "i love Annitah"
 
-function noe() {
-    var teste = document.getElementById("devo");
-    teste.classList.add("noel")
-}
-function showBars() {
-    var bars = document.getElementById("bars");
-    var cross = document.getElementById("xmark");
-    if (bars!=null) {
-        bars.classList.add("hide_bars")
-        cross.classList.add("show_cross")
-        cross.style.display = "block";
+document.addEventListener('click', e => {
+    const isDropDownButton = e.target.matches('[data-dropdown-button]')
+    if (!isDropDownButton && e.target.closest('[data-dropdown]') != null) return
+    let currentDropdown
+
+    if (isDropDownButton) {
+        currentDropdown = e.target.closest('[data-dropdown]') 
+        currentDropdown.classList.toggle('active')         
     }
-    if (cross!=null) {
-        cross.classList.add("show_cross")
-    }
-
-    console.log(bars)
-    console.log(cross)
-
-}
-
-function showCross() {
-    var bars = document.getElementById("bars");
-    var cross = document.getElementById("xmark");
-    if (bars != null) {
-        bars.classList.add("show_cross")
-    }
-    if (cross != null) {
-        cross.classList.add("hide_cross")
-    }
-    console.log(bars)
-    console.log(cross)
-
-
-}
+    document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
+        if (dropdown === currentDropdown) return
+        dropdown.classList.remove('active')
+    })
+})

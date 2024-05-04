@@ -269,28 +269,6 @@ namespace victors.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("victors.Models.ExamCache", b =>
-                {
-                    b.Property<int>("ExamCacheId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExamCacheId"));
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("ExamSession")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ExamCacheId");
-
-                    b.ToTable("ExamCache");
-                });
-
             modelBuilder.Entity("victors.Models.Guardian", b =>
                 {
                     b.Property<int>("GuardianId")
