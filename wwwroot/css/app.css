@@ -328,9 +328,9 @@ canvasjs-chart-canvas svg,
     align-items: baseline;
     padding: .5rem;
     gap: 1rem;
-    padding-right:1rem;
-    z-index:1;
- 
+    padding-right: 1rem;
+    z-index: 1;
+
 }
 
 .link {
@@ -341,6 +341,7 @@ canvasjs-chart-canvas svg,
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
     padding: 0;
+    width:5em;
 }
 .dropdown.active > .link,
 .link:hover{
@@ -389,6 +390,8 @@ canvasjs-chart-canvas svg,
 @media (max-width: 700px) {
     .bars {
         display: block;
+        margin-right:2em;
+
     }
      .header{
                 display:none;
