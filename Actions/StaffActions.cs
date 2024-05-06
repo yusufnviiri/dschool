@@ -31,6 +31,43 @@ namespace victors.Actions
             staffs = await _db.staffs.ToListAsync();
             return staffs;
         }
+
+        public async Task<ICollection<Staff>> SearchStaff(ApplicationDbContext _db,LookUpStaff data)
+        {
+            var Fname = data.FName;var Lname = data.LName; var Sstatus = data.Sstatus;var scategory = data.SCategory; var sjob = data.SJobTitle;
+            if (Fname != null)
+            {
+                staffs= await _db.staffs.Where(k=>k.FirstName.ToLower().Contains(Fname.ToLower())).ToListAsync();
+            }
+            else
+            {
+                staffs = await _db.staffs.ToListAsync();
+            }
+
+
+            if (Lname != null)
+            {
+                staffs = staffs.Where(k => k.LastName.ToLower().Contains(Lname.ToLower())).ToList();
+            }
+            
+            if (Sstatus != null)
+            {
+                staffs = staffs.Where(k => k.Status.ToLower().Contains(Sstatus.ToLower())).ToList();
+            }
+            if (scategory != null)
+            {
+                staffs = staffs.Where(k => k.Category.ToLower().Contains(scategory.ToLower())).ToList();
+            }
+            if (sjob != null)
+            {
+                staffs = staffs.Where(k => k.JobTitle.ToLower().Contains(sjob.ToLower())).ToList();
+            }
+
+
+
+            return staffs;
+        }
+
         public async Task<StaffJoinWagesJoinSaving> GetStaff(ApplicationDbContext _db,int Id)
         {
             staff = await _db.staffs.FindAsync(Id);

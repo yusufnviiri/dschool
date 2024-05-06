@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 
 a {
@@ -8,10 +6,25 @@ a {
     text-transform: uppercase;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+.find_btn {
+    background-color: transparent;
+    margin: 0.2rem 1em;
+    justify-self: center;
+    align-self: baseline;
+}
+    .find_btn input {
+        color: wheat;
+        background-color:blue;
+        font-size: 14px;
+        padding:2px 7px;
+        width:100%;
+        cursor:pointer;
+        text-transform:uppercase;
 
-    a:hover {
-        color: rgb(155, 43, 43);
     }
+a:hover {
+    color: rgb(155, 43, 43);
+}
 
 .loader {
     color: red;
@@ -110,17 +123,7 @@ option {
     padding-top: 4px;
 }
 
-/*nav a {
-    color: #fef9c3;
-    text-transform: capitalize;
-}*/
 
-/*nav div {
-    margin-bottom: 0.45em;
-    background-color: rgb(4, 43, 44);
-    border: 2px solid wheat;
-    border-radius: 2em;
-}*/
 
 option:first-child {
     text-align: center;

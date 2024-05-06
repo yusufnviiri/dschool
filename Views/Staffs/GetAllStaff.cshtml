@@ -3,13 +3,12 @@
 }
 
 
-@model ICollection<Staff>
-@if(Model.Count ==0)
+@model StaffIndex
+@if(Model.Staffs.Count ==0)
 {
 
 
-
-
+  
 
 
 
@@ -19,6 +18,89 @@
         <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Staffs" asp-action="Create">Click to Add Staff....</a>
     </div>
 }else{
+    <form method="post" action="SearchStaff" class="  row">
+
+
+    <div class="flex  bg-black  lg:py-4 py-2 mb-1 justify-between  w-full">
+
+
+
+                <div class="find_btn  ">
+                    <input class="   "
+                           value="find" type="submit" />
+                </div>
+        <div class=" text-white  flex justify-between   font-bold  m-auto
+text-center   rounded">
+
+
+            <div class="search_form ">
+                <input placeholder="first name"
+                       asp-for="@Model.LookUpStaff.FName"
+                       class="  text-black text-center"
+                       type="text" />
+            </div>
+
+        </div>
+        <div class=" text-white  flex justify-between  font-bold  m-auto
+text-center   rounded">
+            <div class="search_form">
+                <input asp-for="@Model.LookUpStaff.LName"
+                       placeholder="last name"
+                       class="  text-center"
+                       type="text" />
+            </div>
+
+        </div>
+        <div class=" text-white hidden lg:flex justify-between   font-bold  m-auto
+text-center   rounded">
+            <div class="search_form">
+                <input asp-for="@Model.LookUpStaff.SCategory"
+                       placeholder="category"
+                       class="  text-center"
+                       type="text" />
+            </div>
+
+        </div>
+        <div class=" text-white hidden lg:flex justify-between   font-bold  m-auto
+                text-center   rounded">
+            <div class="search_form">
+                <input asp-for="@Model.LookUpStaff.SJobTitle"
+                       placeholder="Job Title"
+                       class="  text-center"
+                       type="text" />
+            </div>
+
+        </div>
+
+        <div class=" text-white hidden xl:flex justify-between   font-bold  m-auto
+                text-center   rounded">
+            <div class="search_form">
+                <input asp-for="@Model.LookUpStaff.Sstatus"
+                       placeholder="status"
+                       class="  text-center"
+                       type="text" />
+            </div>
+        </div>
+
+          
+
+
+        <div class="search_form  submit  ml-2 bg-teal-800 m-auto">
+            <button class="uppercase w-full m-0   cursor-pointer px-1
+                font-poppins text-white">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="currentColor"
+                     class="w-6 h-6">
+                    <path fillRule="evenodd"
+                          d="M4.755 10.059a7.5 7.5 0 0 1 12.548-3.364l1.903 1.903h-3.183a.75.75 0 1 0 0 1.5h4.992a.75.75 0 0 0 .75-.75V4.356a.75.75 0 0 0-1.5 0v3.18l-1.9-1.9A9 9 0 0 0 3.306 9.67a.75.75 0 1 0 1.45.388Zm15.408 3.352a.75.75 0 0 0-.919.53 7.5 7.5 0 0 1-12.548 3.364l-1.902-1.903h3.183a.75.75 0 0 0 0-1.5H2.984a.75.75 0 0 0-.75.75v4.992a.75.75 0 0 0 1.5 0v-3.18l1.9 1.9a9 9 0 0 0 15.059-4.035.75.75 0 0 0-.53-.918Z"
+                          clipRule="evenodd" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    </form>
 
 <table class="w-full m-auto text-lime-900  ">
     <thead>
@@ -31,12 +113,12 @@
             <th>Contact</th>
             <th> Gender</th>
             <th> Status</th>
-            <th> Residance</th>
+                <th class="table_hide"> Residance</th>
 <th>DETAILS</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var staff in Model)
+        @foreach (var staff in Model.Staffs)
         {
             <tr class="   text-[0.7em] sm:text-[0.99em] ">
                 <td>

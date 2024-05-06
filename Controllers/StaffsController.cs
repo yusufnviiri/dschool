@@ -16,8 +16,6 @@ namespace victors.Controllers
             _db = db;
         }
 
-
-
         private readonly ApplicationDbContext _db;
         public OdataManager odataManager { get; set; } = new();
         public StudentActions studentActions { get; set; } = new();
@@ -46,11 +44,26 @@ namespace victors.Controllers
         public async Task<IActionResult> GetAllStaff()
         {
             var result = await staffActions.GetAllStaff(_db);
+            LookUpStaff lookUpStaff = new LookUpStaff();
+            var response = new StaffIndex()
+            {
+                Staffs = result,
+                LookUpStaff = lookUpStaff,
+            };
 
-            return View(result);
+            return View(response);
+        }
+        [HttpPost]
+        public async Task<IActionResult> SearchStaff(LookUpStaff lookUpStaff)
+        {
+            var staffs = await staffActions.SearchStaff(_db,lookUpStaff);
+
+            return View(staffs);
+        
         }
 
-        [HttpGet("Staff/{id}")]
+
+            [HttpGet("Staff/{id}")]
 
         public async Task<IActionResult>Staff(int id)
         {

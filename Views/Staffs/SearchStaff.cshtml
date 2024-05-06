@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "search results";
+}
+
+
+@model ICollection<Staff>
+@if (Model.Count == 0)
+{
+
+
+
+
+
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Staffs" asp-action="GetAllStaff">Return</a>
+
+        <h4>Oppsssss.....No result for the search</h4>
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Staffs" asp-action="Create">Click to Add Staff....</a>
+    </div>
+}
+else
+{
+
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Staffs" asp-action="GetAllStaff">Return</a>
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Staffs" asp-action="Create">Click to Add Staff....</a>
+    </div>
+
+
+    <table class="w-full m-auto text-lime-900  ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th> Category</th>
+                <th>Job Title</th>
+                <th>Contact</th>
+                <th> Gender</th>
+                <th> Status</th>
+                <th class="table_hide"> Residance</th>
+                <th>DETAILS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var staff in Model)
+            {
+                <tr class="   text-[0.7em] sm:text-[0.99em] ">
+                    <td>
+                        @staff.StaffId
+                    </td>
+                    <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">   @staff.FirstName</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">    @staff.LastName</a>
+                    </td>
+                    <td class="table_hide">
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
+                            @staff.Category
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">        @staff.JobTitle</a>
+
+                    </td>
+                    <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">        @staff.Contact</a>
+
+                    </td>
+                    <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
+                            @staff.Gender
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">   @staff.Status </a>
+
+                    </td>
+                    <td class="table_hide">
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
+                            <span class="px-2">@staff.Village</span>
+                            <span class="px-2">,@staff.District</span>
+                        </a>
+
+                    </td>
+
+
+                    <td>
+                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId"> </a>
+
+
+                        details
+
+                    </td>
+
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
