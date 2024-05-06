@@ -92,7 +92,7 @@
                         </div>
                         <div class="flex ">
                             <p class="w-[33%]  font-normal ">Birth Date: </p>
-                            <p class="">   @Model.Staff.Birthdate </p>
+                            <p class="">   @Model.Staff.Birthdate.Day/@Model.Staff.Birthdate.Month/@Model.Staff.Birthdate.Year </p>
                         </div>
                     </div>
 
@@ -106,14 +106,58 @@
                 <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
                     SALARY
                 </h4>
-
+                <div>
+                    @foreach (var salary in  Model.LastThreeWages)
+                    {
+                    <div>
+                        <div  class="my-2 pl-2  bg-teal-950 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] border-2 border-yellow-500   w-full  ">
+                            <div class="flex justify-between  ml-2 mr-7  ">
+                                <p class="w-[30%]">Date: </p>
+                                    <p class="data">@salary.SalaryDate </p>
+                            </div>
+                            <div class="flex justify-between  mx-2  ">
+                                <p class="w-[30%]">Salary: </p>
+                                <p class="data">
+                                        @salary.Amount <span>/=</span>
+                                </p>
+                            </div>
+                            <div class="flex justify-between  mx-2  ">
+                                <p class="w-[30%]">PAYE: </p>
+                                <p class="data">
+                                        @salary.Paye <span>/=</span>
+                                </p>
+                            </div>
+                            <div class="flex justify-between  mx-2 pb-2 ">
+                                <p class="w-[30%]">Net Pay: </p>
+                                <p class="data">
+                                        @salary.NetPay <span>/=</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                   }
+                </div>
             </div>
             <div class="mt-1 w-[50%]  px-3  text-white  bg-teal-900">
                 <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
                     SAVINGS
                 </h4>
-
-
+                <div>
+                   @foreach( var saving in Model.LastFiveSavings){
+                    <div >
+                        <div class="my-2 pl-2  bg-teal-950 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] border-2 border-yellow-500   w-full  ">
+                            <div class="flex justify-between mx-6 ">
+                                <p class="w-[30%]">Saving: </p>
+                                <p class="data">@saving.savingAmount </p>
+                            </div>
+                            <div class="flex justify-between mx-6 ">
+                                <p class="w-[30%]">Date: </p>
+                                <p class="data">@saving.savingDate </p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
             </div>
         </div>
     </div>

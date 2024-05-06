@@ -41,6 +41,8 @@ namespace victors.Actions
                 Staff = staff,
                 Wages = wages.Where(k => k.StaffId == Id).ToList(),
                 Savings = savings.Where(k => k.StaffId == Id).ToList(),
+                LastFiveSavings = savings.Where(k => k.StaffId == Id).ToList().Take(5),
+                LastThreeWages = wages.Where(k => k.StaffId == Id).ToList().Take(3),
             };
             return data;
         }

@@ -95,8 +95,7 @@ namespace victors.Controllers
             var data = await _academicaffairs.getStudentAssessements(_db, id);
             return View(data);
 
-            //var data = await _db.Assessements.Where(k=>k.StudentId==id).GroupBy(h=>h.CourseId).ToListAsync();
-            //return Ok(data);
+         
         }
         [HttpGet("examstudent/{id}")]
 

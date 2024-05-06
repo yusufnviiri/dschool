@@ -63,7 +63,6 @@ namespace victors.Controllers
                 var result = await staffActions.GetStaff(_db, id);
                 return View(result);
             }
-
         }
         [HttpGet("update/{id}")]
         
