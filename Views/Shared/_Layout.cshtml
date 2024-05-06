@@ -12,19 +12,12 @@
 <body>
     <header class="w-full">
 
-        <div class="navbar">
-            <a class="navbar-brand" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
-
-
-
-
+        <div class="navbar bg-cyan-950">
+            <a class="navbar-brand     ml-9" aria-current="page" asp-controller="Students" asp-action="CreateStudent"> Add Student</a>
             <div id="header" class="header">
-
                 <div class="dropdown" data-dropdown>
                     <button data-dropdown-button class="link ">
-                        Students
-                        <heroicon id="chevDown" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
-                        <heroicon id="chevRight" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronRight" />
+                        Students                      
                     </button>
                     <div class="dropdown-menu">
 
@@ -33,7 +26,7 @@
                                 <a class="navbar-brand" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
                             </li>
 
-                            <li class="nav-item hidden">
+                            <li class="nav-item ">
                                 <a class="nav-link" asp-controller="Students" asp-action="CreateStudent">New Student</a>
 
                             </li>
@@ -58,13 +51,9 @@
                 <div class="dropdown" data-dropdown>
                     <button data-dropdown-button class="link">
                         Staff
-                        <heroicon id="chevDown" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
-                        <heroicon id="chevRight" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronRight" />
-                    </button>
+                                          </button>
                     <div class="dropdown-menu">
                         <ul class=" ">
-
-
                             <li class="nav-item ">
                                 <a class="nav-link" asp-controller="Staffs" asp-action="Create">New Staff</a>
                             </li>
@@ -82,9 +71,7 @@
                 <div class="dropdown" data-dropdown>
                     <button data-dropdown-button class="link">
                         School               
-                        <heroicon id="chevDown" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
-                        <heroicon id="chevRight" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronRight" />
-                    </button>
+                                           </button>
                     <div class="dropdown-menu">
                         <ul class=" ">
 
@@ -124,23 +111,15 @@
                 </div>
                 <div class="dropdown" data-dropdown>
                     <button data-dropdown-button class="link">
-                        Academics
-
-                        <heroicon id="chevDown" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
-                        <heroicon id="chevRight" class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronRight" />
-                    </button>
+                        Academics                                          </button>
                     <div class="dropdown-menu">
                         <ul class=" ">
-
-
                             <li class="nav-item ">
                                 <a class="nav-link" class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Academic" asp-action="GetAllCourse">Subjects</a>
                             </li>
                             <li class="nav-item">
                                 <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Academic" asp-action="CreateCourse">New Subject</a>
-
                             </li>
-
                         </ul>
                     </div>
 
@@ -148,12 +127,11 @@
 
                 <div class="dropdown" data-dropdown>
                     <button data-dropdown-button class="link">
-                        Ledgers                      <heroicon class="ml-1 -mr-0.5 h-4 w-4 inline " kind="Solid" name="ChevronDown" />
+                        Ledgers             
+                      
                     </button>
                     <div class="dropdown-menu">
                         <ul class=" ">
-
-
                             <li class="nav-item ">
                                 <a class="nav-link" asp-controller="Students" asp-route-id="0" asp-action="AddUniform">New Uniform</a>
                             </li>

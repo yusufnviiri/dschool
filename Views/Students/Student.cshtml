@@ -133,15 +133,85 @@
 
         <div class=" mt-1 flex justify-between gap-3 lg:w-[60%]">
             <div class=" w-[50%]  px-3 text-white  bg-teal-900">
+
                 <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
                     ACADEMIC SUMMARY
                 </h4>
+                <div class="flex py-2 justify-between text-yellow-200 w-[95%] m-auto ">
+                    <p class=" text-[0.679em] uppercase">Subject </p>
+                    <a class="text-white text-[0.679em] hover:text-rose-900 bg-orange-400  px-2  rounded text-center " aria-current="page" asp-controller="Academic" asp-action="getAllAssessements"  asp-route-id="@Model.student.StudentId"> full report</a>
 
+
+                    <p class="text-[0.679em] uppercase"> Final Score</p>
+                </div>
+                @foreach (var item in Model.termlyAssessemnts)
+                {
+
+                    <div class=" bg-cyan-950 rounded  text-stone-200 ">
+    
+      
+              <div class=" px-2 pt-1 bg-teal-900 pb-1  text-stone-100 w-full lg:text-[0.8299em]  text-[0.699em] " >
+                <div class="flex  w-full border-yellow-400 border-2  place-items-center  ">
+                  <div class="flex justify-between w-full">
+                    <p class="w-[35%]  "> @item.course.Name</p>
+
+                    <p class="w-[10%]">@item.score </p>
+                  </div>
+                </div>
+              </div>
+       
+      
+                             
+
+
+            </div>}
             </div>
             <div class="mt-1 w-[50%]  px-3  text-white  bg-teal-900">
                 <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
-                    GUARDIAN
+                    GUARDIANS
                 </h4>
+
+                @foreach(var parent in Model.studentGuardians)
+                {
+                      <div class="rounded  text-yellow-300  std_details">
+ <div class="my-4 pl-2  rounded  lg:text-[0.8199em]  text-[0.799em] border-2 border-yellow-500   w-full  "
+              >
+                <div class="flex justify-between  ">
+                  <p class="w-[33%]  font-normal  ">Name </p>
+                  <p class="grow  ">
+                                @parent.FirstName
+                                <span class="px-2">@parent.LastName</span>
+                  </p>
+                </div>
+                <div class="flex   ">
+                  <p class="w-[33%]  font-normal">Contact </p>
+                            <p class="data">@parent.Contact </p>
+                </div>
+                <div class="flex   ">
+                  <p class="w-[33%] ">Email </p>
+                            <p class="data">@parent.Email </p>
+                </div>
+                <div class="flex  ">
+                  <p class="w-[33%] ">Village </p>
+                            <p class="data">@parent.Village </p>
+                </div>
+                <div class="flex   ">
+                  <p class="w-[33%]  ">District: </p>
+                            <p class="data">@parent.District </p>
+                </div>
+
+                <div class="flex w-full  ">
+                  <p class="w-[33%]">Role </p>
+                            <p class="data">@parent.Relationship </p>
+                </div>
+              </div>
+         
+          
+        </div>
+                }
+
+
+
 
               
             </div>

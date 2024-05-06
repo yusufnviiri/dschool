@@ -83,7 +83,7 @@ namespace victors.Actions
             List<ReportCourse> finalData = new List<ReportCourse>();
             Courses = await _db.Courses.ToListAsync();
             var assesmentList = await _db.Assessements.ToListAsync();
-
+            
             Assessements = assesmentList.Where(p => p.StudentId == Id).ToList();
             if (Assessements.Count > 0)
             {
@@ -93,7 +93,8 @@ namespace victors.Actions
                                      {
                                          course = item,
                                          assessements = Assessements.Where(k => k.CourseId == item.CourseId).ToList(),
-                                         score = 0
+                                         score = 0,
+                                         student=student,
                                      });
                 var scores = await _db.PaceScores.Where(k => k.StudentId == Id).ToListAsync();
                 var av = scores.Average(p => p.paceScore);

@@ -1,0 +1,58 @@
+﻿@model List<ReportCourse>
+
+    @if (Model.Count>0) {  
+     
+<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4  m-auto  sm:text-[0.81em]   text-[0.61em] text-center  ">
+    <a class=" text-white  bg-orange-600 px-2 rounded " aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
+    <h4 class=" ">MODULE ASSESSEMENT REPORT</h4>
+    <a class=" text-white  bg-orange-600 px-2 rounded " asp-controller="Students" asp-action="CreateStudent">New Student</a>
+  
+</div>
+   
+        <div class=" bg-cyan-950 mt-10 pt-5  rounded  text-stone-950  w-[90%] md:w-[80%]  lg:w-[70%] m-auto">
+    <div class="flex py-2 flex-col text-stone-300 w-[95%] m-auto ">
+        <p class=" text-[0.979em] bg-white py-1 text-stone-900 text-center uppercase">
+            @Model.FirstOrDefault().student.FirstName
+            <span class="px-2"> @Model.FirstOrDefault().student.LastName </span>
+        </p>
+
+        <p class="text-[0.679em] text-xs text-white">            
+            has successfuly completed the following paces
+        </p>
+    </div>
+    <div class="flex py-2 justify-between text-yellow-300 w-[95%] m-auto ">
+        <p class=" text-[0.779em] uppercase">Subject </p>
+        <p class=" text-[0.779em] uppercase">Paces </p>
+        <p class="text-[0.779em] uppercase"> Final Score</p>
+    </div>
+    @foreach( var item in Model){
+        <div class=" px-2 pt-1  bg-teal-900 pb-1  text-stone-200 w-full m-auto lg:text-[0.8299em]  text-[0.699em]     ">
+            <div class="flex  w-full border-yellow-400 border-2  rounded place-items-center  ">
+                <div class="flex justify-between w-full pl-3">
+                    <p class="w-[18%] self-center  "> @item.course.Name</p>
+                    <div class="  w-[40%] flex justify-between ">
+                         @foreach (var data in item.assessements)
+                        {
+                        <div class=" mr-3  ">
+                            <p class="px-3">@data.PaceNumber</p>
+                            <p class="px-3">@data.PaceScore</p>
+                        </div>
+                        } 
+                    </div>
+                    <p class="w-[10%] text-left self-center">@item.score </p>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+
+    } else{
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4  m-auto  sm:text-[0.81em]   text-[0.61em] text-center  ">
+        <a class=" text-white  bg-orange-600 px-2 rounded " aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
+        <h4 class=" ">MODULE ASSESSEMENT REPORT</h4>
+        <a class=" text-white  bg-orange-600 px-2 rounded " asp-controller="Students" asp-action="CreateStudent">New Student</a>
+
+    </div>
+    }
+
+    

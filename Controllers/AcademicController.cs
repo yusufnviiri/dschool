@@ -87,13 +87,13 @@ namespace victors.Controllers
         public async Task<IActionResult> GetAllAssessements()
         {
             var data = await _academicaffairs.GetAllAssessements(_db);
-            return Ok(data);
+            return View(data);
         }
         [HttpGet("assessements/{id}")]
         public async Task<IActionResult> getAllAssessements(int id)
         {
             var data = await _academicaffairs.getStudentAssessements(_db, id);
-            return Ok(data);
+            return View(data);
 
             //var data = await _db.Assessements.Where(k=>k.StudentId==id).GroupBy(h=>h.CourseId).ToListAsync();
             //return Ok(data);

@@ -11,6 +11,8 @@ namespace victors.Actions
     {
         public Student student { get; set; } = new ();
         public Uniform uniform { get; set; } = new();
+        private readonly AcademicAffair _academicaffairs = new();
+
         public ICollection<Uniform> uniformList { get; set; } = new List<Uniform>();
         public Promotion promotion { get; set; } = new ();
         public Requirement requirement { get; set; } = new();
@@ -183,7 +185,9 @@ if (student.fullUniform == true)
             await _db.SaveChangesAsync();
             return student;
         }
-       public async Task<OdataManager> findStudent(int id,ApplicationDbContext _db){  
+       public async Task<OdataManager> findStudent(int id,ApplicationDbContext _db){
+
+
                  student = await _db.Students.FindAsync(id);
                  promotionList = await _db.promotions.Where(p => p.StudentId == student.StudentId).ToListAsync();
                 promotion = promotionList.FirstOrDefault();
@@ -198,6 +202,14 @@ if (student.fullUniform == true)
                 var schFees = await _db.schoolFees.Where(p => p.StudentId == id).ToListAsync();
                 odataManager.schoolFees = schFees.LastOrDefault();
                 odataManager.student = student;
+            var studentAssessement = await _db.Assessements.Where(i => i.StudentId == id).ToListAsync();
+                var studentGuardians = await _db.guardians.Where(k => k.StudentId == id).ToListAsync();
+            var studentReport = await _academicaffairs.getStudentAssessements(_db, id);
+
+
+
+            odataManager.termlyAssessemnts =studentReport;
+            odataManager.studentGuardians = studentGuardians.Take(3);
                 return odataManager;
         }
         public async Task<SchoolFees> saveStudentSchFees(SchoolFees schoolFees,ApplicationDbContext _db)
