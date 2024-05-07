@@ -23,11 +23,25 @@ namespace victors.Controllers
         public async Task<IActionResult> GetStudents()
         {
             var result = await studentActions.getStudents(_db);
-
-            return View(result);
+            LookUpStudents lookUpStudents = new LookUpStudents();
+            var response = new StudentIndex()
+            {
+                Students = result,
+                LookUpStudents = lookUpStudents,
+            };
+           
+            return View(response);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> SearchStudents(LookUpStudents lookUpStudents)
+        {
 
+            var data = await studentActions.SearchStudents(_db, lookUpStudents);
+
+            return View(data);
+
+        }
 
         [HttpGet]
         public async Task<IActionResult> CreateStudent()

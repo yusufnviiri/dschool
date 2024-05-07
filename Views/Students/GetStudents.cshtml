@@ -2,16 +2,84 @@
     ViewData["Title"] = "students list";
 }
 
-@model ICollection<Student>
+@model StudentIndex
 
-    @if(Model.Count ==0)
+    @if(Model.Students.Count ==0)
 {
+
+
+
     <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-11 ">
 
         <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
     </div>
 }else{
+    <form method="post" action="SearchStudents" class=" row">
+
+        <div class="flex  bg-black  lg:py-4 py-2 mb-1 justify-between  w-full">
+
+            <div class="find_btn  ">
+                <input class="   "
+                       value="Search" type="submit" />
+            </div>
+            <div class=" text-white  flex justify-between   font-bold  m-auto
+text-center   rounded">
+
+
+                <div class="search_form ">
+                    <input placeholder="first name"
+                           asp-for="@Model.LookUpStudents.FName"
+                           class="  text-black text-center"
+                           type="text" />
+                </div>
+
+            </div>
+            <div class=" text-white  flex justify-between  font-bold  m-auto
+text-center   rounded">
+                <div class="search_form">
+                    <input asp-for="@Model.LookUpStudents.LName"
+                           placeholder="last name"
+                           class="  text-center"
+                           type="text" />
+                </div>
+
+            </div>
+            <div class=" text-white hidden lg:flex justify-between   font-bold  m-auto
+text-center   rounded">
+                <div class="search_form">
+                    <input asp-for="@Model.LookUpStudents.SGrade"
+                           placeholder="grade"
+                           class="  text-center"
+                           type="text" />
+                </div>
+
+            </div>
+            <div class=" text-white hidden lg:flex justify-between   font-bold  m-auto
+                text-center   rounded">
+                <div class="search_form">
+                    <input asp-for="@Model.LookUpStudents.Ssection"
+                           placeholder="section"
+                           class="  text-center"
+                           type="text" />
+                </div>
+
+            </div>
+
+            <div class=" text-white hidden xl:flex justify-between   font-bold  m-auto
+                text-center   rounded">
+                <div class="search_form">
+                    <input asp-for="@Model.LookUpStudents.Sstatus"
+                           placeholder="status"
+                           class="  text-center"
+                           type="text" />
+                </div>
+            </div>
+
+
+        </div>
+
+    </form>
 
 <table class="w-full m-auto text-lime-900  ">
     <thead>
@@ -30,7 +98,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var student in Model){
+        @foreach (var student in Model.Students){
         <tr class="text-[0.7em] sm:text-[0.99em] ">
             <td>                    @student.StudentId
 

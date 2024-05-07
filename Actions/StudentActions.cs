@@ -47,6 +47,64 @@ namespace victors.Actions
             }).ToList();
             return data;
         }
+
+
+        public async Task<List<Student>> SearchStudents(ApplicationDbContext _db,LookUpStudents data)
+        {
+
+            var Fname = data.FName; var Lname = data.LName; var Sstatus = data.Sstatus; var Sgrade = data.SGrade; var ssection = data.Ssection;
+            if (Fname != null)
+            {
+                students = await _db.Students.Where(k => k.FirstName.ToLower().Contains(Fname.ToLower())).ToListAsync();
+            }
+            else
+            {
+                students = await _db.Students.ToListAsync();
+            }
+
+
+            if (Lname != null)
+            {
+                students = students.Where(k => k.LastName.ToLower().Contains(Lname.ToLower())).ToList();
+            }
+
+            if (Sstatus != null)
+            {
+                students = students.Where(k => k.Status.ToLower().Contains(Sstatus.ToLower())).ToList();
+            }
+            if (Sgrade != null)
+            {
+                students = students.Where(k => k.Grade.ToLower().Contains(Sgrade.ToLower())).ToList();
+            }
+            if (ssection != null)
+            {
+                    students = students.Where(k => k.Section.ToLower().Contains(ssection.ToLower())).ToList();
+            }
+            promotionList = await _db.promotions.ToListAsync();
+
+            var result = (from promoted in promotionList
+                        join stdnt in students on promoted.StudentId equals stdnt.StudentId
+                        select new Student
+                        {
+                            FirstName = stdnt.FirstName,
+                            LastName = stdnt.LastName,
+                            StudentId = stdnt.StudentId,
+                            SchoolFees = promoted.SchoolFees,
+                            Term = promoted.Term,
+                            Grade = promoted.Grade,
+                            Year = promoted.Year,
+                            Stream = promoted.Stream,
+                            Section = promoted.Section,
+                            Status = promoted.Status,
+                            birthDateString = stdnt.birthDateString,
+                            Gender = stdnt.Gender,
+                            Village = stdnt.Village,
+                            District = stdnt.District,
+                            Email = stdnt.Email,
+                        }).ToList();
+            return result;
+        }
+
         public async Task<Student> createSudents(Student student,ApplicationDbContext _db)
         {  
 
@@ -204,11 +262,7 @@ if (student.fullUniform == true)
                 odataManager.student = student;
             var studentAssessement = await _db.Assessements.Where(i => i.StudentId == id).ToListAsync();
                 var studentGuardians = await _db.guardians.Where(k => k.StudentId == id).ToListAsync();
-            var studentReport = await _academicaffairs.getStudentAssessements(_db, id);
-
-
-
-            odataManager.termlyAssessemnts =studentReport;
+            var studentReport = await _academicaffairs.getStudentAssessements(_db, id);           odataManager.termlyAssessemnts =studentReport;
             odataManager.studentGuardians = studentGuardians.Take(3);
                 return odataManager;
         }

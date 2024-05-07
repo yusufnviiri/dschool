@@ -1,9 +1,8 @@
-﻿using victors.Actions;
+﻿using Microsoft.AspNetCore.Mvc;
+using victors.Actions;
+using victors.Models;
 using victors.Models.Context;
 using victors.Models.Helper;
-using victors.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Cors;
 
 namespace victors.Controllers
 {
@@ -84,7 +83,7 @@ namespace victors.Controllers
                 CashFlows = flows
             };
 
-            return Ok(data);
+            return View(data);
         }
 
         [HttpGet("notices")]

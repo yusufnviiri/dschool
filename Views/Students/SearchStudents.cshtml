@@ -1,0 +1,110 @@
+﻿@model List<Student>
+
+@{
+    ViewData["Title"] = "search results";
+}
+
+
+
+@if (Model.Count == 0)
+{
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto " asp-controller="Students" asp-action="GetStudents">Home</a>
+
+        <h4>Oppsssss.....No result for the search</h4>
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+    </div>
+
+
+}
+else
+{
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto " asp-controller="Students" asp-action="GetStudents">Home</a>
+
+
+        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+    </div>
+
+    <table class="w-full m-auto text-lime-900  ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th class="table_hide">Grade</th>
+                <th>class</th>
+                <th> Section</th>
+                <th> Term</th>
+                <th> Gender</th>
+                <th>Status</th>
+                <th class="table_hide"> Residance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr class="text-[0.7em] sm:text-[0.99em] ">
+                    <td>
+                        @student.StudentId
+
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">   @student.FirstName</a>
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">        @student.LastName</a>
+                    </td>
+                    <td class="table_hide">
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">
+                            @student.Grade
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">           @student.Stream</a>
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">   @student.Section</a>
+
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">          @student.Term</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">
+                            @student.Gender
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">        @student.Status</a>
+
+                    </td>
+                    <td class="table_hide">
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">     @student.Village</a>
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId" class="underline uppercase font-bold underline-offset-2 text-rose-800 text-[0.88em] px-3 ">
+                            Details
+                        </a>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

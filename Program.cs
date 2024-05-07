@@ -66,7 +66,9 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Students}/{action=GetStudents}/{id?}");
+        //pattern: "{controller=Students}/{action=GetStudents}/{id?}");
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
 if (app.Environment.IsDevelopment())
 {
     _ = app.RunTailwind("tailwind", "./");
