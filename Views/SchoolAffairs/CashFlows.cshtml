@@ -10,12 +10,14 @@
     <h4 class=" "> CASH FLOWS</h4>
     <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
 </div>
-    <div class="flex sm:flex-row flex-col  gap-10 w-[95%] mt-8 mx-auto  ">
+
+
+<div class="flex sm:flex-row flex-col  gap-10 w-[95%] mt-8 mx-auto  ">
     <div class="grid grid-cols-1  sm:grid-cols-2 gap-4 sm:w-[45%] justify-between ">
         <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
             <p class="  self-center text-[1.4em] font-bold text-amber-400">
                 @Model.CashFlows.ElementAt(0).Description
-                
+
             </p>
             <div class="flex justify-between  ">
                 <p class="w-[33%]  font-normal">Type </p>
@@ -32,22 +34,7 @@
                     <span>/=</span>
                 </p>
             </div>
-            <div class=" justify-between  ">
-                <p class="w-[33%]  font-normal ">Balance</p>
-
-                <p class="data">
-                    @Model.CashFlows.ElementAt(0).AmountDue
-                    <span>/=</span>
-                </p>
-            </div>
-            <div class="flex justify-between  ">
-                <p class="w-[33%]  font-normal">BAL DUE </p>
-
-                <p class="">
-                    @Model.CashFlows.ElementAt(0).AmountDue
-                    <span>/=</span>
-                </p>
-            </div>
+         
         </div>
         <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
             <p class="  self-center text-[1.4em] font-bold text-amber-400">
@@ -66,44 +53,22 @@
                     <span>/=</span>
                 </p>
             </div>
-            <div class="hidden justify-between  ">
-                <p class="w-[33%]   font-normal">Balance</p>
+         
 
-                <p class="data">
-                    @Model.CashFlows.ElementAt(1).AmountDue
-                    <span>/=</span>
-                </p>
-            </div>
-           
         </div>
 
         <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
             <p class="  self-center text-[1.4em] font-bold text-amber-400">
-                @Model.CashFlows.ElementAt(2).Description
-
+                Notifications
             </p>
-            <div class="flex justify-between  ">
-                <p class="w-[33%]  font-normal">Type </p>
-
-                <p class="data text-amber-400">Income</p>
-            </div>
-            <div class="flex justify-between  ">
-                <p class="w-[33%]  font-normal">Amount </p>
-
-                <p class={"data"}>
-                    @Model.CashFlows.ElementAt(2).AmountSpent
-                    <span>/=</span>
+            <div class="flex justify-between   ">
+                <p class="w-[33%] text-[2.5em] m-auto " >
+                    @Model.CashFlows.ElementAt(4).NoticesList
                 </p>
-            </div>
-            <div class=" justify-between hidden  ">
-                <p class="w-[33%]  font-normal">Balance</p>
 
-                <p class="data">
-                    @Model.CashFlows.ElementAt(2).AmountDue
-                    <span>/=</span>
-                </p>
             </div>
-          
+
+
         </div>
         <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
             <p class="  self-center text-[1.4em] font-bold text-amber-400">
@@ -118,17 +83,17 @@
                 <p class="w-[33%]  font-normal">Paid </p>
 
                 <p class="">
-                    @Model.CashFlows.Sum(k=>k.AmountSpent)
+                    @Model.CashFlows.Sum(k => k.AmountSpent)
 
                     <span>/=</span>
                 </p>
             </div>
-          
+
             <div class="flex justify-between  ">
                 <p class="w-[33%]  font-normal">BAL DUE</p>
 
                 <p class="">
-                    @Model.CashFlows.Sum(k=>k.AmountDue)
+                    @Model.CashFlows.Sum(k => k.AmountDue)
 
                     <span>/=</span>
                 </p>
@@ -153,15 +118,8 @@
                     <span>/=</span>
                 </p>
             </div>
-            <div class=" justify-between hidden  ">
-                <p class="w-[33%]  font-normal">Due</p>
+         
 
-                <p class="data">
-                    @Model.CashFlows.ElementAt(0).AmountDue
-                    <span>/=</span>
-                </p>
-            </div>
-          
         </div>
         <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
             <p class="  self-center text-[1.4em] font-bold text-amber-400">
@@ -175,20 +133,13 @@
             <div class="flex justify-between  ">
                 <p class="w-[33%]  font-normal">Paid </p>
 
-                <p class={"data"}>
+                <p class="">
                     @Model.CashFlows.ElementAt(3).AmountSpent
                     <span>/=</span>
                 </p>
             </div>
-            <div class="hidden justify-between  ">
-                <p class="w-[33%]  font-normal">Due</p>
+          
 
-                <p class="data">
-                    @Model.CashFlows.ElementAt(3).AmountDue
-                    <span>/=</span>
-                </p>
-            </div>
- 
         </div>
 
         <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
@@ -214,7 +165,7 @@
                     0<span>/=</span>
                 </p>
             </div>
-         
+
         </div>
         <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
             <p class="  self-center text-[1.4em] font-bold text-amber-400">
@@ -239,7 +190,89 @@
                     0<span>/=</span>
                 </p>
             </div>
-         
+
         </div>
     </div>
+
 </div>
+
+
+    <div class="flex sm:flex-row flex-col  gap-10 w-[95%] mt-8 mx-auto  ">
+    <div class="grid grid-cols-1  sm:grid-cols-2 gap-4 sm:w-[45%] justify-between ">
+    
+        <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
+            <p class="  self-center text-[1.4em] font-bold text-amber-400">
+Staff Members
+            </p>
+            <div class="flex justify-between  ">
+                <p class="w-[33%] text-[2.5em] m-auto ">
+                    @Model.CashFlows.ElementAt(4).StaffList
+                </p>
+
+
+            </div>
+            
+          
+        </div>
+        <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
+            <p class="  self-center text-[1.4em] font-bold text-amber-400">
+                Total Assets
+            </p>
+
+            <div class="flex justify-between  ">
+
+                <p class="w-[33%] text-[2.5em] m-auto ">
+                    @Model.CashFlows.ElementAt(4).AssetsCount
+
+                </p>
+            </div>
+        </div>
+
+        
+    
+    </div>
+
+
+
+    <div class="grid grid-cols-1  sm:grid-cols-2 gap-4 sm:w-[45%] justify-between ">
+
+        <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
+            <p class="  self-center text-[1.4em] font-bold text-amber-400">
+                Total Parents
+            </p>
+            <div class=" justify-between  ">
+
+                <p class="w-[33%] text-[2.5em] m-auto ">
+                    @Model.CashFlows.ElementAt(4).Guardianlist
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="flex justify-between  flex-col pr-3 pl-1  py-3  bg-stone-700 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] ">
+            <p class="  self-center text-[1.4em] font-bold text-amber-400">
+                Students Total
+            </p>
+            <div class="flex justify-between  text-center ">
+                <p class="w-[33%] text-[2.5em] m-auto ">
+                    @Model.CashFlows.ElementAt(4).StudentList
+                </p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
