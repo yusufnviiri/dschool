@@ -1,0 +1,136 @@
+﻿@model StudentJoinFeesJoinRequirements
+
+
+
+
+
+@{
+    ViewData["Title"] = "student payments";
+}
+
+
+
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+
+
+    <h4 class=" ">STUDENT DETAILS</h4>
+    <a class=" text-white  bg-orange-600 px-2 rounded " aria-current="page" asp-controller="Students" asp-action="GetStudents">BACK</a>
+
+
+ 
+</div>
+<div class="">
+  
+    <div >
+        <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-2 sm:px-4   m-auto  sm:text-[0.61em] md:text-[0.76em] lg:text-[0.96em]   text-[0.51em]
+ text-center  ">
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PaySchoolFees">
+            School Fees
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PayRequirement">
+        
+            Requirements
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="PayUniform">
+
+                Uniform
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Academic" asp-route-id="@Model.student.StudentId" asp-action="StoreExamStudent">
+
+                Assessement
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded "
+               asp-controller="Students" asp-route-studentId="@Model.student.StudentId" asp-action="PromoteStudent">
+                student info
+            
+            </a>
+            <a class=" text-white  bg-orange-600 px-2 rounded " asp-route-id="@Model.student.StudentId"
+               asp-controller="Students" asp-route-id="@Model.student.StudentId" asp-action="CreateGuardian">
+
+       
+            Add Guardian
+            </a>
+
+            <a class=" text-white  bg-orange-600 px-2 rounded " asp-controller="Students" asp-action="CreateStudent">
+                Add Student
+            </a>
+        </div>
+    </div>
+
+
+
+        <div class=" mt-1 flex justify-between gap-3 ">
+            <div class=" w-[50%]  px-3 text-white  bg-teal-900">
+
+                <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
+                   SCHOOL FEES
+                </h4>
+            
+                @foreach (var pay in Model.schoolFees.OrderDescending().Take(4))
+                {        
+    
+          <div
+           
+            class="my-2 pl-2  bg-teal-950 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] border-2 border-yellow-500   w-full  "
+          >
+            <div class="flex justify-between  ">
+              <p class="w-[33%]  font-normal">Date: </p>
+              <p class="data">@pay.DateOfPayment</p>
+            </div>
+            <div class="flex jusify-between  ">
+              <p class="w-[33%]">Amount: </p>
+                            <p class="data">@pay.Amount</p>
+            </div>
+            <div class="flex jusify-between sm:hidden md:flex  ">
+              <p class="w-[33%]">Reason : </p>
+                            <p class="data">@pay.Reason</p>
+            </div>
+            <div class="flex jusify-between   ">
+              <p class="w-[33%]">Balance: </p>
+                            <p class="data">@pay.Balance</p>
+            </div>
+          </div>
+     
+            }
+            </div>
+            <div class=" w-[50%]  px-3 text-white  bg-teal-900">
+
+                <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
+                    REQUIREMENTS
+                </h4>
+
+                @foreach(var pay in Model.requirementPayments.Take(5))
+                {             
+
+                  
+          <div    
+            class="my-2 pl-2  bg-teal-950 text-stone-100 rounded  lg:text-[0.8199em]  text-[0.799em] border-2 border-yellow-500   w-full  "
+          >
+            <div class="flex jusify-between  ">
+              <p class="w-[33%]">Date: </p>
+              <p class="data">@pay.DateOfPayment</p>
+            </div>
+            <div class="flex w-full  ">
+              <p class="w-[30%]">Amount: </p>
+                            <p class="data">@pay.Amount</p>
+            </div>
+            <div class="flex w-full  ">
+              <p class="w-[30%]">Item : </p>
+                            <p class="data">@pay.RequiremntName</p>
+            </div>
+            <div class="flex jusify-between sm:hidden md:flex  ">
+              <p class="w-[30%]">Balance: </p>
+                            <p class="data">@pay.Balance</p>
+            </div>
+          </div>          
+                }
+              
+            </div>
+        </div>
+    </div>
+</div>

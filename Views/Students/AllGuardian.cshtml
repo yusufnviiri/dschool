@@ -10,11 +10,21 @@
     <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-11 ">
 
-        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+
+        <a class=" text-white  bg-orange-600 px-2 rounded" asp-controller="Students" asp-action="GetStudents"> Students</a>
+        <a class=" text-white  bg-orange-600 px-2 rounded     " asp-controller="Students" asp-action="CreateStudent">New Student</a>
     </div>
 }
 else
 {
+
+    <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+ text-center  ">
+        <a class=" text-white  bg-orange-600 px-2 rounded" asp-controller="Students" asp-action="GetStudents"> Students</a>
+
+        <h4 class=" "> PARENTS </h4>
+        <a class=" text-white  bg-orange-600 px-2 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
+    </div>
 
     <table class="w-full m-auto text-lime-900  ">
         <thead>

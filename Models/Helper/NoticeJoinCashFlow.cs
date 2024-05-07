@@ -2,7 +2,8 @@
 {
     public class NoticeJoinCashFlow
     {
-        public ICollection<CashFlow> CashFlows { get; set; } = new List<CashFlow>();
+        public IEnumerable<CashFlow> CashFlows { get; set; } = new List<CashFlow>();
+        public Array CashFlowArray { get; set; }
         public ICollection<Notice> Notices { get; set; } = new List<Notice>();
     }
 }

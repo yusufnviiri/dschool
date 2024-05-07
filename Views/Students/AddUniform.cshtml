@@ -1,15 +1,17 @@
 ﻿@model StudentJoinUniform
 
+
+@{
+    ViewData["Title"] = "new uniform";
+}
+
       <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em] 
  text-center  " >
-    <a asp-controller="Students" asp-action="GetStudents"> HOME</a>
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
 
+        <h4 class=" "> UINFORM CREATION FORM</h4>      
 
-        <h4 class=" "> UINFORM CREATION FORM</h4>
-
-      
-
-    <a asp-controller="Students" asp-action="GetStudents"> UNIFORMS</a>
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents"> UNIFORMS</a>
 
 
       </div>

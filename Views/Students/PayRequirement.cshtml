@@ -1,13 +1,18 @@
 ﻿
-
-
 @model StudentJoinRequirement
 
 
 @{
     ViewData["Title"] = "school requiremenet payment";
 }
+<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center ">
 
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
+
+    <h4 class=" ">  SCHOOL REQUIREMENT PAYMENT FORM</h4>
+    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
+</div>
 
 <div class=" mt-7 mx-auto w-[70%] ">
     <form method="post" action="PayRequirement" class="h-25  row">
@@ -101,9 +106,9 @@
                            value="Shool Requirement"
                            class=" w-full text-center " />
                 </div>
-                <div class=" mt-2 text-white   font-bold w-full m-auto
-    text-center  bg-green-700 rounded hover:bg-slate-700">
-                    <input class="uppercase text-yellow-100" type="submit" />
+                <div class=" mt-5 text-white   font-bold w-full m-auto   submit
+    text-center  bg-green-700 rounded hover:bg-indigo-800">
+                    <input class="uppercase text-yellow-100  px-2" type="submit" />
                 </div>
             </div>
         </div>

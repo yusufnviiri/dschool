@@ -4,6 +4,11 @@
 
 @model StudentIndex
 
+
+
+
+
+
     @if(Model.Students.Count ==0)
 {
 
@@ -11,10 +16,26 @@
 
     <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-11 ">
+        <h4 class=" ">  STUDENT INFORMATION</h4>
 
-        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
     </div>
 }else{
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
+
+        <h4 class=" ">  STUDENTS</h4>
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
+    </div>
+
+
+
+
+
     <form method="post" action="SearchStudents" class=" row">
 
         <div class="flex  bg-black  lg:py-4 py-2 mb-1 justify-between  w-full">
@@ -138,11 +159,11 @@ text-center   rounded">
              
             </td>
             <td class="table_hide">
-                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">     @student.Village</a>              
-                
+                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId">     @student.Village</a>
+
             </td>
             <td>
-                        <a asp-controller="Students" asp-action="Student" asp-route-id=" @student.StudentId" class="underline uppercase font-bold underline-offset-2 text-rose-800 text-[0.88em] px-3 ">
+                        <a asp-controller="Students" asp-action="StudentPayments" asp-route-id=" @student.StudentId" class="underline uppercase font-bold underline-offset-2 text-rose-800 text-[0.88em] px-3 ">
                             Details
                         </a>                
             </td>   

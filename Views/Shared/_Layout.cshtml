@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] </title>
    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+   <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
 
 </head>
 <body>
     <header class="w-full">
 
         <div class="navbar bg-cyan-950">
-            <a class="navbar-brand     ml-9" aria-current="page" asp-controller="Students" asp-action="CreateStudent"> Add Student</a>
+            <a class="navbar-brand  ml-9" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
+
             <div id="header" class="header">
                 <div class="dropdown" data-dropdown>
                     <button data-dropdown-button class="link ">
@@ -123,7 +125,7 @@
                                 <a class="nav-link" class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Academic" asp-action="GetAllCourse">Subjects</a>
                             </li>
                             <li class="nav-item">
-                                <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Academic" asp-action="CreateCourse">New Subject</a>
+                                <a class=" nav-link  " asp-controller="Academic" asp-action="CreateCourse">New Subject</a>
                             </li>
                         </ul>
                     </div>
@@ -145,6 +147,11 @@
                             </li>
                             <li class="nav-item hidden">
                                 <a class="nav-link" asp-controller="Students" asp-action="GetAllPaidUniforms"> Uniforms</a>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="SchoolAffairs" asp-action="CashFlows">Cash Flows</a>
 
                             </li>
 

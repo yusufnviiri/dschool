@@ -9,9 +9,27 @@
     <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-11 ">
 
-        <a class=" text-white  bg-orange-600 px-4 py-2 rounded w-[20%] m-auto     "asp-controller="Staffs" asp-action="Create">Click to Add Staff....</a>
+        <h4 class=" ">  STAFF INFORMATION</h4>
+
+
+
+        <a class="text-white  bg-orange-600 px-4 rounded" asp-controller="Staffs" asp-action="Create">New Staff</a>
     </div>
 }else{
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
+
+        <h4 class=" ">  STAFF MEMBERS</h4>
+     
+
+        <a class="text-white  bg-orange-600 px-4 rounded " asp-controller="Staffs" asp-action="Create">New Staff</a>
+    </div>
+
+
+
     <form method="post" action="SearchStaff" class="  row">
 
 
@@ -93,7 +111,6 @@ text-center   rounded">
             <th> Gender</th>
             <th> Status</th>
                 <th class="table_hide"> Residance</th>
-<th>DETAILS</th>
         </tr>
     </thead>
     <tbody>
@@ -109,7 +126,7 @@ text-center   rounded">
                 <td>
                         <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">    @staff.LastName</a>                 
                 </td>
-                <td class="table_hide">
+                <td class="">
                         <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
                             @staff.Category
                         </a>
@@ -133,24 +150,13 @@ text-center   rounded">
                 </td>
                     <td class="table_hide">
                         <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
-                            <span class="px-2">@staff.Village</span>
-                            <span class="px-2">,@staff.District</span>
+                            <span class="">@staff.Village</span>
+                            <span class="pl-2">,@staff.District</span>
                         </a>               
 
-                </td>
-              
-              
-                <td>
-                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId"> </a>
+                </td>  
 
-
-                    details
-
-                </td>
-
-
-
-            </tr>
+                            </tr>
         }
     </tbody>
 </table>}

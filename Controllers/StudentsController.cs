@@ -189,11 +189,33 @@ namespace victors.Controllers
         public async Task<IActionResult> Payments([FromRoute] int id)
         {
             string[] items = new string[1];
+
             var fees = await _db.schoolFees.Where(p => p.StudentId == id).ToListAsync();
-          
-                return View(fees);
+
+            return View(fees);
            
         }
+
+        [HttpGet("{id}/studentPayments")]
+        public async Task<IActionResult> StudentPayments([FromRoute] int id)
+        {
+            string[] items = new string[1];
+            odataManager = await studentActions.findStudent(id, _db);
+
+            var fees = await _db.schoolFees.Where(p => p.StudentId == id).ToListAsync();
+            var requirements = await _db.RequirementsPayment.Where(p => p.StudentId == id).ToListAsync();
+
+            StudentJoinFeesJoinRequirements studentjoinFeesJoinRequirements = new StudentJoinFeesJoinRequirements()
+            {
+                student = odataManager.student,
+                requirementPayments = requirements,
+                schoolFees = fees,
+
+            };
+            return View(studentjoinFeesJoinRequirements);
+
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> CreateGuardian(int id)
         {

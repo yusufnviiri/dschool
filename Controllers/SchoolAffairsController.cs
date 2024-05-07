@@ -80,7 +80,8 @@ namespace victors.Controllers
             NoticeJoinCashFlow data = new()
             {
                 Notices = notices,
-                CashFlows = flows
+                CashFlows = flows.ToArray(),
+                CashFlowArray=flows.ToArray(),
             };
 
             return View(data);
