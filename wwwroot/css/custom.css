@@ -132,6 +132,9 @@ span {
     font-size: 0.86em;
     margin-left: 0.42em;
 }
+.setUniform{
+    display:none;
+}
 
 .submit {
     border-radius: 3px;

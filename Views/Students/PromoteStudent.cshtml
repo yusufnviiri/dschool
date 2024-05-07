@@ -178,19 +178,16 @@
                 </div>
             </div>
 
-            @*       <div class="mb-2">
-            @(
-            fullUniform ? < div class = "mb-2" >  < label asp -for= "charge" class = "font-bold ml-2 block " >
-            Uniform Charge
-            </ label >
-            < input type = "number"
-            asp -for= "fullUniform" />
-            </ div >
-            :
-            ""
-            )
+            <div id="uniform-amount" class="mb-2  setUniform">
+                <label asp -for="charge" class="font-bold ml-2 block ">
+                    Uniform Charge
+                </label>
+                <input type="number"
+                       asp-for="fullUniform" />
 
-            </div> *@
+
+
+            </div>
 
             <div class="mt-3 sm:mt-7 text-white   font-bold w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-slate-700">

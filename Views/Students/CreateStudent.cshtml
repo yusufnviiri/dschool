@@ -175,25 +175,22 @@
 
                 <div class="mb-1 w-[30%]">
                     <label asp-for="fullUniform" class="font-bold ml-2 block">Uniform</label>
-                    <input type="checkbox"
+                    <input   onclick="payUniform()" type="checkbox"
                            asp-for="fullUniform"
                            class=" m-auto ml-7 w-[20%] text-sm text-center " />
                 </div>
             </div>
 
-      @*       <div class="mb-2">
-                @(    
-                    fullUniform ? < div class = "mb-2" >  < label asp -for= "charge" class = "font-bold ml-2 block " >
+           <div id="uniform-amount" class="mb-2  setUniform">
+                <label asp -for= "charge" class = "font-bold ml-2 block " >
                     Uniform Charge
-                    </ label >
-                    < input type = "number"
-                    asp -for= "fullUniform" />
-                    </ div >
-                     : 
-                    ""
-                    )
+                    </label >
+                    <input type = "number"
+                    asp-for= "fullUniform" />       
+                   
+                
              
-            </div> *@
+            </div> 
 
             <div class="mt-3 sm:mt-7 text-white   font-bold w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-slate-700">

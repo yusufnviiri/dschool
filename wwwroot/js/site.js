@@ -24,6 +24,10 @@ const dropDownLists = document.getElementsByClassName('dropdown-menu')
 
 function toggleHeader() {
     menu.classList.toggle('active')
-    console.log(dropDownLists)
     
+}
+
+function payUniform() {
+    const uniformField = document.getElementById('uniform-amount')
+    uniformField.classList.toggle('setUniform');
 }
