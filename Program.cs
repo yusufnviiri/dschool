@@ -67,7 +67,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
         //pattern: "{controller=Students}/{action=GetStudents}/{id?}");
-        pattern: "{controller=Home}/{action=Index}/{id?}");
+        pattern: "{controller=SchoolAffairs}/{action=AllStudents}/{id?}");
 
 if (app.Environment.IsDevelopment())
 {

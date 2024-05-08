@@ -14,6 +14,8 @@ namespace victors.Controllers
 
         private readonly ApplicationDbContext _db;
         private readonly Affairs _affairs = new Affairs();
+        public OdataManager odataManager { get; set; } = new();
+        public StudentActions studentActions { get; set; } = new();
         public SchoolAffairsController(ApplicationDbContext db)
         {
             _db = db;
@@ -52,10 +54,22 @@ namespace victors.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> AllStudents()
+        {
+            var result = await studentActions.getStudents(_db);
+            LookUpStudents lookUpStudents = new LookUpStudents();
+            var response = new StudentIndex()
+            {
+                Students = result,
+                LookUpStudents = lookUpStudents,
+            };
+
+            return View(response);
+        }
 
 
-
-            [HttpPost("notice/{id}")]
+        [HttpPost("notice/{id}")]
         public async Task<IActionResult> CreateNotice(Notice notice)
         {
             if (ModelState.IsValid)
