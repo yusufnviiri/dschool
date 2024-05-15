@@ -374,5 +374,13 @@ namespace victors.Controllers
             return View(result);
 
         }
+        [HttpGet("{id}/deletestudent")]
+        public async Task<IActionResult> DeleteStudent(int id)
+        {
+
+            await studentActions.DeleteStudent(_db, id);
+            return RedirectToAction("GetStudents");
+        }
+
     }
 }

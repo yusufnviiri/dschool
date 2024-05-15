@@ -116,6 +116,8 @@ text-center   rounded">
             <th>Status</th>
             <th class="table_hide"> Residance</th>
             <th>Actions</th>
+             <th>Delete</th>
+
         </tr>
     </thead>
     <tbody>
@@ -163,12 +165,18 @@ text-center   rounded">
 
             </td>
             <td>
-                        <a asp-controller="Students" asp-action="StudentPayments" asp-route-id=" @student.StudentId" class="underline uppercase font-bold underline-offset-2 text-rose-800 text-[0.88em] px-3 ">
+                        <a asp-controller="Students" asp-action="StudentPayments" asp-route-id=" @student.StudentId" class="underline uppercase font-bold underline-offset-2 text-sky-800 text-[0.88em] px-3 ">
                             Details
                         </a>                
-            </td>   
-         
-            
+            </td>
+
+                    <td>
+                        <a asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentId" class=" uppercase bg-red-600 p-1  font-bold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
+                            Delete
+                        </a>
+                    </td>
+
+
         </tr>
         }
     </tbody>

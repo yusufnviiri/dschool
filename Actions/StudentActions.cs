@@ -402,5 +402,26 @@ if (student.fullUniform == true)
             return promoted;
         }
 
+
+        public async Task DeleteStudent(ApplicationDbContext _db, int id)
+        {
+            student = await _db.Students.FindAsync(id);
+            _db.Remove(student);
+            var studentInUniforms = await _db.UniformPayments.Where(k => k.StudentId == id).ToListAsync();
+            var studentInFees = await _db.schoolFees.Where(k => k.StudentId == id).ToListAsync();
+            var studentInPromotion = await _db.promotions.Where(k => k.StudentId == id).ToListAsync();
+            var studentInRequirements = await _db.RequirementsPayment.Where(k => k.StudentId == id).ToListAsync();
+            var studentInAssesement = await _db.Assessements.Where(k => k.StudentId == id).ToListAsync();
+            var studentInGuardians = await _db.guardians.Where(k => k.StudentId == id).ToListAsync();
+            _db.RemoveRange(studentInUniforms);
+            _db.RemoveRange(studentInFees);
+            _db.RemoveRange(studentInPromotion);
+            _db.RemoveRange(studentInRequirements);
+            _db.RemoveRange(studentInAssesement);
+            _db.RemoveRange(studentInGuardians);
+
+            await _db.SaveChangesAsync();
+        }
+
     }
 }
