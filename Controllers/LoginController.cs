@@ -24,14 +24,16 @@ namespace victors.Controllers
 
         private readonly UserActions _userActions = new();
 
+       
+        private readonly SignInManager<User> _signInManager;
 
-        public LoginController(IMapper mapper, UserManager<User> userManager)
+        public LoginController(IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _mapper = mapper;
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        
 
         [HttpGet]
         public IActionResult Register()
@@ -59,8 +61,21 @@ namespace victors.Controllers
 
                 return View(userModel);
             }
-
-            await _userManager.AddToRoleAsync(user, "Visitor");
+            switch (userModel.Function)
+            {
+                case "Burser":
+                    await _userManager.AddToRoleAsync(user, "Burser");
+                    break;
+                case "Administrator":
+                    await _userManager.AddToRoleAsync(user, "Administrator");
+                    break;
+                case "Parent":
+                    await _userManager.AddToRoleAsync(user, "Parent");
+                    break;
+                default:
+                    await _userManager.AddToRoleAsync(user, "Visitor");
+                    break;
+            }
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
@@ -85,34 +100,34 @@ namespace victors.Controllers
                 return View(userModel);
             }
 
-            var user = await _userManager.FindByEmailAsync(userModel.Email);
-            if (user != null &&
-                await _userManager.CheckPasswordAsync(user, userModel.Password))
+            var result = await _signInManager.PasswordSignInAsync(userModel.Email, userModel.Password, userModel.RememberMe, false);
+            if (result.Succeeded)
             {
-                var identity = new ClaimsIdentity(IdentityConstants.ApplicationScheme);
-                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id));
-                identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
-
-                await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme,
-                    new ClaimsPrincipal(identity));
-
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToLocal(returnUrl);
             }
             else
             {
                 ModelState.AddModelError("", "Invalid UserName or Password");
                 return View();
             }
+        }
 
-            private IActionResult RedirectToLocal(string returnUrl)
-            {
-                if (Url.IsLocalUrl(returnUrl))
-                    return Redirect(returnUrl);
-                else
-                    return RedirectToAction(nameof(HomeController.Index), "Home");
+        private IActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+                return Redirect(returnUrl);
+            else
+                return RedirectToAction(nameof(HomeController.Index), "Home");
 
-            }
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
 

@@ -16,9 +16,20 @@ namespace victors.Configuration
             },
             new IdentityRole
             {
+                Name = "Parent",
+                NormalizedName = "PARENT"
+            }, new IdentityRole
+
+            {
                 Name = "Administrator",
                 NormalizedName = "ADMINISTRATOR"
-            });
+            },
+            new IdentityRole
+            {
+                Name = "Burser",
+                NormalizedName = "BURSER"
+            }); 
+         
         }
     }
 }

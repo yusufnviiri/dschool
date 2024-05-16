@@ -51,15 +51,34 @@ namespace victors.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ccb44ce1-bea5-4d17-95c9-6883fe696921",
+                            Id = "7d6c5db2-3db7-45cd-886a-708b440b3a62",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "efba1a98-a465-4558-afed-4abfae9380fe",
+                            Id = "2eb1534e-bce8-4b2b-9ac5-4e7e5a3d2c5b",
+                            Name = "Parent",
+                            NormalizedName = "PARENT"
+                        },
+                        new
+                        {
+                            Id = "da32bbc8-dc1d-4844-93b4-c7e60c82e769",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
+                        },
+                        new
+                        {
+                            Id = "92f0a88c-2ce4-4d44-a9f6-d0c176e87939",
+                            Name = "Burser",
+                            NormalizedName = "BURSER"
+                        },
+                        new
+                        {
+                            Id = "253a7f33-4741-4d5d-90ec-c7353f66403d",
+                            ConcurrencyStamp = "253a7f33-4741-4d5d-90ec-c7353f66403d",
+                            Name = "Director",
+                            NormalizedName = "DIRECTOR"
                         });
                 });
 
@@ -148,6 +167,13 @@ namespace victors.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "51009a63-58e3-45f0-b9b3-8442c0c3d847",
+                            RoleId = "253a7f33-4741-4d5d-90ec-c7353f66403d"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -1114,6 +1140,10 @@ namespace victors.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Function")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1162,6 +1192,26 @@ namespace victors.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "51009a63-58e3-45f0-b9b3-8442c0c3d847",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e869da6f-114d-461b-8a59-925c4734a319",
+                            Email = "directors@victors",
+                            EmailConfirmed = true,
+                            FirstName = "Director",
+                            Function = "Director",
+                            LastName = "Director",
+                            LockoutEnabled = false,
+                            NormalizedUserName = "DIRECTOR@VICTORS",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK8saxFpw39Qx+wFE6QCbtHocB9EcEM6gC37WWYc/grOpw43WdJ2mzrtlK1GJTql6A==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "fdabc43c-2380-433d-b073-7e53125e507d",
+                            TwoFactorEnabled = false,
+                            UserName = "Director@victors"
+                        });
                 });
 
             modelBuilder.Entity("victors.Models.Wage", b =>

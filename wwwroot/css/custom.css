@@ -25,10 +25,14 @@
    overflow-x:clip;overflow-y:hidden;
   
 }
+
+.login_li a{
+    color:white;
+    text-transform:uppercase;
+}
 /*.home {
     background: url("assets/building.jpg") no-repeat fixed center;
 }*/
-
 body {
     /* background-color: #042f2e; */
     background-color: white;
@@ -39,10 +43,21 @@ body {
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 40%,rgba(2,0,36,1) 50%,rgba(9,9,121,1) 100%); */
 }
 
+input:required ::before{
+    content:"*";
+    color:red;
+    display:inline;
+}
 textarea {
     background-color: rgb(230, 237, 241);
 }
-
+.login_form{
+    width:40%;
+    margin:auto;
+}
+.login_form label{
+    font-weight:bolder;
+}
 input,
 select {
     height: 1.85em;

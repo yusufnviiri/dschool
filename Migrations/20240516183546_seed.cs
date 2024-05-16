@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace victors.Migrations
 {
     /// <inheritdoc />
-    public partial class sso : Migration
+    public partial class seed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -56,6 +56,7 @@ namespace victors.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Function = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -621,9 +622,22 @@ namespace victors.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "ccb44ce1-bea5-4d17-95c9-6883fe696921", null, "Visitor", "VISITOR" },
-                    { "efba1a98-a465-4558-afed-4abfae9380fe", null, "Administrator", "ADMINISTRATOR" }
+                    { "253a7f33-4741-4d5d-90ec-c7353f66403d", "253a7f33-4741-4d5d-90ec-c7353f66403d", "Director", "DIRECTOR" },
+                    { "2eb1534e-bce8-4b2b-9ac5-4e7e5a3d2c5b", null, "Parent", "PARENT" },
+                    { "7d6c5db2-3db7-45cd-886a-708b440b3a62", null, "Visitor", "VISITOR" },
+                    { "92f0a88c-2ce4-4d44-a9f6-d0c176e87939", null, "Burser", "BURSER" },
+                    { "da32bbc8-dc1d-4844-93b4-c7e60c82e769", null, "Administrator", "ADMINISTRATOR" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Function", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "51009a63-58e3-45f0-b9b3-8442c0c3d847", 0, "e869da6f-114d-461b-8a59-925c4734a319", "directors@victors", true, "Director", "Director", "Director", false, null, null, "DIRECTOR@VICTORS", "AQAAAAIAAYagAAAAEK8saxFpw39Qx+wFE6QCbtHocB9EcEM6gC37WWYc/grOpw43WdJ2mzrtlK1GJTql6A==", null, false, "fdabc43c-2380-433d-b073-7e53125e507d", false, "Director@victors" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "253a7f33-4741-4d5d-90ec-c7353f66403d", "51009a63-58e3-45f0-b9b3-8442c0c3d847" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

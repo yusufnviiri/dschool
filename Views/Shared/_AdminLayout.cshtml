@@ -3,11 +3,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <title>@ViewBag.Title</title>
 </head>
 <body>
     
-    @{
+ @*    @{
         // Access the currently logged-in user
         var user = Context.User;
 
@@ -23,22 +25,20 @@
         {
             <p>You are not logged in.</p>
         }
-    }
+    } *@
 
 
-    <h2>Claim details</h2>
+   @*  <h2>Claim details</h2>
     <ul>
         @foreach (var claim in User.Claims)
         {
             <li><strong>@claim.Type</strong>: @claim.Value</li>
         }
-    </ul>
+    </ul> *@
 
-    <h2>Am joking...nothing here ...hahahahahahaha</h2>
-    <div>
+   
         <partial name="_LoginPartial" />
         @RenderBody()
-    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

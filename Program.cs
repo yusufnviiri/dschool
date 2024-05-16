@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Hosting;
 using NuGet.Protocol;
+using victors.Factory;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -64,9 +65,10 @@ builder.Services.AddIdentity<User, IdentityRole>(opt =>
 
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllersWithViews();
-
-
+builder.Services.ConfigureApplicationCookie(o => o.LoginPath = "/Authentication/Login");
+builder.Services.AddScoped<IUserClaimsPrincipalFactory<User>, CustomClaimsFactory>();
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

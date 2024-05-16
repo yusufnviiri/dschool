@@ -4,7 +4,6 @@
 
 @{
 
-    Layout = "~/Views/Shared/_NavBar.cshtml";
     ViewBag.Title = "Students";
 }
 @model StudentIndex
@@ -24,7 +23,7 @@
         <h4 class=" ">  STUDENT INFORMATION</h4>
 
 
-        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent"> New Student</a>
     </div>
 }else{
 

@@ -6,6 +6,8 @@ namespace victors.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        [Required(ErrorMessage = "Function is required")]
+        public string Function { get; set; }
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress]
         public string Email { get; set; }
