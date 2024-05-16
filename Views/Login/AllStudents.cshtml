@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "students list";
+}
+
+@model StudentIndex
+
+
+
+
+
+
+@if (Model.Students.Count == 0)
+{
+
+
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+        <h4 class=" ">  STUDENT INFORMATION</h4>
+
+
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">Click to Add Student....</a>
+    </div>
+}
+else
+{
+    <div id="home_page" class="">
+
+        <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center ">
+
+            <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
+
+            <h4 class="uppercase"> Welcome to  Victors Nest christain school</h4>
+            <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
+        </div>
+
+    </div>
+
+}

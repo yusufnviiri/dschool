@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    
+    @{
+        // Access the currently logged-in user
+        var user = Context.User;
+
+        // Check if the user is authenticated
+        if (user.Identity.IsAuthenticated)
+        {
+            <p>Welcome, @user.Identity.Name!</p>
+
+            // You can access other user properties or claims as well
+            <p>Your email address is: @user.FindFirst(ClaimTypes.NameIdentifier)?.Value</p>
+        }
+        else
+        {
+            <p>You are not logged in.</p>
+        }
+    }
+
+
+    <h2>Claim details</h2>
+    <ul>
+        @foreach (var claim in User.Claims)
+        {
+            <li><strong>@claim.Type</strong>: @claim.Value</li>
+        }
+    </ul>
+
+    <h2>Am joking...nothing here ...hahahahahahaha</h2>
+    <div>
+        <partial name="_LoginPartial" />
+        @RenderBody()
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -27,13 +27,7 @@ namespace victors.Controllers
             if (data is not null)
             {
                 var userData = data.Claims;
-                var user = new User
-                {
-                    UserName = userData.FirstOrDefault(k => k.Type == ClaimTypes.NameIdentifier)?.Value,
-                    Password = userData.FirstOrDefault(k => k.Type == ClaimTypes.Role)?.Value,
-                };
-                var userRef = await _userActions.GetUser(user, _db);
-                user.UserId = userRef.UserId;
+              
                 if (change.OldPassword.ToLower() == change.NewPassword.ToLower() || change.NewPassword == string.Empty)
                 {
                     return BadRequest("New Password is same with old password or new password is missing");
@@ -45,7 +39,6 @@ namespace victors.Controllers
                         OldPassword = change.OldPassword,
                         NewPassword = change.NewPassword,
                         ConfirmPassword = change.ConfirmPassword,
-                        UserName = user.UserName
                     };
                     await _userActions.UpdatePassword(_db, passwordChange);
                 }

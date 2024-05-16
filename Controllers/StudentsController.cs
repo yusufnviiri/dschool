@@ -5,6 +5,7 @@ using victors.Models.Helper;
 using victors.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Authorization;
 
 namespace victors.Controllers
 {
@@ -19,6 +20,7 @@ namespace victors.Controllers
         }
 
         // [HttpGet, Authorize(Roles ="admin,burser")]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetStudents()
         {

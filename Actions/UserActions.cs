@@ -25,7 +25,6 @@ namespace victors.Actions
                 OdataManager = await CheckUserName(user, _db);
                 if (OdataManager.ResponseData.ToLower() == ("valid"))
                 {
-                    User.Password = user.Password;
                     User.UserName = user.UserName;
                     await _db.Users.AddAsync(User);
                     await _db.SaveChangesAsync();
@@ -78,14 +77,12 @@ namespace victors.Actions
         public async Task<IEnumerable<AuditTrail>> AllAuditTrails(ApplicationDbContext _db)
         {
             var trails = new List<AuditTrail>();
-            trails = await _db.AuditTrails.Include(p => p.User).ToListAsync();
 
             return trails;
 
         }
         public async Task AddAuditTrail(ApplicationDbContext _db, User user)
         {
-            AuditTrail.User = user;
 
             await _db.AuditTrails.AddAsync(AuditTrail);
             await _db.SaveChangesAsync();
@@ -98,7 +95,6 @@ namespace victors.Actions
             var user = await GetUser(User, _db);
 
             await AddAuditTrail(_db, user);
-            user.Password = change.NewPassword;
             await _db.SaveChangesAsync();
 
         }
