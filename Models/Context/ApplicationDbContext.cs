@@ -40,8 +40,8 @@ namespace victors.Models.Context
             var appUser = new User
             {
                 Id = DIRECTOR_ID,
-                Email = "directors@victors",
-                EmailConfirmed = true,
+                Email = "director@victors",
+                EmailConfirmed = false,
                 FirstName = "Director",
                 LastName = "Director",
                 Function="Director",

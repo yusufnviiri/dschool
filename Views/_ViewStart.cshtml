@@ -1,12 +1,11 @@
-﻿@{
-    if (User.IsInRole("Admin"))
-    {
-        Layout = "_AdminLayout";
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
-    }
-    else
-    {
+@{
+    
+   
         Layout = "_Layout";
 
-    }
+    
 }

@@ -9,12 +9,11 @@
 
         <li class="login_li">
             <a class="mx-4 " asp-controller="Home" asp-action="Index"
-               title="Welcome">Welcome: <span class="px-2  text-yellow-600">@User.Identity.Name!</span></a>
+               title="Welcome">Welcome: <span class="px-2  text-yellow-500">@User.Identity.Name!</span></a>
 
             <a class="px-3 " asp-controller="Home" asp-action="Index"
-               title="Welcome"> Role:     <span class="px-2  text-yellow-600">@logged_user.FindFirst(ClaimTypes.Role)?.Value</span>  </a>
-        </li>
-      
+               title="Welcome"> Role:     <span class="px-2  text-yellow-500">@logged_user.FindFirst(ClaimTypes.Role)?.Value</span>  </a>
+        </li>     
       
         <li class="nav-item">
             <form class="text-white  hover:bg-green-800  bg-orange-600 py-1 px-2  rounded" asp-controller="Login" asp-action="Logout">
@@ -23,18 +22,14 @@
         </li>
     }
     else
-    {
-      
+    {      
         <li class="uppercase">You are not logged in</li>
-
-
         <li class="login_li">
             <a class="text-white  hover:bg-green-800  bg-orange-600 py-1 px-2  rounded " asp-controller="Login"
                asp-action="Login">Login</a> <span class="px-4">OR</span>
             <a class="text-white  hover:bg-green-800  bg-orange-600 px-2 py-1 rounded " asp-controller="Login"
                asp-action="Register">Register</a>
-        </li>
-      
+        </li>      
     }
 </ul>
 
