@@ -173,11 +173,15 @@ namespace victors.Controllers
             }
             else
             {
-                return BadRequest();
+                return View(book);
 
             }
 
         }
+
+
+     
+  
 
     }
 
