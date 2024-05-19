@@ -60,11 +60,20 @@ namespace victors.Actions
            Notices = await _db.Notices.ToListAsync();
             return Notices;
         }
+
+        public async Task<ICollection<Notice>> GetWebFeedBackNotices(ApplicationDbContext _db)
+        {
+            string nameTag = "feedback";
+            Notices = await _db.Notices.Where(p=>p.Postedby.ToLower().Contains(nameTag)).ToListAsync();
+            return Notices;
+        }
         public async Task<Notice> FindNotice(ApplicationDbContext _db, int id)
         {
             var notice = await _db.Notices.FindAsync(id);
             return notice;
         }
+
+
         public async Task<Book> CreateBook(ApplicationDbContext _db, Book book)
         {
             await _db.Books.AddAsync(book);

@@ -107,6 +107,12 @@ namespace victors.Controllers
             var notices = await _affairs.getAllNotice(_db);
             return View(notices);
         }
+        [HttpGet("{id}/webnotices")]
+        public async Task<IActionResult> GetWebFeedBackNotices()
+        {
+            var notices = await _affairs.GetWebFeedBackNotices(_db);
+            return View(notices);
+        }
         [HttpGet("{id}/notice")]
         public async Task<IActionResult> FindNotices(int id)
         {
