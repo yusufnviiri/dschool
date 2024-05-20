@@ -12,7 +12,7 @@
 
 <form method="post" action="CreateStudent" >
 
-        <div asp-validation-summary="All" class="text-red-700"></div>
+        <div asp-validation-summary="All" class="text-red-700 text-[0.6em] font-bold list-disc"></div>
 
     <div class="flex sm:flex-row flex-col  w-[90%] md:w-[90%] gap-6 flex-auto flex-grow-1 m-auto">
         <div class="sm:w-[45%]">
@@ -213,11 +213,8 @@
                     Uniform Charge
                     </label >
                     <input type = "number"
-                    asp-for= "fullUniform" />       
-                   
-                
-             
-            </div> 
+                    asp-for= "fullUniform" />               
+                </div> 
 
             <div class="mt-3 sm:mt-7 text-white   font-bold w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-slate-700">

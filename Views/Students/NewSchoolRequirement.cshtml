@@ -14,30 +14,43 @@
 
 <div class="w-[40%]  m-auto requirement_form mt-7">
 
+
     <form method="post" action="NewSchoolRequirement" class="h-25  row">
+        <div asp-validation-summary="All" class="text-red-700 text-[0.6em] font-bold list-disc"></div>
+
 
         <div class="mb-1">
-            <label asp-for="Name" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="Name" class="font-bold text-[0.97em] required_label  ml-2 block">
                 Item Description
             </label>
             <input required
                    asp-for="Name"
                    class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
                    type="text" />
+            <span asp-validation-for="Name" class="text-red-700 text-[0.8em]"></span>
+
         </div>
 
         <div class="mb-2">
-            <label asp-for="Charge" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="Charge" class="font-bold text-[0.97em] required_label ml-2 block">
                 Amount
             </label>
             <input required
                    asp-for="Charge"
                    class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center" />
+            <span asp-validation-for="Charge" class="text-red-700"></span>
+
         </div>
 
-        <div class="mt-3 text-white   font-bold w-full m-auto submit   text-center  bg-green-700 rounded hover:bg-slate-700">
-            <input class="uppercase text-yellow-100  w-[20%]"
+        <div class="mt-3 sm:mt-7 text-white   font-bold w-full m-auto submit
+    text-center  bg-green-700 rounded hover:bg-slate-700">
+            <input class="  text-[0.73em] md:text-[0.8em] px-4 uppercase text-yellow-100  w-[30%]"
                    type="submit" />
         </div>
     </form>
 </div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

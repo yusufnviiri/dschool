@@ -16,6 +16,8 @@
 <div class="w-[90%] m-auto  mt-4 requirement_form">
 
 <form method="post" action="Create" class="h-25  row">
+        <div asp-validation-summary="All" class="text-red-700 text-[0.6em] font-bold list-disc"></div>
+
     <div class="flex sm:flex-row flex-col  w-[90%] md:w-[90%] gap-6 flex-auto flex-grow-1 m-auto">
         <div class="sm:w-[45%]">
             <div class="mb-1">
@@ -24,6 +26,8 @@
                        asp-for="FirstName"
                        class=" w-full text-center"
                        type="text" />
+                    <span asp-validation-for="FirstName" class="text-red-700"></span>
+
             </div>
             <div class="mb-1">
                 <label asp-for="LastName" class=" font-bold  ml-2 block ">Last Name</label>
@@ -31,6 +35,8 @@
                        asp-for="LastName"
                        class=" w-full text-center"
                        type="text" />
+                    <span asp-validation-for="LastName" class="text-red-700"></span>
+
             </div>
       
 
@@ -63,6 +69,8 @@
                            asp-for="Contact"
                            class=" w-full text-center "
                            type="number" />
+                        <span asp-validation-for="Contact" class="text-red-700"></span>
+
                 </div>
 
                 <div class="mb-2  justify-self-end w-[50%] ">
@@ -74,6 +82,8 @@
                         <option>Active</option>
                         <option>Former</option>
                     </select>
+                        <span asp-validation-for="Status" class="text-red-700"></span>
+
                 </div>
             </div>
             <div class="flex justify-between gap-2 w-full">
@@ -89,6 +99,8 @@
                         <option>Administrator</option>
                         <option>Director</option>
                     </select>
+                        <span asp-validation-for="Category" class="text-red-700"></span>
+
                 </div>
                 <div class="mb-2  justify-self-end w-[50%] ">
                     <label asp-for="MaritalStatus" class="font-bold  ml-2 block">Marital Status</label>
@@ -111,6 +123,8 @@
                        asp-for="Email"
                        class=" w-full text-center"
                        type="email`" />
+                    <span asp-validation-for="Email" class="text-red-700"></span>
+
             </div>
 
                 <div class="mb-1 ">
@@ -119,6 +133,8 @@
                            asp-for="Salary"
                            type="number"
                            class=" w-full text-center " />
+                                               <span asp-validation-for="Salary" class="text-red-700"></span>
+
              
 
 
@@ -130,6 +146,8 @@
                 <input required
                        asp-for="Nationality"
                        class=" w-full text-center " />
+                                           <span asp-validation-for="Nationality" class="text-red-700"></span>
+
             </div>
             <div class="mb-1">
                 <label asp-for="District" class="font-bold ml-2 block">
@@ -140,6 +158,8 @@
                        asp-for="District"
                        class=" w-full text-center"
                        type="text" />
+                                           <span asp-validation-for="District" class="text-red-700"></span>
+
             </div>
 
             <div class="mb-2">
@@ -148,6 +168,8 @@
                        asp-for="Village"
                        class=" w-full text-center "
                        type="text" />
+                                           <span asp-validation-for="Village" class="text-red-700"></span>
+
             </div>
             <div class="mb-2">
                 <label asp-for="Religion" class="font-bold ml-2 block">Religion</label>
@@ -169,6 +191,8 @@
                         <option>Certificate</option>
                         <option>Other</option>
                     </select>
+                                        <span asp-validation-for="Qualification" class="text-red-700"></span>
+
                 </div>
             <div class="mb-1 ">
                 <label asp-for="JobTitle" class="font-bold  ml-2 block"></label>
@@ -187,9 +211,11 @@
             </div>
         </div>
     </div>
-
-
-
 </form>
-
                            </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,8 +1,10 @@
-﻿namespace victors.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace victors.Models
 {
     public class Payment
     {
-
+        [Required(ErrorMessage = " Amount is required")]
         public decimal Amount { get; set; } 
         public string DateOfPayment { get; set; }= $"{DateTime.Now.Day}/{DateTime.Now.Month}/{DateTime.Now.Year}";
         public string RecievedBy { get; set; } = string.Empty;
