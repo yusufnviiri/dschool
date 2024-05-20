@@ -21,7 +21,7 @@
     <div class="flex sm:flex-row flex-col  w-[90%] md:w-[90%] gap-6 flex-auto flex-grow-1 m-auto">
         <div class="sm:w-[45%]">
             <div class="mb-1">
-                <label asp-for="FirstName" class="font-bold ml-2 block">First Name</label>
+                    <label asp-for="FirstName" class="font-bold ml-2 block  required_label">First Name</label>
                 <input required
                        asp-for="FirstName"
                        class=" w-full text-center"
@@ -30,7 +30,7 @@
 
             </div>
             <div class="mb-1">
-                <label asp-for="LastName" class=" font-bold  ml-2 block ">Last Name</label>
+                    <label asp-for="LastName" class=" font-bold  ml-2 block required_label">Last Name</label>
                 <input required
                        asp-for="LastName"
                        class=" w-full text-center"
@@ -42,18 +42,17 @@
 
             <div class="flex justify-between gap-2  w-full">
                 <div class="mb-1 w-[80%]">
-                    <label asp-for="Gender" class="font-bold ml-2 block">Gender</label>
+                        <label asp-for="Gender" class="font-bold ml-2 block required_label">Gender</label>
                     <select required
                             asp-for="Gender"
                             class=" w-full text-center ">
                         <option value="">select</option>
                         <option>Male</option>
-
                         <option>Female</option>
                     </select>
                 </div>
                 <div class="mb-2  justify-self-end w-[50%] ">
-                    <label asp-for="Birthdate" class="font-bold block ">Birth Date</label>
+                        <label asp-for="Birthdate" class="font-bold block required_label ">Birth Date</label>
                     <input required
                            asp-for="Birthdate"
                            type="date"
@@ -64,7 +63,7 @@
 
             <div class="flex justify-between gap-2 w-full">
                 <div class="mb-1 w-[80%]">
-                    <label asp-for="Contact" class="font-bold ml-2 block"> Contact</label>
+                        <label asp-for="Contact" class="font-bold ml-2 block  required_label"> Contact</label>
                     <input required
                            asp-for="Contact"
                            class=" w-full text-center "
@@ -74,7 +73,7 @@
                 </div>
 
                 <div class="mb-2  justify-self-end w-[50%] ">
-                    <label asp-for="Status" class="font-bold ml-2 block">Status</label>
+                        <label asp-for="Status" class="font-bold ml-2 block required_label">Status</label>
                     <select required
                             asp-for="Status"
                             class=" w-full text-center ">
@@ -88,7 +87,7 @@
             </div>
             <div class="flex justify-between gap-2 w-full">
                 <div class="mb-1 w-[80%]">
-                    <label asp-for="Category" class="font-bold  ml-2 block">Category</label>
+                        <label asp-for="Category" class="font-bold  ml-2 block required_label">Category</label>
 
                     <select required
                             asp-for="Category"
@@ -103,7 +102,7 @@
 
                 </div>
                 <div class="mb-2  justify-self-end w-[50%] ">
-                    <label asp-for="MaritalStatus" class="font-bold  ml-2 block">Marital Status</label>
+                        <label asp-for="MaritalStatus" class="font-bold  ml-2 block required_label">Marital Status</label>
 
                     <select required
                             asp-for="MaritalStatus"
@@ -118,7 +117,7 @@
            
 
             <div class="mb-1">
-                <label asp-for="Email" class="font-bold  ml-2 block"></label>
+                    <label asp-for="Email" class="font-bold  ml-2 block required_label"></label>
                 <input required
                        asp-for="Email"
                        class=" w-full text-center"
@@ -126,50 +125,42 @@
                     <span asp-validation-for="Email" class="text-red-700"></span>
 
             </div>
-
                 <div class="mb-1 ">
-                    <label asp-for="Salary" class="font-bold ml-2 block"></label>
+                    <label asp-for="Salary" class="font-bold ml-2 block  required_label"></label>
                     <input required
                            asp-for="Salary"
                            type="number"
                            class=" w-full text-center " />
-                                               <span asp-validation-for="Salary" class="text-red-700"></span>
-
-             
-
-
-            </div>
+                     <span asp-validation-for="Salary" class="text-red-700"></span>   
+ </div>
         </div>
         <div class="sm:w-[45%]">
             <div class="mb-1">
-                <label asp-for="Nationality" class="font-bold ml-2 block">Nationality</label>
+                    <label asp-for="Nationality" class="font-bold ml-2 block  required_label">Nationality</label>
                 <input required
                        asp-for="Nationality"
                        class=" w-full text-center " />
-                                           <span asp-validation-for="Nationality" class="text-red-700"></span>
+                     <span asp-validation-for="Nationality" class="text-red-700"></span>
 
             </div>
             <div class="mb-1">
-                <label asp-for="District" class="font-bold ml-2 block">
-
+                    <label asp-for="District" class="font-bold ml-2 block   required_label">
                     District Of Residence
                 </label>
                 <input required
                        asp-for="District"
                        class=" w-full text-center"
                        type="text" />
-                                           <span asp-validation-for="District" class="text-red-700"></span>
-
+                 <span asp-validation-for="District" class="text-red-700"></span>
             </div>
 
             <div class="mb-2">
-                <label asp-for="Village" class="font-bold ml-2 block">Village</label>
+                    <label asp-for="Village" class="font-bold ml-2 block  required_label">Village</label>
                 <input required
                        asp-for="Village"
                        class=" w-full text-center "
                        type="text" />
-                                           <span asp-validation-for="Village" class="text-red-700"></span>
-
+                      <span asp-validation-for="Village" class="text-red-700"></span>
             </div>
             <div class="mb-2">
                 <label asp-for="Religion" class="font-bold ml-2 block">Religion</label>
@@ -177,11 +168,8 @@
                        class=" w-full text-center "
                        type="text" />
             </div>
-         
-
-
                 <div class="mb-1 ">
-                    <label asp-for="Qualification" class="font-bold ml-2 block"></label>
+                    <label asp-for="Qualification" class="font-bold ml-2 block  required_label"></label>
                     <select required
                             asp-for="Qualification"
                             class=" w-full text-center">
@@ -191,7 +179,7 @@
                         <option>Certificate</option>
                         <option>Other</option>
                     </select>
-                                        <span asp-validation-for="Qualification" class="text-red-700"></span>
+                   <span asp-validation-for="Qualification" class="text-red-700"></span>
 
                 </div>
             <div class="mb-1 ">

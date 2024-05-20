@@ -16,18 +16,20 @@
 
 <div class="w-[40%] m-auto  mt-7 requirement_form">
     <form method="post" action="CreateAsset" class="h-25  row">
-        
-            <div class="mb-1">
-                <label asp-for="Name" class="font-bold text-[0.97em]  ml-2 block">Name</label>
+        <div asp-validation-summary="All" class="text-red-700 text-[0.6em] font-bold list-disc"></div>
+
+        <div class="mb-1">
+            <label asp-for="Name" class="font-bold text-[0.97em]  ml-2 block  required_label">Name</label>
                 <input required
                    asp-for="Name"
                 placeholder="asset name"
                 class=" w-full text-center"
                 type="text"
                 />
+           <span asp-validation-for="Name" class="text-red-700"></span>
             </div>
             <div class="mb-1">
-            <label asp-for="Description" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="Description" class="font-bold text-[0.97em]  ml-2 block  required_label">
                     Description
                 </label>
             <input asp-for="Description"
@@ -36,9 +38,11 @@
                 class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
                 type="text"
                 />
+           <span asp-validation-for="Description" class="text-red-700"></span>
+
             </div>
             <div class="mb-2">
-            <label asp-for="AssetValue" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="AssetValue" class="font-bold text-[0.97em]  ml-2 block  required_label">
                     Purchase value
                 </label>
                 <input required
@@ -47,9 +51,11 @@
                 placeholder="asset value"
                 class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
                 />
+          <span asp-validation-for="AssetValue" class="text-red-700"></span>
+
             </div>
             <div class="mb-1">
-            <label asp-for="Supplier" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="Supplier" class="font-bold text-[0.97em]  ml-2 block  required_label">
                     Supplier
                 </label>
                 <input required
@@ -58,9 +64,11 @@
                 class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
                 type="text"
                 />
+                                            <span asp-validation-for="Supplier" class="text-red-700"></span>
+
             </div>
             <div class="mb-1">
-            <label asp-for="SupplierContact" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="SupplierContact" class="font-bold text-[0.97em]  ml-2 block  required_label">
                     Supplier Contact
                 </label>
                 <input required
@@ -69,10 +77,12 @@
                 class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
                 type="text"
                 />
+                     <span asp-validation-for="SupplierContact" class="text-red-700"></span>
+
             </div>
             <div class="mt-3 text-white   font-bold w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-indigo-800">
-            <input class="uppercase text-yellow-100  w-[20%]"
+            <input class="uppercase text-yellow-100  md:w-[20%]  w-[60%]"
                        type="submit" />
             </div>
 
@@ -80,3 +90,8 @@
 
         </form>
 </div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

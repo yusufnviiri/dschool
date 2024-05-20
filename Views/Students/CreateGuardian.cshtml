@@ -20,11 +20,13 @@
 
 <div class=" mt-7 mx-auto w-[70%] ">
     <form method="post" action="CreateGuardian" class="h-25  row">
+        <div asp-validation-summary="All" class="text-red-700 text-[0.6em] font-bold list-disc"></div>
+
 
           <div class="flex  w-full gap-6 flex-auto flex-grow-1 m-auto">
             <div class="sm:w-[45%]">
               <div class="mb-1">
-                <label asp-for="Guardian.FirstName" class="font-bold ml-2 block">First Name</label>
+                    <label asp-for="Guardian.FirstName" class="font-bold ml-2 block  required_label">First Name</label>
                 <input
                     asp-for="Guardian.FirstName"
                   required
@@ -32,20 +34,24 @@
                   class=" sm:w-full text-center"
                   type="text"
                 />
+                                    <span asp-validation-for="Guardian.FirstName" class="text-red-700"></span>
+
               </div>
               <input hidden  asp-for="Student.StudentId"/>
               <div class="mb-1">
-                <label asp-for="Guardian.LastName" class="font-bold  ml-2 block">Last Name</label>
+                    <label asp-for="Guardian.LastName" class="font-bold  ml-2 block  required_label">Last Name</label>
                 <input
                   required
                asp-for="Guardian.LastName" 
                   class=" w-full text-center"
                   type="text"
                 />
+                                    <span asp-validation-for="Guardian.LastName" class="text-red-700"></span>
+
               </div>
 
               <div class="mb-2">
-                <label asp-for="Guardian.Village"  class="font-bold ml-2 block">Village</label>
+                    <label asp-for="Guardian.Village" class="font-bold ml-2 block  required_label">Village</label>
                 <input
                   required
             asp-for="Guardian.Village" 
@@ -53,9 +59,11 @@
                   class=" w-full text-center "
                   type="text"
                 />
+                                    <span asp-validation-for="Guardian.Village" class="text-red-700"></span>
+
               </div>
               <div class="mb-2">
-                <label  asp-for="Guardian.District"  class="font-bold ml-2 block">
+                    <label asp-for="Guardian.District" class="font-bold ml-2 block  required_label">
                 
                    District
                 </label>
@@ -65,11 +73,13 @@
                   class=" w-full text-center "
                   type="text"
                 />
+                                    <span asp-validation-for="Guardian.District" class="text-red-700"></span>
+
               </div>
             </div>
             <div class="sm:w-[45%]">
               <div class="mb-1">
-                <label asp-for="Guardian.Relationship" class="font-bold ml-2 block">Relationship</label>
+                    <label asp-for="Guardian.Relationship" class="font-bold ml-2 block  required_label">Relationship</label>
                 <select
                   required
                asp-for="Guardian.Relationship" 
@@ -85,20 +95,24 @@
                   <option>Next of kin</option>
                   <option> Friend</option>
                 </select>
+                                    <span asp-validation-for="Guardian.Relationship" class="text-red-700"></span>
+
               </div>
 
               <div class="mb-1  ">
-                <label  asp-for="Guardian.Contact"  class="font-bold ml-2 block"> Contact</label>
+                    <label asp-for="Guardian.Contact" class="font-bold ml-2 block  required_label"> Contact</label>
                 <input
                   required
                 asp-for="Guardian.Contact" 
                   class=" w-full text-center "
                   type="text"
                 />
+                                    <span asp-validation-for="Guardian.Contact" class="text-red-700"></span>
+
               </div>
 
               <div class="mb-2">
-                <label  asp-for="Guardian.Email"  class="font-bold ml-2 block">Email</label>
+                <label  asp-for="Guardian.Email"  class="font-bold ml-2 block  required_label">Email</label>
                 <input
                   required
                   asp-for="Guardian.Email" 
@@ -108,12 +122,14 @@
               </div>
 
               <div class="mb-2">
-                <label asp-for="Guardian.PlaceofOrigin"  class="font-bold ml-2 block"> Place of Origin</label>
+                    <label asp-for="Guardian.PlaceofOrigin" class="font-bold ml-2 block  required_label"> Place of Origin</label>
                 <input
                 asp-for="Guardian.PlaceofOrigin" 
                   class=" w-full text-center "
                   type="text"
                 />
+                    <span asp-validation-for="Guardian.PlaceofOrigin" class="text-red-700"></span>
+
               </div>
             </div>
           </div>
@@ -123,9 +139,14 @@
     text-center  bg-green-700 rounded hover:bg-slate-700"
           >
             <input
-              class="uppercase text-yellow-100  w-[20%]"
+              class="uppercase text-yellow-100  w-[60%] md:w-[20%] "
               type="submit"
             />
           </div>
         </form>
       </div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

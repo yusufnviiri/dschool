@@ -16,9 +16,10 @@
 
 <div class="w-[40%] m-auto  mt-7 requirement_form">
     <form method="post" action="CreateExpense" class="h-25  row">
-       
+
+        <div asp-validation-summary="All" class="text-red-700 text-[0.6em] font-bold list-disc"></div>       
             <div class="mb-1">
-                <label asp-for="Category" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="Category" class="font-bold text-[0.97em]  ml-2 block  required_label">
                     Category
                 </label>
                 <select required
@@ -31,9 +32,11 @@
                     <option>Food/Refreshements</option>
                     <option>Other</option>
                 </select>
+      <span asp-validation-for="Category" class="text-red-700"></span>
+
             </div>
             <div class="mb-1">
-            <label asp-for="Description" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="Description" class="font-bold text-[0.97em]  ml-2 block  required_label">
                     Description
                 </label>
                 <input required
@@ -42,9 +45,11 @@
                 class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
                 type="text"
                 />
+                                    <span asp-validation-for="Description" class="text-red-700"></span>
+
             </div>
             <div class="mb-2">
-            <label asp-for="Amount" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="Amount" class="font-bold text-[0.97em]  ml-2 block  required_label">
                     Amount
                 </label>
                 <input required
@@ -53,9 +58,11 @@
                 placeholder="charge"
                 class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
                 />
+                                    <span asp-validation-for="Amount" class="text-red-700"></span>
+
             </div>
             <div class="mb-1">
-            <label asp-for="PaidBy" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="PaidBy" class="font-bold text-[0.97em]  ml-2 block  required_label">
                     Paid By
                 </label>
                 <input required
@@ -64,6 +71,8 @@
                 class=" w-full  text:[0.48em] sm:text-[1.23em] py-3 text-center"
                 type="text"
                 />
+                                    <span asp-validation-for="PaidBy" class="text-red-700"></span>
+
             </div>
             <div class="mb-1">
             <label asp-for="RecievedBy" class="font-bold text-[0.97em]  ml-2 block">
@@ -81,9 +90,14 @@
 
         <div class="mt-3 sm:mt-8 text-white   font-bold w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-indigo-800">
-            <input class="  px-4 uppercase text-yellow-100  w-[20%]"
+            <input class="  px-4 uppercase text-yellow-100  md:w-[20%] w-[60%]"
                    type="submit" />
         </div>
-
         </form>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
