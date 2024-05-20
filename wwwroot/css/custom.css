@@ -43,10 +43,13 @@ body {
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 40%,rgba(2,0,36,1) 50%,rgba(9,9,121,1) 100%); */
 }
 
-input:required ::before{
-    content:"*";
-    color:red;
-    display:inline;
+.required_label::after {
+    content: "*";
+    color: red;
+    display: inline;
+    width:10px;
+    height:10px;
+    margin-left:10px;
 }
 textarea {
     background-color: rgb(230, 237, 241);
