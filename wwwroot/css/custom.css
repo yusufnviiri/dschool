@@ -331,7 +331,6 @@ td a,td a span{
         font-size: 15px;
     }
 }
-#visitor_header{
-    margin-left:4em;
-
+#header-vistor {
+    margin-left: 1.5em;
 }

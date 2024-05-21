@@ -201,12 +201,13 @@
 
         <div class="navbar bg-cyan-950">
 
-                        <div id="visitor_header" class="header">
-                    <div class="dropdown" data-dropdown-vistor>
+
+            <div id="header-vistor" class="header">
+                    <div class="dropdown" data-dropdown-visitor>
                             <button data-dropdown-vistor-button class="link">
                                 Menu
                             </button>
-                            <div class="dropdown-menu">
+                    <div id="dropdown-menu-vistor" class="dropdown-menu">
                                 <ul class=" ">
                                     <li class="nav-item">
                                         <a class="navbar-brand" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
@@ -219,7 +220,7 @@
                             </div>
 
                         </div></div>
-            <button onclick="toggleHeader()" id="bars" class="bars">
+            <button onclick="toggleVistorHeader()" id="bars" class="bars">
                 <heroicon class="ml-2 -mr-0.5 h-6 w-6 " kind="Solid" name="Bars4" />
             </button>
         </div>
