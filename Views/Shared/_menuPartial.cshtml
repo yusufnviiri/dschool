@@ -7,15 +7,19 @@
     var user = Context.User;
 
     // Check if the user is authenticated
-    if (user.Identity.IsAuthenticated)
-    {
-        <div class="navbar bg-cyan-950">
+  
+        <p> funk me  @user.FindFirst(ClaimTypes.Role)?.Value.ToUpper()</p>
+
+                @if (user.Identity.IsAuthenticated && (user.FindFirst(ClaimTypes.Role)?.Value.ToUpper() == "DIRECTOR" || user.FindFirst(ClaimTypes.Role)?.Value.ToUpper() != "BURSER"))
+                {
+
+                    <div class="navbar bg-cyan-950">
             <a class="navbar-brand  ml-9" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
 
             <div id="header" class="header">
 
-                @if  (user.FindFirst(ClaimTypes.Role)?.Value.ToUpper() != "VISITOR" || user.FindFirst(ClaimTypes.Role)?.Value.ToUpper() != "PARENT")
-                {
+
+
                     <div class="dropdown" data-dropdown>
                         <button data-dropdown-button class="link ">
                             Students
@@ -181,10 +185,22 @@
                     </div>
 
                     </div>
+                </div>
+            </div>
+                
+                
+                
                 }
             else
                     {
-                        <div class="dropdown" data-dropdown>
+
+                    <div class="navbar bg-cyan-950">
+                        <a class="navbar-brand  ml-9" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
+
+                        <div id="header" class="header">
+
+
+                    <div class="dropdown" data-dropdown>
                             <button data-dropdown-button class="link">
                                 menu
                             </button>
@@ -200,7 +216,7 @@
                                 </ul>
                             </div>
 
-                        </div>
+                        </div></div>
 
                     }
 
@@ -212,9 +228,7 @@
 
             <button onclick="toggleHeader()" id="bars" class="bars">
                 <heroicon class="ml-2 -mr-0.5 h-6 w-6 " kind="Solid" name="Bars4" />
-            </button>
-
-        </div>
+            </button>    
 
     }
    
