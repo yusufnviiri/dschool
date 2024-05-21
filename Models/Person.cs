@@ -28,8 +28,7 @@ namespace victors.Models
         [Required(ErrorMessage = "Status missing")]
 
         public string Status { get; set; } = string.Empty;
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress]
+       
         public string Email { get; set; }= string.Empty;
         public string Gender { get; set; } = string.Empty;
         public string RegistrationDate { get; set; } = $"{DateTime.Now.Day}/{DateTime.Now.Month}/{DateTime.Now.Year}";
