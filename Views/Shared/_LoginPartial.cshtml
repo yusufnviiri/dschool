@@ -29,11 +29,7 @@
             </li>
 
         }
-        else
-        { 
-            <a class="px-3 " asp-controller="Home" asp-action="Index"
-               title="Welcome"> Role:     <span class="px-2  text-yellow-500">@logged_user.FindFirst(ClaimTypes.Role)?.Value</span>  </a>
-        }
+       
     }
     else 
     {      
