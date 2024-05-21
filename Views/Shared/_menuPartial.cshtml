@@ -7,141 +7,141 @@
     var user = Context.User;
 
     // Check if the user is authenticated
+
   
-        <p> funk me  @user.FindFirst(ClaimTypes.Role)?.Value.ToUpper()</p>
 
-                @if (user.Identity.IsAuthenticated && (user.FindFirst(ClaimTypes.Role)?.Value.ToUpper() == "DIRECTOR" || user.FindFirst(ClaimTypes.Role)?.Value.ToUpper() != "BURSER"))
-                {
+    @if (user.Identity.IsAuthenticated && (user.FindFirst(ClaimTypes.Role)?.Value.ToUpper() == "DIRECTOR" || user.FindFirst(ClaimTypes.Role)?.Value.ToUpper() == "BURSER"))
+    {
 
-                    <div class="navbar bg-cyan-950">
+        <div class="navbar bg-cyan-950">
             <a class="navbar-brand  ml-9" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
 
             <div id="header" class="header">
 
 
 
-                    <div class="dropdown" data-dropdown>
-                        <button data-dropdown-button class="link ">
-                            Students
-                        </button>
-                        <div class="dropdown-menu">
+                <div class="dropdown" data-dropdown>
+                    <button data-dropdown-button class="link ">
+                        Students
+                    </button>
+                    <div class="dropdown-menu">
 
-                            <ul class=" ">
-                                <li class="nav-item">
-                                    <a class="navbar-brand" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
-                                </li>
+                        <ul class=" ">
+                            <li class="nav-item">
+                                <a class="navbar-brand" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
+                            </li>
 
-                                <li class="nav-item ">
-                                    <a class="nav-link" asp-controller="Students" asp-action="CreateStudent">New Student</a>
+                            <li class="nav-item ">
+                                <a class="nav-link" asp-controller="Students" asp-action="CreateStudent">New Student</a>
 
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Students" asp-action="AllRequiremntsPayments">Paid Requirements</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Students" asp-route-id="0" asp-action="NewSchoolRequirement">New Requirement</a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a class="nav-link" asp-controller="Students" asp-action="AllFeesPayments">Fees Payment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Students" asp-action="AllRequiremntsPayments">Paid Requirements</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Students" asp-route-id="0" asp-action="NewSchoolRequirement">New Requirement</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" asp-controller="Students" asp-action="AllFeesPayments">Fees Payment</a>
 
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Students" asp-action="AllGuardian">Parents</a>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                    <div class="dropdown" data-dropdown>
-                        <button data-dropdown-button class="link">
-                            Staff
-                        </button>
-                        <div class="dropdown-menu">
-                            <ul class=" ">
-
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" asp-controller="Staffs" asp-action="GetAllStaff">Staff Members</a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a class="nav-link" asp-controller="Staffs" asp-action="Create">New Staff</a>
-                                </li>
-
-                                <li class="nav-item ">
-                                    <a class="nav-link" asp-controller="Staffs" asp-action="GetAllWages">Staff Wages</a>
-
-                                </li>
-
-                            </ul>
-                        </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Students" asp-action="AllGuardian">Parents</a>
+                            </li>
+                        </ul>
 
                     </div>
 
-                    <div class="dropdown" data-dropdown>
-                        <button data-dropdown-button class="link">
-                            School
-                        </button>
-                        <div class="dropdown-menu">
-                            <ul class=" ">
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="SchoolAffairs" asp-action="GetWebFeedBackNotices"  asp-route-id="0">Web FeedBack</a>
+                </div>
+                <div class="dropdown" data-dropdown>
+                    <button data-dropdown-button class="link">
+                        Staff
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul class=" ">
 
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Students" asp-action="AllGuardian">Parents</a>
-                                </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="SchoolAffairs" asp-action="GetAllBooks">Books</a>
-                                </li>
-                                <li class="nav-item">
+                            <li class="nav-item ">
+                                <a class="nav-link" asp-controller="Staffs" asp-action="GetAllStaff">Staff Members</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" asp-controller="Staffs" asp-action="Create">New Staff</a>
+                            </li>
 
-                                    <a class="nav-link" asp-controller="SchoolAffairs" asp-action="Createbook">New Book</a>
-                                </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" asp-controller="Staffs" asp-action="GetAllWages">Staff Wages</a>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="SchoolAffairs" asp-action="GetNotices">Notices</a>
+                            </li>
 
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="SchoolAffairs" asp-route-id="0" asp-action="CreateNotice">New Notice</a>
-
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="SchoolAffairs" asp-action="GetAssets">Assets</a>
-
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="SchoolAffairs" asp-route-id="0" asp-action="CreateAsset">New Asset</a>
-
-                                </li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                    <div class="dropdown" data-dropdown>
-                        <button data-dropdown-button class="link">
-                            Academics
-                        </button>
-                        <div class="dropdown-menu">
-                            <ul class=" ">
-                                <li class="nav-item">
-                                    <a class=" nav-link  " asp-controller="Academic" asp-action="GetAllCourse">New Subject</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class=" nav-link  " asp-controller="Academic" asp-action="CreateCourse">New Subject</a>
-                                </li>
-                            </ul>
-                        </div>
-
+                        </ul>
                     </div>
 
-                    <div class="dropdown" data-dropdown>
-                        <button data-dropdown-button class="link">
+                </div>
+
+                <div class="dropdown" data-dropdown>
+                    <button data-dropdown-button class="link">
+                        School
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul class=" ">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="SchoolAffairs" asp-action="GetWebFeedBackNotices"  asp-route-id="0">Web FeedBack</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Students" asp-action="AllGuardian">Parents</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="SchoolAffairs" asp-action="GetAllBooks">Books</a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" asp-controller="SchoolAffairs" asp-action="Createbook">New Book</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="SchoolAffairs" asp-action="GetNotices">Notices</a>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="SchoolAffairs" asp-route-id="0" asp-action="CreateNotice">New Notice</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="SchoolAffairs" asp-action="GetAssets">Assets</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="SchoolAffairs" asp-route-id="0" asp-action="CreateAsset">New Asset</a>
+
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="dropdown" data-dropdown>
+                    <button data-dropdown-button class="link">
+                        Academics
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul class=" ">
+                            <li class="nav-item">
+                                <a class=" nav-link  " asp-controller="Academic" asp-action="GetAllCourse">New Subject</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class=" nav-link  " asp-controller="Academic" asp-action="CreateCourse">New Subject</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="dropdown" data-dropdown>
+                    <button data-dropdown-button class="link">
                         Ledgers
 
                     </button>
@@ -184,18 +184,23 @@
                         </ul>
                     </div>
 
-                    </div>
                 </div>
             </div>
-                
-                
-                
-                }
-            else
-                    {
 
-                    <div class="navbar bg-cyan-950">
-                        <a class="navbar-brand  ml-9" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
+
+            <button onclick="toggleHeader()" id="bars" class="bars">
+                <heroicon class="ml-2 -mr-0.5 h-6 w-6 " kind="Solid" name="Bars4" />
+            </button>
+        </div>
+
+
+
+    }
+    else
+    {
+
+        <div class="navbar bg-cyan-950">
+            <a class="navbar-brand  ml-9" aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
 
                         <div id="header" class="header">
 
@@ -217,19 +222,18 @@
                             </div>
 
                         </div></div>
-
-                    }
-
-
-
-
-            </div>
-
-
             <button onclick="toggleHeader()" id="bars" class="bars">
                 <heroicon class="ml-2 -mr-0.5 h-6 w-6 " kind="Solid" name="Bars4" />
-            </button>    
+            </button>
+        </div>
+
+            }
+
+
+
+
+          
+  
 
     }
    
-}
