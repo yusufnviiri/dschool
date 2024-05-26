@@ -38,13 +38,13 @@ else
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th class="table_hide">Grade</th>
-                <th>class</th>
-                <th> Section</th>
                 <th> Term</th>
+                <th> Section</th>
+              
                 <th> Gender</th>
                 <th class="table_hide"> Residance</th>
-                <th>Actions</th>
-                <th>Delete</th>
+                <th>Approve</th>
+                <th>Reject</th>
 
             </tr>
         </thead>
@@ -54,7 +54,6 @@ else
                 <tr class="text-[0.7em] sm:text-[0.99em] ">
                     <td>
                         @student.StudentId
-
 
                     </td>
                     <td>
@@ -68,10 +67,11 @@ else
                             @student.Grade
                     </td>
                                       <td>
-@student.Section
+                        @student.Term
+
                     </td>
                     <td>
-       @student.Term
+                        @student.Section
                     </td>
                     <td>
                             @student.Gender
@@ -82,14 +82,14 @@ else
 
                     </td>
                     <td>
-                        <a asp-controller="Students" asp-action="StudentPayments" asp-route-id=" @student.StudentFromWebsiteId" class="underline uppercase font-bold underline-offset-2 text-sky-800 text-[0.88em] px-3 ">
-                            Details
+                        <a asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentFromWebsiteId" class=" h-[90%] uppercase bg-teal-900 p-1  font-bold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
+                            approve
                         </a>
                     </td>
 
                     <td>
                         <a asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentFromWebsiteId" class=" uppercase bg-red-600 p-1  font-bold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
-                            Delete
+                            reject
                         </a>
                     </td>
 
