@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using victors.Actions;
 using victors.Models;
@@ -10,9 +11,6 @@ namespace victors.Controllers
 
     public class HomeController : Controller
     {
-
-
-
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -35,7 +33,8 @@ namespace victors.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+   
 
-    
+
     }
 }

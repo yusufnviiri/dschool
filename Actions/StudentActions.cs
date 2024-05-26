@@ -423,5 +423,15 @@ if (student.fullUniform == true)
             await _db.SaveChangesAsync();
         }
 
+        public async Task CreateWebStudent(StudentFromWebsite webstudent,ApplicationDbContext _db)
+        {
+            webstudent.Status = "active";
+            webstudent.Stream = "Glorious";
+            webstudent.SchoolFees = 0;
+            await _db.studentsFromWebsite.AddAsync(webstudent);
+            await _db.SaveChangesAsync();
+
+        }
+
     }
 }

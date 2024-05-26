@@ -16,7 +16,7 @@ namespace victors.Models
         [Required(ErrorMessage = "District is required")]
 
         public string District { get; set; } = string.Empty;
-        [Required(ErrorMessage = "Student contact is missing")]
+        [Required(ErrorMessage = "Contact is missing")]
 
         public string Contact { get; set; } = string.Empty;
         [Required(ErrorMessage = "Missing Nationality")]
@@ -25,7 +25,6 @@ namespace victors.Models
         public int Age { get; set; }
         public String Religion { get; set; }= string.Empty;
         public DateTime Birthdate { get; set; } = DateTime.Now.Date;
-        [Required(ErrorMessage = "Status missing")]
 
         public string Status { get; set; } = string.Empty;
        

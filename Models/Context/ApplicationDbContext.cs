@@ -65,7 +65,7 @@ namespace victors.Models.Context
 
     }
 
-
+        public DbSet<StudentFromWebsite> studentsFromWebsite { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<AcademicJouney> academicJouneys { get; set; }
         public DbSet<Guardian> guardians { get; set; }

@@ -1,0 +1,101 @@
+﻿
+
+@{
+
+    ViewBag.Title = "Online Applications";
+}
+@model ICollection<StudentFromWebsite>
+
+@if (Model.Count == 0)
+{
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center sm:mb-5 lg:mb-11 ">
+        <h4 class=" ">  STUDENT INFORMATION</h4>
+
+
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent"> New Student</a>
+    </div>
+}
+else
+{
+
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+ text-center ">
+
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
+
+        <h4 class=" ">  STUDENTS</h4>
+        <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
+    </div>
+
+
+
+    <table class="w-full m-auto text-lime-900  ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th class="table_hide">Grade</th>
+                <th>class</th>
+                <th> Section</th>
+                <th> Term</th>
+                <th> Gender</th>
+                <th class="table_hide"> Residance</th>
+                <th>Actions</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr class="text-[0.7em] sm:text-[0.99em] ">
+                    <td>
+                        @student.StudentId
+
+
+                    </td>
+                    <td>
+@student.FirstName
+
+                    </td>
+                    <td>
+     @student.LastName
+                    </td>
+                    <td class="table_hide">
+                            @student.Grade
+                    </td>
+                                      <td>
+@student.Section
+                    </td>
+                    <td>
+       @student.Term
+                    </td>
+                    <td>
+                            @student.Gender
+                    </td>
+                 
+                    <td class="table_hide">
+  @student.Village
+
+                    </td>
+                    <td>
+                        <a asp-controller="Students" asp-action="StudentPayments" asp-route-id=" @student.StudentFromWebsiteId" class="underline uppercase font-bold underline-offset-2 text-sky-800 text-[0.88em] px-3 ">
+                            Details
+                        </a>
+                    </td>
+
+                    <td>
+                        <a asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentFromWebsiteId" class=" uppercase bg-red-600 p-1  font-bold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
+                            Delete
+                        </a>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}

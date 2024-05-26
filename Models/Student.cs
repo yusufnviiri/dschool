@@ -15,7 +15,6 @@ namespace victors.Models
         [Required(ErrorMessage = "Term is required")]
 
         public string Term { get; set; } = string.Empty;
-        [Required(ErrorMessage = "Stream is required")]
 
         public string Stream { get; set; } = string.Empty;
         [Required(ErrorMessage = "School Fees is required")]
