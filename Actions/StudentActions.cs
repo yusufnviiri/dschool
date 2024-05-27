@@ -432,6 +432,11 @@ if (student.fullUniform == true)
             await _db.SaveChangesAsync();
 
         }
-
+        public async Task RejectWebStudent(int id,ApplicationDbContext _db)
+        {
+            var student = await _db.studentsFromWebsite.FindAsync(id);
+            _db.Remove(student);
+            await _db.SaveChangesAsync();
+        }
     }
 }

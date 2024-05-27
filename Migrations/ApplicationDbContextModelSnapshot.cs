@@ -47,25 +47,25 @@ namespace victors.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9813c4c4-4d0d-4802-ad00-feee77c4e674",
+                            Id = "0b8c6cc9-9ccd-456b-a210-52c022208b9d",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "24a2a1e9-7976-4b60-a552-dfe2a194a168",
+                            Id = "afbe7217-df0f-43ba-8655-f6c75f9c35d8",
                             Name = "Parent",
                             NormalizedName = "PARENT"
                         },
                         new
                         {
-                            Id = "dfac0cb8-f28a-403f-bbf4-021490d735f2",
+                            Id = "af25392b-f0af-4aad-b90f-22bedb0da7ed",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "c9fcde5e-797d-4d3f-9e43-b5877fa10772",
+                            Id = "d54a0b7b-69c8-4edf-8c2f-b596f3589e03",
                             Name = "Burser",
                             NormalizedName = "BURSER"
                         },
@@ -932,10 +932,6 @@ namespace victors.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("District")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -1011,10 +1007,102 @@ namespace victors.Migrations
                     b.HasKey("StudentId");
 
                     b.ToTable("Students");
+                });
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Student");
+            modelBuilder.Entity("victors.Models.StudentFromWebsite", b =>
+                {
+                    b.Property<int>("StudentFromWebsiteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.UseTphMappingStrategy();
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Approved")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("Birthdate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Contact")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("District")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Grade")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nationality")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RegistrationDate")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Religion")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("SchoolFees")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Section")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Stream")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Term")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Village")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.Property<string>("birthDateString")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<decimal>("charge")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("fullUniform")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("StudentFromWebsiteId");
+
+                    b.ToTable("studentsFromWebsite");
                 });
 
             modelBuilder.Entity("victors.Models.Uniform", b =>
@@ -1155,7 +1243,7 @@ namespace victors.Migrations
                         {
                             Id = "51009a63-58e3-45f0-b9b3-8442c0c3d847",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a391edb3-9655-4dc7-9570-a6c8f29b22a6",
+                            ConcurrencyStamp = "072dcd0d-9219-41ea-a414-0693aaa04c2c",
                             Email = "director@victors",
                             EmailConfirmed = false,
                             FirstName = "Director",
@@ -1163,9 +1251,9 @@ namespace victors.Migrations
                             LastName = "Director",
                             LockoutEnabled = false,
                             NormalizedUserName = "DIRECTOR@VICTORS",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHDx221JTXMvJJMyu65stNnzFSBpx08gJleA2vogpnnWvM3pAt7fnUDEDyEVP5hOxA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPhY/KTHULQgKu3pZUKb8NlySJEl1xNPUYrw3/ZtKAiIBXRGJuEYHs8QYzvAe1FGtg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8a588c34-624b-4d5f-90fa-3e8362b84863",
+                            SecurityStamp = "b3549ec0-10c5-4d32-8e87-1015e29c7c1a",
                             TwoFactorEnabled = false,
                             UserName = "Director@victors"
                         });
@@ -1214,19 +1302,6 @@ namespace victors.Migrations
                     b.HasIndex("StaffId");
 
                     b.ToTable("wages");
-                });
-
-            modelBuilder.Entity("victors.Models.StudentFromWebsite", b =>
-                {
-                    b.HasBaseType("victors.Models.Student");
-
-                    b.Property<bool>("Approved")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("StudentFromWebsiteId")
-                        .HasColumnType("int");
-
-                    b.HasDiscriminator().HasValue("StudentFromWebsite");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

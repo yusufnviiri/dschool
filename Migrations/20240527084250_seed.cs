@@ -475,6 +475,42 @@ namespace victors.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "studentsFromWebsite",
+                columns: table => new
+                {
+                    StudentFromWebsiteId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Approved = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Section = table.Column<string>(type: "longtext", nullable: false),
+                    Grade = table.Column<string>(type: "longtext", nullable: false),
+                    Year = table.Column<int>(type: "int", nullable: false),
+                    Term = table.Column<string>(type: "longtext", nullable: false),
+                    Stream = table.Column<string>(type: "longtext", nullable: false),
+                    SchoolFees = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    birthDateString = table.Column<string>(type: "longtext", nullable: false),
+                    charge = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    fullUniform = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    FirstName = table.Column<string>(type: "longtext", nullable: false),
+                    LastName = table.Column<string>(type: "longtext", nullable: false),
+                    Village = table.Column<string>(type: "longtext", nullable: false),
+                    District = table.Column<string>(type: "longtext", nullable: false),
+                    Contact = table.Column<string>(type: "longtext", nullable: false),
+                    Nationality = table.Column<string>(type: "longtext", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    Religion = table.Column<string>(type: "longtext", nullable: false),
+                    Birthdate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Status = table.Column<string>(type: "longtext", nullable: false),
+                    Email = table.Column<string>(type: "longtext", nullable: false),
+                    Gender = table.Column<string>(type: "longtext", nullable: false),
+                    RegistrationDate = table.Column<string>(type: "longtext", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_studentsFromWebsite", x => x.StudentFromWebsiteId);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "UniformPayments",
                 columns: table => new
                 {
@@ -655,17 +691,17 @@ namespace victors.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "15c5ecae-8cff-4e42-9919-82e49201c2dd", null, "Parent", "PARENT" },
-                    { "1dc752e7-e3a9-496d-ba37-86d00aae1be7", null, "Administrator", "ADMINISTRATOR" },
+                    { "0b8c6cc9-9ccd-456b-a210-52c022208b9d", null, "Visitor", "VISITOR" },
                     { "253a7f33-4741-4d5d-90ec-c7353f66403d", "253a7f33-4741-4d5d-90ec-c7353f66403d", "Director", "DIRECTOR" },
-                    { "e454ea44-e169-45e6-9b66-6a861a274752", null, "Visitor", "VISITOR" },
-                    { "f9895f3b-095e-45c5-9a19-631583e6e0db", null, "Burser", "BURSER" }
+                    { "af25392b-f0af-4aad-b90f-22bedb0da7ed", null, "Administrator", "ADMINISTRATOR" },
+                    { "afbe7217-df0f-43ba-8655-f6c75f9c35d8", null, "Parent", "PARENT" },
+                    { "d54a0b7b-69c8-4edf-8c2f-b596f3589e03", null, "Burser", "BURSER" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Function", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "51009a63-58e3-45f0-b9b3-8442c0c3d847", 0, "8d9c3a06-50fd-4806-b8e2-6170d995c46d", "director@victors", false, "Director", "Director", "Director", false, null, null, "DIRECTOR@VICTORS", "AQAAAAIAAYagAAAAECRIPRmyUsmKseXC//Ytu7ijCYSEbKbZqMXgX158z0pnxdUwXHdCfJuFxsvpgX7m0w==", null, false, "dafe9159-37d7-4433-9642-2b09bebdf45c", false, "Director@victors" });
+                values: new object[] { "51009a63-58e3-45f0-b9b3-8442c0c3d847", 0, "072dcd0d-9219-41ea-a414-0693aaa04c2c", "director@victors", false, "Director", "Director", "Director", false, null, null, "DIRECTOR@VICTORS", "AQAAAAIAAYagAAAAEPhY/KTHULQgKu3pZUKb8NlySJEl1xNPUYrw3/ZtKAiIBXRGJuEYHs8QYzvAe1FGtg==", null, false, "b3549ec0-10c5-4d32-8e87-1015e29c7c1a", false, "Director@victors" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -786,6 +822,9 @@ namespace victors.Migrations
 
             migrationBuilder.DropTable(
                 name: "Students");
+
+            migrationBuilder.DropTable(
+                name: "studentsFromWebsite");
 
             migrationBuilder.DropTable(
                 name: "UniformPayments");

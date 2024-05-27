@@ -38,9 +38,23 @@ namespace victors.Controllers
 
         public async Task<IActionResult> RejectApplication(int id)
         {
+            await studentActions.RejectWebStudent(id, _db);           
+            return RedirectToAction("PendingApplications");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CreateStudentFromWeb(int id)
+        {
             var student = await _db.studentsFromWebsite.FindAsync(id);
-            _db.Remove(student);
-            await _db.SaveChangesAsync();
+            return View(student);
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateStudentFromWeb(StudentFromWebsite studentData)
+        {
+            var newStudent = studentData;
+            Student newEntry = new Student();
+            await studentActions.createSudents(newEntry,_db);
+            await studentActions.RejectWebStudent(1, _db);
             return RedirectToAction("PendingApplications");
         }
     }
