@@ -34,5 +34,14 @@ namespace victors.Controllers
             var pendingStudents = await _db.studentsFromWebsite.ToListAsync();
             return View(pendingStudents);
         }
+      
+
+        public async Task<IActionResult> RejectApplication(int id)
+        {
+            var student = await _db.studentsFromWebsite.FindAsync(id);
+            _db.Remove(student);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("PendingApplications");
+        }
     }
 }

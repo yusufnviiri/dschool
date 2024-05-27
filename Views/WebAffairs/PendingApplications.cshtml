@@ -82,13 +82,13 @@ else
 
                     </td>
                     <td>
-                        <a asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentFromWebsiteId" class=" h-[90%] uppercase bg-teal-900 p-1  font-bold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
+                        <a asp-controller="WebAffairs" asp-action="DeleteStudent" asp-route-id=" @student.StudentId" class=" h-[90%] uppercase bg-teal-900 p-1  font-bold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
                             approve
                         </a>
                     </td>
 
                     <td>
-                        <a asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentFromWebsiteId" class=" uppercase bg-red-600 p-1  font-bold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
+                        <a asp-controller="WebAffairs" asp-action="RejectApplication" asp-route-id=" @student.StudentId" class=" uppercase bg-red-600 p-1  font-bold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
                             reject
                         </a>
                     </td>
