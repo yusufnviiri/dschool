@@ -76,7 +76,7 @@ namespace victors.Controllers
             Gender=studentData.Gender,
             };
                       await studentActions.createSudents(student,_db);
-            await studentActions.RejectWebStudent(1, _db);
+            await studentActions.RejectWebStudent(studentData.StudentFromWebsiteId, _db);
             return RedirectToAction("PendingApplications");
         }
     }
