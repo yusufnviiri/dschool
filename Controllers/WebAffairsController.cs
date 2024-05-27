@@ -28,7 +28,8 @@ namespace victors.Controllers
         {
 
             await studentActions.CreateWebStudent(webstudent, _db);
-            return RedirectToAction("PendingApplications");
+
+            return Redirect("https://victorsnestchristianschool.net/");
         }
         [HttpGet]
         public async Task<IActionResult> PendingApplications()
