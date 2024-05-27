@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Mysqlx.Notice;
 using System.Diagnostics;
 using victors.Actions;
 using victors.Models;
 using victors.Models.Context;
 using victors.Models.Helper;
+using static System.Collections.Specialized.BitVector32;
 
 namespace victors.Controllers
 {
@@ -52,8 +54,28 @@ namespace victors.Controllers
         public async Task<IActionResult> CreateStudentFromWeb(StudentFromWebsite studentData)
         {
             var newStudent = studentData;
-            Student newEntry = new Student();
-            await studentActions.createSudents(newEntry,_db);
+            Student student = new()
+            {
+            FirstName=studentData.FirstName,
+            LastName=studentData.LastName,
+            Term=studentData.Term,
+            Section=studentData.Section,
+            Status=studentData.Status,
+            Stream=studentData.Stream,
+            Grade=studentData.Grade,
+            SchoolFees=studentData.SchoolFees,
+            Nationality=studentData.Nationality,
+            Village=studentData.Village,
+            Religion=studentData.Religion,
+            Birthdate=studentData.Birthdate,
+            fullUniform=studentData.fullUniform,
+            charge=studentData.charge,
+            District=studentData.District,
+            Contact=studentData.Contact,
+            Age=studentData.Age,
+            Gender=studentData.Gender,
+            };
+                      await studentActions.createSudents(student,_db);
             await studentActions.RejectWebStudent(1, _db);
             return RedirectToAction("PendingApplications");
         }
