@@ -20,6 +20,10 @@ namespace victors.Controllers
 
         public IActionResult Index()
         {
+            return View();
+        }
+        public IActionResult Gate()
+        {
             return Redirect("https://victorsnestchristianschool.net/");
         }
 
