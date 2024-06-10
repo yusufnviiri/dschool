@@ -20,7 +20,7 @@ namespace victors.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return Redirect("https://victorsnestchristianschool.net/");
         }
 
         public IActionResult Privacy()
