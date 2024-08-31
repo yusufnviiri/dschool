@@ -18,9 +18,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 //Using Mysql
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 //Using Msql server
-//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 builder.Services.AddCors(options =>
@@ -88,7 +88,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
         //pattern: "{controller=Students}/{action=GetStudents}/{id?}");
-        pattern: "{controller=Home}/{action=Gate}/{id?}");
+        pattern: "{controller=Login}/{action=Login}/{id?}");
 
 if (app.Environment.IsDevelopment())
 {

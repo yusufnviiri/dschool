@@ -40,18 +40,18 @@ namespace victors.Models.Context
             var appUser = new User
             {
                 Id = DIRECTOR_ID,
-                Email = "director@victors",
+                Email = "director@byron",
                 EmailConfirmed = false,
                 FirstName = "Director",
                 LastName = "Director",
                 Function="Director",
-                UserName = "Director@victors",
-            NormalizedUserName ="DIRECTOR@VICTORS"
+                UserName = "Director@byron",
+            NormalizedUserName ="DIRECTOR@BYRON"
             };
 
             //set user password
             PasswordHasher<User> ph = new PasswordHasher<User>();
-            appUser.PasswordHash = ph.HashPassword(appUser, "director@victors");
+            appUser.PasswordHash = ph.HashPassword(appUser, "director@byron");
 
             //seed user
             modelBuilder.Entity<User>().HasData(appUser);
