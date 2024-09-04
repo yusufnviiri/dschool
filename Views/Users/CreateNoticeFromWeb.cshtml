@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_WebFeedBack.cshtml";
 }
 
-<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500 hidden  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500 hidden  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-11 ">
    
 
@@ -20,7 +20,7 @@
     <form method="post" action="CreateNoticeFromWeb"  class="h-25  row">
 
         <div class="mb-1">
-            <label asp-for="Title" class="font-bold text-[0.97em]  ml-2 block">Title</label>
+            <label asp-for="Title" class="font-semibold text-[0.97em]  ml-2 block">Title</label>
             <input required
                    asp-for="Title"
                    placeholder="title"
@@ -28,7 +28,7 @@
                    type="text" />
         </div>
         <div class="mb-1">
-            <label asp-for="Description" class="font-bold text-[0.97em]  ml-2 block">
+            <label asp-for="Description" class="font-semibold text-[0.97em]  ml-2 block">
                 Description
             </label>
 
@@ -38,7 +38,7 @@
         </div>
       
     
-        <div class="mt-3 text-white   font-bold w-full m-auto submit
+        <div class="mt-3 text-white   font-semibold w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-indigo-800">
             <input class="uppercase text-yellow-100  w-[20%]"
                    type="submit" />

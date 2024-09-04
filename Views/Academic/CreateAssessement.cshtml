@@ -3,7 +3,7 @@
 }
 @model AssessementJoinCourseJoinStudent
 
-<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
  text-center  ">
     <h4 class=" "> ASSESSEMENT FORM</h4>
 
@@ -21,14 +21,14 @@
                 <input hidden asp-for="PromotedStudent.StudentId" />
 
                 <div class="mb-2">
-                    <label asp-for="PromotedStudent.Term" class="font-bold ml-2 block">Term</label>
+                    <label asp-for="PromotedStudent.Term" class="font-semibold ml-2 block">Term</label>
                     <input asp-for="PromotedStudent.Term"
                            disabled
                            class="bg-sky-100 w-full text-center "
                            type="text" />
                 </div>
                 <div class="mb-1">
-                    <label asp-for="PromotedStudent.Section" class="font-bold ml-2 block">Section</label>                   
+                    <label asp-for="PromotedStudent.Section" class="font-semibold ml-2 block">Section</label>                   
                     <input asp-for="PromotedStudent.Section"
                            class="bg-sky-100 w-full text-center"
                            type="text"
@@ -38,7 +38,7 @@
               
 
                 <div class="mb-1">
-                    <label asp-for="assessement.PaceNumber" class="font-bold ml-2 block"> Pace Number</label>
+                    <label asp-for="assessement.PaceNumber" class="font-semibold ml-2 block"> Pace Number</label>
                     <input required
                            asp-for="assessement.PaceNumber"
                            type="text"
@@ -47,7 +47,7 @@
                     />
                 </div>
                 <div class="mb-1">
-                    <label asp-for="assessement.PaceScore" class="font-bold ml-2 block"> Pace Score</label>
+                    <label asp-for="assessement.PaceScore" class="font-semibold ml-2 block"> Pace Score</label>
                     <input required
                            asp-for="assessement.PaceScore" type="number"
                    
@@ -58,14 +58,14 @@
             <div class="sm:w-[45%]">
             
                 <div class="mb-2  ">
-                    <label asp-for="PromotedStudent.Grade" class="font-bold ml-2 block"> Class</label>
+                    <label asp-for="PromotedStudent.Grade" class="font-semibold ml-2 block"> Class</label>
                     <input disabled
                            asp-for="PromotedStudent.Grade" class="bg-sky-100 w-full text-center "
                            type="text" />
                 </div>
 
                 <div class="mb-2">
-                    <label asp-for="course.Name" class="font-bold ml-2 block">Subject Name </label>
+                    <label asp-for="course.Name" class="font-semibold ml-2 block">Subject Name </label>
                     <input disabled
                            asp-for="course.Name"
                     type="text"
@@ -73,14 +73,14 @@
                     />
                 </div>
                 <div class="mb-2">
-                    <label asp-for="course.Code" class="font-bold ml-2 block">Subject Code </label>
+                    <label asp-for="course.Code" class="font-semibold ml-2 block">Subject Code </label>
                     <input disabled
                            asp-for="course.Code"
                     type="text"
                     class=" w-full text-center "
                     />
                 </div>
-                <div class="mt-6 text-white   font-bold w-full m-auto submit
+                <div class="mt-6 text-white   font-semibold w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-indigo-800">
                     <input class="uppercase text-yellow-100  w-[20%]"
                            type="submit" />

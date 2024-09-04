@@ -87,8 +87,10 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-        //pattern: "{controller=Students}/{action=GetStudents}/{id?}");
-        pattern: "{controller=Login}/{action=Login}/{id?}");
+            //pattern: "{controller=Students}/{action=GetStudents}/{id?}");
+            //pattern: "{controller=Home}/{action=Index}/{id?}");
+
+pattern: "{controller=Login}/{action=Login}/{id?}");
 
 if (app.Environment.IsDevelopment())
 {

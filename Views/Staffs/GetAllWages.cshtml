@@ -7,7 +7,7 @@
 
 @if(Model.Count == 0)
 {
-    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-11   sm:text-[0.81em]   text-[0.61em]
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-11 ">
 
         <a class=" text-white  bg-orange-600 px-2 rounded" asp-controller="Staffs" asp-action="Create">New Staff</a>     
@@ -20,7 +20,7 @@
     </div>
 }else {
 
-    <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-bold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+    <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
  text-center  ">
         <a class=" text-white  bg-orange-600 px-2 rounded" asp-controller="Students" asp-action="GetStudents"> Students</a>
 
@@ -59,11 +59,11 @@
             <td>@item.Staff.Status</td>
             <td>
                @item.Amount
-                <span class="font-bold">/=</span>
+                <span class="font-semibold">/=</span>
             </td>
             <td>
                 @item.NetPay
-                <span class="font-bold">/= </span>
+                <span class="font-semibold">/= </span>
             </td>
             <td>@item.PayMonth</td>            
         </tr>

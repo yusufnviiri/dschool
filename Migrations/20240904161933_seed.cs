@@ -658,16 +658,16 @@ namespace victors.Migrations
                 values: new object[,]
                 {
                     { "253a7f33-4741-4d5d-90ec-c7353f66403d", "253a7f33-4741-4d5d-90ec-c7353f66403d", "Director", "DIRECTOR" },
-                    { "3378d59a-d01c-4783-8778-e178370abded", null, "Burser", "BURSER" },
-                    { "453831c9-017d-4a57-a2a8-8852b5ebcd1c", null, "Visitor", "VISITOR" },
-                    { "8a6f2dd7-a2aa-4d40-ae71-f9039e5a262e", null, "Administrator", "ADMINISTRATOR" },
-                    { "f92cfb7c-6094-4135-b3ef-4406cd6b30d8", null, "Parent", "PARENT" }
+                    { "26a0a0a7-a05d-4c46-be67-e4db7cfb7a17", null, "Parent", "PARENT" },
+                    { "27de65a4-ae17-4489-adc4-d7dc98983275", null, "Visitor", "VISITOR" },
+                    { "adabf2db-6bda-4fd2-9e7e-99c1db771a6a", null, "Burser", "BURSER" },
+                    { "df07d952-ba48-4073-8196-2db715d2ec0e", null, "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Function", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "51009a63-58e3-45f0-b9b3-8442c0c3d847", 0, "0bda0f29-d12a-45a5-a30f-0cb449a7eeea", "director@byron", false, "Director", "Director", "Director", false, null, null, "DIRECTOR@BYRON", "AQAAAAIAAYagAAAAECHFCmhGYGz9RAVMGoUHkeneUWLXz3IsISxb8JhusQd6G0lwZqFhOJwPx9EWErHB/A==", null, false, "8a5957d5-67e2-4eab-97e6-d4e496dd0c22", false, "Director@byron" });
+                values: new object[] { "51009a63-58e3-45f0-b9b3-8442c0c3d847", 0, "bbce9ad0-9b28-4e84-90d7-45e34db245fd", "director@byron", false, "Director", "Director", "Director", false, null, null, "DIRECTOR@BYRON", "AQAAAAIAAYagAAAAEAjtzhi+pPmPuOAn22tIhEJy2WFSFd//8UWCBbyIamZ3o+jFbWjD6zLrVES6nFWNdQ==", null, false, "1ad85a37-87ab-49cc-8d41-c5d27dfc66d4", false, "Director@byron" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
