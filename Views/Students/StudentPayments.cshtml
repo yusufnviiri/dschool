@@ -70,8 +70,7 @@
                 <h4 class=" my-2 text-[0.83em] font-extrabold text-center font-sans ">
                    SCHOOL FEES
                 </h4>
-            
-                @foreach (var pay in Model.schoolFees.OrderDescending().Take(4))
+                @foreach (var pay in Model.schoolFees.Take(4))
                 {        
     
           <div

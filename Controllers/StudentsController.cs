@@ -118,7 +118,7 @@ namespace victors.Controllers
         public async Task<IActionResult> PaySchoolFees(FeesJoinStudent data)
         {
             data.SchoolFees.StudentId = data.Student.StudentId;
-           if (ModelState.IsValid)
+           if (data.SchoolFees.StudentId!=0)
             {
               await studentActions.saveStudentSchFees(data.SchoolFees, _db);
                 return RedirectToAction("GetStudents");
@@ -211,7 +211,7 @@ namespace victors.Controllers
             {
                 student = odataManager.student,
                 requirementPayments = requirements,
-                schoolFees = fees,
+                schoolFees = fees.OrderByDescending(k=>k.DateOfPayment),
 
             };
             return View(studentjoinFeesJoinRequirements);
