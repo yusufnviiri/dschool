@@ -327,7 +327,7 @@ namespace victors.Controllers
         public async Task<IActionResult> AddUniform(StudentJoinUniform data)
         {
             var uniform = data.uniform;
-            if (ModelState.IsValid)
+            if (data.uniform.Cost>1000)
             {
                 var result = await studentActions.NewUniform(uniform, _db);
                 return RedirectToAction("GetStudents");
