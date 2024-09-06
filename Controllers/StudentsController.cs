@@ -230,15 +230,16 @@ namespace victors.Controllers
         public async Task<IActionResult> CreateGuardian(StudentJoinGuardian data)
         {var guardian = data.Guardian;
             guardian.StudentId = data.Student.StudentId;
-            if (ModelState.IsValid)
+            if (guardian.StudentId>0)
             {
                 await _db.guardians.AddAsync(guardian);
                 await _db.SaveChangesAsync();
-                return RedirectToAction("GetStudents");
+                return RedirectToAction("AllGuardian");
+
 
             }
 
-            return RedirectToAction("AllGuardian");
+            return View(data);
         }
 
         [HttpGet("{id}/guardians")]

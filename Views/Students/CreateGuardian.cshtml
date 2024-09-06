@@ -49,6 +49,17 @@
 
               </div>
 
+                <div class="mb-2">
+                    <label asp-for="Guardian.Gender" class="font-semibold ml-2 block required_label">Gender</label>
+                    <select required
+                            asp-for="Guardian.Gender"
+                            class=" w-full text-center ">
+                        <option value="">select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+
               <div class="mb-2">
                     <label asp-for="Guardian.Village" class="font-semibold ml-2 block  required_label">Village</label>
                 <input
@@ -75,6 +86,7 @@
                                     <span asp-validation-for="Guardian.District" class="text-red-700"></span>
 
               </div>
+           
             </div>
             <div class="sm:w-[45%]">
               <div class="mb-1">
@@ -119,6 +131,14 @@
                   class="w-full text-center "
                 />
               </div>
+                <div class="mb-2">
+                    <label asp-for="Guardian.Nationality" class="font-semibold ml-2 block  required_label">Nationality</label>
+                    <input required
+                           asp-for="Guardian.Nationality"
+                           class=" w-full text-center " />
+                    <span asp-validation-for="Guardian.Nationality" class="text-red-700"></span>
+
+                </div>
 
               <div class="mb-2">
                     <label asp-for="Guardian.PlaceofOrigin" class="font-semibold ml-2 block  required_label"> Place of Origin</label>

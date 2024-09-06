@@ -16,18 +16,18 @@
    
         <div class=" bg-cyan-950 mt-10 pt-5  rounded  text-stone-950  w-[90%] md:w-[80%]  lg:w-[70%] m-auto">
     <div class="flex py-2 flex-col text-stone-300 w-[95%] m-auto ">
-        <p class=" text-[0.979em] bg-white py-1 text-stone-900 text-center uppercase">
+        <p class=" text-[0.979em] py-1 bg-stone-900 text-white text-center uppercase">
             @Model.FirstOrDefault().student.FirstName
-            <span class="px-2"> @Model.FirstOrDefault().student.LastName </span>
+            <span class="px-2 capitalize"> @Model.FirstOrDefault().student.LastName </span>
         </p>
 
         <p class="text-[0.679em] text-xs text-white">            
-            has successfuly completed the following paces
+            has successfuly completed the following Assessements
         </p>
     </div>
     <div class="flex py-2 justify-between text-yellow-300 w-[95%] m-auto ">
         <p class=" text-[0.779em] uppercase">Subject </p>
-        <p class=" text-[0.779em] uppercase">Paces </p>
+        <p class=" text-[0.779em] uppercase">Assessement  </p>
         <p class="text-[0.779em] uppercase"> Final Score</p>
     </div>
     @foreach( var item in Model){
