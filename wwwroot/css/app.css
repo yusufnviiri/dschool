@@ -213,3 +213,15 @@ ul li a{
      display:none;
  }
 }
+
+
+html {
+    font-size: clamp(13px, 1.01vw, 14px);
+    color: rgba(248,238,255,0.8);
+    font-family: Tahoma;
+}
+
+#submit-input{
+    font-size:0.85rem;
+    padding:0 5px;
+}

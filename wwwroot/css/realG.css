@@ -1,0 +1,2072 @@
+﻿/* GLOBAL FONT SIZE SET TO STANDARD 16px WITH FLUID SCALING */
+html {
+    font-size: clamp(13px, 1.01vw, 14px);
+    color: rgba(248,238,255,0.8);
+    font-family: Tahoma;
+}
+
+.container-layout {
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.headline p {
+    color: aqua;
+    font-family: Gabriola;
+    word-spacing: 1px;
+    display: none;
+    font-size: 1.3rem;
+}
+
+.image-card {
+    max-width: 100%;
+    margin: auto;
+}
+
+.index-category {
+    display: none;
+}
+
+.image-card img {
+    display: block;
+    max-width: 100%;
+    height: 60vh;
+}
+
+
+@media (max-width: 451px) {
+    .login-container form {
+        width: 90%;
+        margin: auto;
+    }
+
+    #login-container {
+        width: 14rem;
+        margin: 5rem auto;
+    }
+
+    .tweet-user-profile svg {
+        display: none;
+    }
+
+    section {
+        margin: 50px auto;
+    }
+
+
+    #new-tweet-container {
+        padding-top: 1%;
+        width: fit-content;
+        margin: 10vh auto;
+    }
+
+    .new-tweet-container form {
+        width: 70vw;
+        margin: auto;
+        /*        border: 1px solid rgba(148, 148, 128, 0.5);
+        border-radius: 4%;*/
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: clip;
+    }
+
+    #thought-title-textarea {
+        padding: 0.6rem 0.8rem;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 1em;
+        width: 10rem;
+    }
+
+    #thought-body-textarea {
+        padding: 7px 10px;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin: 0 auto 0.31em auto;
+        width: 15rem;
+    }
+
+    .attach-section {
+        width: 15em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-content: baseline;
+    }
+
+    .attchement-card {
+        display: inline-block;
+        width: 36%;
+        height: fit-content;
+        height: 100%;
+        color: white;
+    }
+
+        .attchement-card:hover {
+            background-color: rgb(3, 86, 4);
+            border: 1px solid green;
+            border-radius: 0.31rem;
+        }
+
+        .attchement-card input {
+            width: 40%;
+            height: fit-content;
+            height: 100%;
+        }
+
+        .attchement-card label {
+            font-size: 0.7rem;
+            padding-top: 4%;
+            text-align: left;
+        }
+
+            .attchement-card label span {
+                font-size: 1.0rem;
+            }
+
+    #submit-input {
+        align-self: flex-end;
+        position: relative;
+        right: 0;
+    }
+
+    .brand-logo img {
+        height: 2.5rem;
+        width: 3.8rem;
+    }
+
+
+
+    .categories {
+        display: none;
+    }
+
+    .category, .categories-label, .headline {
+        display: none;
+        width: 1px;
+    }
+
+    .tweet-title {
+        color: rgb(10, 10, 10, 0.9);
+        margin: 0;
+        font-size: 0.7em;
+        font-weight: 500;
+    }
+
+    .tweet-id {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0;
+        font-family: Verdana
+    }
+
+
+
+    .index-view {
+        width: 94%;
+        margin: auto;
+    }
+
+    .thought-details-view {
+        width: 85%;
+        margin: auto;
+    }
+
+    .image-card {
+        max-width: 100%;
+        margin: auto;
+        /*    max-height: 25%;*/
+    }
+
+        .image-card img {
+            display: inline;
+            max-width: 100%;
+            margin: auto;
+            margin: -2px -12px;
+            height: 60vh;
+        }
+
+    .image-details-card img {
+        display: inline;
+        width: 5em;
+        margin: auto;
+        height: 6em;
+        border-radius: 0.5em;
+    }
+
+    .post-index {
+        width: 99%;
+        padding: 1%;
+        margin: 6px auto 20px auto;
+        border-radius: 0.7em;
+    }
+
+        .post-index input {
+            width: 100%;
+            background-color: black;
+            text-align: center;
+            padding: 5px 0;
+            color: rgba(250, 248, 255, 0.9);
+            margin-bottom: 5px;
+        }
+
+
+    .post-actions {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px auto;
+        align-items: center;
+        width: 70%;
+    }
+
+        .post-actions li {
+            border-right: 1px solid rgba(25,20,25, 0.9);
+            list-style: none;
+            height: 16px;
+            width: 100%;
+            margin: 0 1%;
+        }
+
+            .post-actions li:last-child {
+                border: none;
+            }
+
+        .post-actions button {
+            background-color: rgba(38,38,38, 0.99);
+            border-radius: 3em;
+            height: fit-content;
+            width: 70%;
+            border: none;
+            padding: 4px 4px 6px 5px;
+            cursor: pointer;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+            align-content: baseline;
+        }
+
+            .post-actions button:hover {
+                background-color: rgba(38,38,38, 0.99);
+                border-radius: 3em;
+            }
+
+    .post-action {
+        color: white;
+        align-items: center;
+        position: relative;
+    }
+
+    .post-svg {
+        width: 10px;
+        height: 10px;
+        padding-right: 3px;
+        margin-right: 1px;
+        position: relative;
+        top: 1px;
+        color: white;
+    }
+
+    .post-action-span {
+        font-size: 0.2em;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 451px) and (max-width: 570px) {
+    .login-container form {
+        width: 90%;
+    }
+
+    #login-container {
+        width: 15rem;
+        margin: 5rem auto;
+    }
+
+    .image-details-card img {
+        display: inline;
+        width: 5em;
+        margin: auto;
+        height: 6em;
+        border-radius: 0.5em;
+    }
+
+    .tweet-user-profile svg {
+        display: none;
+    }
+
+    .categories {
+        display: none;
+    }
+
+    section {
+        margin: 50px auto;
+    }
+
+    .category, .categories-label, .headline {
+        display: none;
+        width: 1px;
+    }
+
+    .brand-logo img {
+        height: 2.5rem;
+        width: 3.8rem;
+    }
+
+
+
+
+    .tweet-tweet p {
+        text-align: justify;
+    }
+
+        .tweet-tweet p:hover {
+            color: rgba(250, 248, 255, 0.8);
+        }
+
+
+
+
+    .index-view {
+        width: 88%;
+        margin: auto;
+    }
+
+    .thought-details-view {
+        width: 80%;
+        margin: auto;
+    }
+
+    .image-card {
+        max-width: 100%;
+        margin: auto;
+        /*    max-height: 25%;*/
+    }
+
+        .image-card img {
+            display: inline;
+            max-width: 100%;
+            margin: auto;
+            margin: -2px -12px;
+            height: 60vh;
+        }
+
+    .post-index {
+        width: 85%;
+        padding: 1%;
+        margin: 6px auto 20px auto;
+        border-radius: 0.7em;
+    }
+
+
+
+
+    .post-actions {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px auto;
+        align-items: center;
+        width: 75%;
+    }
+
+        .post-actions li {
+            border-right: 1px solid rgba(25,20,25, 0.9);
+            list-style: none;
+            width: 100%;
+            margin: 0 1%;
+        }
+
+            .post-actions li:last-child {
+                border: none;
+            }
+
+        .post-actions button {
+            background-color: rgba(38,38,38, 0.99);
+            border-radius: 3em;
+            height: fit-content;
+            width: 60%;
+            border: none;
+            padding: 4px 4px 6px 5px;
+            cursor: pointer;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+            align-content: baseline;
+        }
+
+            .post-actions button:hover {
+                background-color: rgba(38,38,38, 0.99);
+                border-radius: 3em;
+            }
+
+    .post-action {
+        color: white;
+        align-items: center;
+        position: relative;
+    }
+
+    .post-svg {
+        width: 14px;
+        height: 13px;
+        padding-right: 3px;
+        margin-right: 1px;
+        position: relative;
+        top: 3px;
+        color: white;
+    }
+
+    .post-action-span {
+        font-size: 0.6rem;
+    }
+
+
+    #new-tweet-container {
+        padding-top: 2%;
+        width: fit-content;
+        margin: 10vh auto;
+    }
+
+    .new-tweet-container form {
+        width: 25rem;
+        margin: auto;
+        /*        border: 1px solid rgba(148, 148, 128, 0.5);
+        border-radius: 4%;*/
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: clip;
+    }
+
+    #thought-title-textarea {
+        padding: 0.6rem 0.8rem;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 1em;
+        width: 15rem;
+    }
+
+    #thought-body-textarea {
+        padding: 7px 10px;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 0.31em;
+        width: 20rem;
+    }
+
+    .attach-section {
+        width: 22em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-content: baseline;
+    }
+
+    .attchement-card {
+        display: inline-block;
+        width: 30%;
+        height: fit-content;
+        height: 100%;
+        color: white;
+    }
+
+        .attchement-card:hover {
+            background-color: rgb(3, 86, 4);
+            border: 1px solid green;
+            border-radius: 0.31rem;
+        }
+
+        .attchement-card input {
+            width: 40%;
+            height: fit-content;
+            height: 100%;
+        }
+
+        .attchement-card label {
+            font-size: 0.7rem;
+            padding-top: 4%;
+            text-align: left;
+        }
+
+            .attchement-card label span {
+                font-size: 1.0rem;
+            }
+
+    #submit-input {
+        align-self: flex-end;
+        position: relative;
+        right: 0;
+    }
+}
+
+
+@media (min-width: 570px) and (max-width: 650px) {
+    .login-container form {
+        width: 90%;
+    }
+
+    #login-container {
+        width: 15rem;
+        margin: 5rem auto;
+    }
+
+    .data-bag {
+        overflow: hidden;
+    }
+
+
+    .tweet-user-profile svg {
+        display: none;
+    }
+
+    section {
+        margin: 60px auto;
+    }
+
+
+
+    .index-view {
+        width: 29rem;
+        margin: 0 auto 0 150px;
+    }
+
+    .index-categories {
+        display: none;
+    }
+
+    .index-category {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .category, .headline {
+        display: flex;
+    }
+
+    .categories-label {
+        display: none;
+    }
+
+    .categories {
+        display: flex;
+        width: 140px;
+        overflow-y: hidden;
+        margin-top: -18px;
+    }
+
+    .brand-logo img {
+        height: 2.5rem;
+        width: 3.8rem;
+    }
+
+    .tweet-tweet p {
+        text-align: justify;
+    }
+
+        .tweet-tweet p:hover {
+            color: rgba(250, 248, 255, 0.8);
+        }
+
+
+    .thought-details-view {
+        width: 28rem;
+        margin: auto;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .image-card {
+        max-width: 100%;
+        margin: auto;
+        /*    max-height: 25%;*/
+    }
+
+        .image-card img {
+            display: inline;
+            max-width: 100%;
+            margin: auto;
+            height: 60vh;
+        }
+
+    .post-index {
+        display: none;
+    }
+
+
+
+    #new-tweet-container {
+        padding-top: 2%;
+        width: fit-content;
+        margin: 10vh auto;
+    }
+
+    .new-tweet-container form {
+        width: 28rem;
+        margin: auto;
+        /*        border: 1px solid rgba(148, 148, 128, 0.5);
+        border-radius: 4%;*/
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: clip;
+    }
+
+    #thought-title-textarea {
+        padding: 0.6rem 0.8rem;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 1em;
+        width: 14rem;
+    }
+
+    #thought-body-textarea {
+        padding: 7px 10px;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 0.31em;
+        width: 22rem;
+    }
+
+    .attach-section {
+        width: 22em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-content: baseline;
+    }
+
+    .attchement-card {
+        display: inline-block;
+        width: 30%;
+        height: fit-content;
+        height: 100%;
+        color: white;
+    }
+
+        .attchement-card:hover {
+            background-color: rgb(3, 86, 4);
+            border: 1px solid green;
+            border-radius: 0.31rem;
+        }
+
+        .attchement-card input {
+            width: 40%;
+            height: fit-content;
+            height: 100%;
+        }
+
+        .attchement-card label {
+            font-size: 0.7rem;
+            padding-top: 4%;
+            text-align: left;
+        }
+
+            .attchement-card label span {
+                font-size: 1.0rem;
+            }
+
+    #submit-input {
+        align-self: flex-end;
+        position: relative;
+        right: 0;
+    }
+}
+
+
+@media (min-width: 650px) and (max-width: 850px) {
+    .login-container form {
+        width: 90%;
+    }
+
+    #login-container {
+        width: 15rem;
+        margin: 5rem auto;
+    }
+
+    .data-bag {
+        overflow: hidden;
+    }
+
+    .tweet-user-profile svg {
+        display: none;
+    }
+
+    section {
+        margin: 60px auto;
+    }
+
+    .index-categories {
+        display: none;
+    }
+
+    .index-category {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .category, .categories-label, .headline {
+        display: flex;
+    }
+
+    .categories {
+        display: flex;
+        width: 160px;
+        overflow-y: hidden;
+        margin-top: -18px;
+    }
+
+    .brand-logo img {
+        height: 2.5rem;
+        width: 3.8rem;
+    }
+
+
+
+
+    .tweet-tweet p:hover {
+        color: rgba(250, 248, 255, 0.8);
+    }
+
+    .index-view {
+        width: 33rem;
+        margin: 0 auto 0 180px;
+    }
+
+    .thought-details-view {
+        width: 28rem;
+        margin: auto;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .image-card {
+        max-width: 100%;
+        margin: auto;
+        /*    max-height: 25%;*/
+    }
+
+        .image-card img {
+            display: inline;
+            max-width: 100%;
+            margin: auto;
+            height: 60vh;
+        }
+
+    .post-index {
+        display: none;
+    }
+
+    .new-tweet-container {
+        padding-top: 2%;
+    }
+
+    #new-tweet-container {
+        padding-top: 2%;
+        width: fit-content;
+        margin: 10vh auto;
+    }
+
+    .new-tweet-container form {
+        width: 30rem;
+        margin: auto;
+        /*        border: 1px solid rgba(148, 148, 128, 0.5);
+        border-radius: 4%;*/
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: clip;
+    }
+
+    #thought-title-textarea {
+        padding: 0.6rem 0.8rem;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 1em;
+        width: 15rem;
+    }
+
+    #thought-body-textarea {
+        padding: 7px 10px;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 0.31em;
+        width: 24rem;
+    }
+
+    .attach-section {
+        width: 24rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-content: baseline;
+    }
+
+    .attchement-card {
+        display: inline-block;
+        width: 30%;
+        height: fit-content;
+        height: 100%;
+        color: white;
+    }
+
+        .attchement-card:hover {
+            background-color: rgb(3, 86, 4);
+            border: 1px solid green;
+            border-radius: 0.31rem;
+        }
+
+        .attchement-card input {
+            width: 40%;
+            height: fit-content;
+            height: 100%;
+        }
+
+        .attchement-card label {
+            font-size: 0.7rem;
+            padding-top: 4%;
+            text-align: left;
+        }
+
+            .attchement-card label span {
+                font-size: 1.0rem;
+            }
+
+    #submit-input {
+        align-self: flex-end;
+        position: relative;
+        right: 0;
+    }
+
+    .image-details-card img {
+        display: inline;
+        width: 5em;
+        margin: auto;
+        height: 6em;
+        border-radius: 0.5em;
+    }
+}
+
+@media (min-width: 850px) and (max-width: 1000px) {
+    .login-container form {
+        width: 90%;
+    }
+
+    #login-container {
+        width: 15rem;
+        margin: 5rem auto;
+    }
+
+    .data-bag {
+        overflow: hidden;
+    }
+
+    .image-details-card img {
+        display: inline;
+        width: 5em;
+        margin: auto;
+        height: 6em;
+        border-radius: 0.5em;
+    }
+
+    .tweet-user-profile svg {
+        display: none;
+    }
+
+    section {
+        margin: 60px auto;
+    }
+
+    .index-categories {
+        display: none;
+    }
+
+    .index-category {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .category, .categories-label, .headline {
+        display: flex;
+    }
+
+    .categories {
+        display: flex;
+        width: 160px;
+        overflow-y: hidden;
+        margin-top: -18px;
+    }
+
+    .brand-logo img {
+        height: 2.5rem;
+        width: 3.8rem;
+    }
+
+    .tweet-tweet p {
+        color: rgb(9, 9, 8, 0.90);
+        text-align: justify;
+    }
+
+        .tweet-tweet p:hover {
+            color: rgba(250, 248, 255, 0.8);
+        }
+
+    .index-view {
+        width: 36rem;
+        margin: 0 auto 0 180px;
+    }
+
+    .thought-details-view {
+        width: 28rem;
+        margin: auto;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .image-card {
+        max-width: 100%;
+        margin: auto;
+        /*    max-height: 25%;*/
+    }
+
+        .image-card img {
+            display: inline;
+            max-width: 100%;
+            margin: auto;
+            height: 60vh;
+        }
+
+    .post-index {
+        display: none;
+    }
+
+    .new-tweet-container {
+        padding-top: 2%;
+    }
+
+
+    #new-tweet-container {
+        padding-top: 2%;
+        width: fit-content;
+        margin: 10vh auto;
+    }
+
+
+    .new-tweet-container form {
+        width: 30rem;
+        margin: auto;
+        /*        border: 1px solid rgba(148, 148, 128, 0.5);
+        border-radius: 4%;*/
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: clip;
+    }
+
+    #thought-title-textarea {
+        padding: 0.6rem 0.8rem;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 1em;
+        width: 15rem;
+    }
+
+    #thought-body-textarea {
+        padding: 7px 10px;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 0.31em;
+        width: 24rem;
+    }
+
+    .attach-section {
+        width: 22em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-content: baseline;
+    }
+
+    .attchement-card {
+        display: inline-block;
+        width: 30%;
+        height: fit-content;
+        height: 100%;
+        color: white;
+    }
+
+        .attchement-card:hover {
+            background-color: rgb(3, 86, 4);
+            border: 1px solid green;
+            border-radius: 0.31rem;
+        }
+
+        .attchement-card input {
+            width: 40%;
+            height: fit-content;
+            height: 100%;
+        }
+
+        .attchement-card label {
+            font-size: 0.7rem;
+            padding-top: 4%;
+            text-align: left;
+        }
+
+            .attchement-card label span {
+                font-size: 1.0rem;
+            }
+
+    #submit-input {
+        align-self: flex-end;
+        position: relative;
+        right: 0;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .login-container form {
+        width: 90%;
+    }
+
+    #login-container {
+        width: 15rem;
+        margin: 5rem auto;
+    }
+
+    .data-bag {
+        overflow: hidden;
+    }
+
+    .image-details-card img {
+        display: inline;
+        width: 5em;
+        margin: auto;
+        height: 6em;
+        border-radius: 0.5em;
+    }
+
+    .tweet-user-profile svg {
+        display: none;
+    }
+
+    section {
+        margin: 60px auto;
+    }
+
+    .index-categories {
+        display: none;
+    }
+
+    .index-category {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+
+
+
+    .category, .categories-label, .headline {
+        display: flex;
+    }
+
+    .categories {
+        display: flex;
+        width: 160px;
+        overflow-y: hidden;
+        margin-top: -18px;
+    }
+
+    .brand-logo img {
+        height: 2.5rem;
+        width: 3.8rem;
+    }
+
+
+
+
+    .tweet-tweet p:hover {
+        color: rgba(250, 248, 255, 0.8);
+    }
+
+    .index-view {
+        width: 38.5rem;
+        margin: 0 auto 0 180px;
+    }
+
+    .thought-details-view {
+        width: 28rem;
+        margin: auto;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .image-card {
+        max-width: 100%;
+        margin: auto;
+        /*    max-height: 25%;*/
+    }
+
+        .image-card img {
+            display: inline;
+            max-width: 100%;
+            margin: auto;
+            height: 60vh;
+        }
+
+    .post-index {
+        display: none;
+    }
+
+    .new-tweet-container {
+        padding-top: 2%;
+    }
+
+    #new-tweet-container {
+        padding-top: 2%;
+        width: fit-content;
+        margin: 10vh auto;
+    }
+
+
+    .new-tweet-container form {
+        width: 30rem;
+        margin: auto;
+        /*        border: 1px solid rgba(148, 148, 128, 0.5);
+        border-radius: 4%;*/
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: clip;
+    }
+
+    #thought-title-textarea {
+        padding: 0.6rem 0.8rem;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 1em;
+        width: 13rem;
+    }
+
+    #thought-body-textarea {
+        padding: 7px 10px;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 0.31em;
+        width: 23rem;
+    }
+
+    .attach-section {
+        width: 24em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-content: baseline;
+    }
+
+    .attchement-card {
+        display: inline-block;
+        width: 30%;
+        height: fit-content;
+        height: 100%;
+        color: white;
+    }
+
+        .attchement-card:hover {
+            background-color: rgb(3, 86, 4);
+            border: 1px solid green;
+            border-radius: 0.31rem;
+        }
+
+        .attchement-card input {
+            width: 40%;
+            height: fit-content;
+            height: 100%;
+        }
+
+        .attchement-card label {
+            font-size: 0.7rem;
+            padding-top: 4%;
+            text-align: left;
+        }
+
+            .attchement-card label span {
+                font-size: 1.0rem;
+            }
+
+    #submit-input {
+        align-self: flex-end;
+        position: relative;
+        right: 0;
+    }
+}
+
+
+
+
+@media (min-width: 1200px) {
+    .login-container form {
+        width: 90%;
+    }
+
+    #login-container {
+        width: 16rem;
+        margin: 5rem auto;
+    }
+
+    .data-bag {
+        overflow: hidden;
+    }
+
+    .tweet-user-profile svg {
+        display: none;
+    }
+
+    section {
+        margin: 60px auto;
+    }
+
+    .index-categories {
+        display: none;
+    }
+
+    .index-category {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    .category, .categories-label, .headline {
+        display: flex;
+    }
+
+    .categories {
+        display: flex;
+        width: 160px;
+        overflow-y: hidden;
+        margin-top: -18px;
+    }
+
+    .brand-logo img {
+        height: 2.5rem;
+        width: 3.8rem;
+    }
+
+
+    .tweet-tweet p {
+        text-align: justify;
+    }
+
+        .tweet-tweet p:hover {
+            color: rgba(0, 28, 25, 0.8);
+        }
+
+    .index-view {
+        width: 39rem;
+        margin: 0 auto 0 180px;
+    }
+
+    .thought-details-view {
+        width: 28rem;
+        margin: auto;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .image-card {
+        max-width: 100%;
+        margin: auto;
+        /*    max-height: 25%;*/
+    }
+
+        .image-card img {
+            display: inline;
+            max-width: 100%;
+            margin: auto;
+            height: 60vh;
+        }
+
+    .post-index {
+        display: none;
+    }
+
+    .new-tweet-container {
+        padding-top: 2%;
+    }
+
+    #new-tweet-container {
+        padding-top: 2%;
+        width: fit-content;
+        margin: 10vh auto;
+    }
+
+
+    .new-tweet-container form {
+        width: 28rem;
+        margin: auto;
+        /*        border: 1px solid rgba(148, 148, 128, 0.5);
+        border-radius: 4%;*/
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: clip;
+    }
+
+    #thought-title-textarea {
+        padding: 0.6rem 0.8rem;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 1em;
+        width: 13rem;
+    }
+
+    #thought-body-textarea {
+        padding: 7px 10px;
+        border: 1px solid rgba(148, 148, 128, 0.5);
+        font-size: 0.85rem;
+        margin-bottom: 0.31em;
+        width: 22rem;
+    }
+
+    .attach-section {
+        width: 24em;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-content: baseline;
+    }
+
+    .attchement-card {
+        display: inline-block;
+        width: 30%;
+        height: fit-content;
+        height: 100%;
+        color: white;
+    }
+
+        .attchement-card:hover {
+            background-color: rgb(3, 86, 4);
+            border: 1px solid green;
+            border-radius: 0.31rem;
+        }
+
+        .attchement-card input {
+            width: 40%;
+            height: fit-content;
+            height: 100%;
+        }
+
+        .attchement-card label {
+            font-size: 0.7rem;
+            padding-top: 4%;
+            text-align: left;
+        }
+
+            .attchement-card label span {
+                font-size: 1.0rem;
+            }
+
+    #submit-input {
+        align-self: flex-end;
+        position: relative;
+        right: 0;
+    }
+
+    .image-details-card img {
+        display: inline;
+        width: 5em;
+        margin: auto;
+        height: 6em;
+        border-radius: 0.5em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tweet-title {
+    color: rgb(10, 10, 10, 0.9);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.tweet-id {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.875rem;
+    font-family: 'Franklin Gothic';
+}
+
+.tweet-tweet p {
+    color: rgb(9, 9, 8, 0.90);
+    text-align: justify;
+    font-size: 1rem;
+    font-family: Calibri;
+}
+
+
+.tweet-actions {
+    margin: 2px 0 0.15em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.post-index input {
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+    color: rgba(250, 248, 255, 0.9);
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.post-action-span {
+    font-size: 0.875rem;
+}
+
+.more-button {
+    font-size: 1rem;
+    margin: 0 0 0 -4px;
+    background-color: transparent;
+}
+
+.tweet-date {
+    font-size: 0.76rem;
+    color: rgb(0, 12, 9);
+    font-family: monospace;
+}
+
+
+body {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem wheat, 0 0 0 0.25rem #258cfb;
+}
+
+
+
+
+
+
+a {
+    border-radius: 2em;
+    color: white;
+    border: 1px solid groove;
+    text-decoration: none;
+}
+
+input {
+    background-color: azure;
+    border-radius: 2em;
+    color: black;
+    border: 1px solid rgba(250, 248, 255, 0.4);
+}
+
+
+
+svg {
+    height: 1.4em;
+    width: 1.5em;
+    color: wheat;
+}
+
+.searchField {
+    position: relative;
+    margin-right: 2%;
+    display: none;
+}
+
+    .searchField span {
+        position: absolute;
+        top: 15%;
+        left: 10px;
+    }
+
+    .searchField input {
+        text-align: center;
+        background-color: transparent;
+        padding: 3px;
+        color: rgba(248,238,255,0.8);
+    }
+
+.navbar-links {
+    justify-content: flex-start;
+    width: max-content;
+    display: none;
+}
+
+menu {
+    background-color: rgb(0, 12, 9);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1em 10px 0 0.5rem;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+
+.data-bag {
+    overflow: hidden;
+}
+
+
+
+.adverts {
+    display: none;
+    width: 1%
+}
+
+.categories {
+    padding: 3em 0;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 45px;
+    height: fit-content;
+    overflow-y: auto;
+    border-radius: 0.7rem;
+    background-color: transparent;
+}
+
+.categories-label {
+    background-color: rgba(3,3,3, 0.95);
+    padding: 0.9em 0.90em;
+    border-radius: 0.3rem;
+    margin-bottom: 1em;
+    width: fit-content;
+    position: relative;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 100;
+}
+
+.category a {
+    text-decoration: none;
+    width: 90%;
+    padding: 0.4em 0.5em 0.4em 0.5em;
+    display: block;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.category {
+    position: relative;
+    display: flex;
+    width: 90%;
+    margin-left: 0 auto;
+    align-content: center;
+    border-radius: 1.7rem;
+    border: 1px solid rgba(38,38,38, 0.1);
+    margin-bottom: 10px;
+    padding-left: 8px;
+}
+
+    .category:hover {
+        background-color: rgba(148, 148, 128, 0.5);
+    }
+
+    .category span {
+        color: black;
+        position: relative;
+        top: -2px;
+    }
+
+.category-svg {
+    /*    color: rgba(240,30,10, 0.9);
+*/
+    color: rgb(2 1 8);
+    margin-right: 5px;
+}
+
+.category-svg-new {
+    /*    color: rgba(240,30,10, 0.9);
+*/
+    color: rgb(0 0 244);
+    text-align: center;
+    margin-right: 5px;
+}
+
+
+
+.span-pad {
+    margin-right: 30px;
+}
+
+
+
+.tweet {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(63, 19, 176, 0.1);
+    border-radius: 0.8em;
+    padding: 1.3em 1.3rem 0 1.3rem;
+    margin-bottom: 13px;
+}
+
+    .tweet:hover {
+        border: 1px solid rgba(63, 109, 156, 0.6);
+    }
+
+    .tweet a {
+        text-decoration: none;
+        color: rgb(10, 10, 10, 0.9);
+        padding: 0 1.3em;
+        word-spacing: -1px;
+        text-align: justify;
+        line-height: 1.3em;
+    }
+
+.tweet-title {
+    color: rgb(10, 10, 10, 0.9);
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 900;
+}
+
+.tweet-id {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.tweet-intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    margin-right: 0.2em;
+}
+
+.tweet-user {
+    color: rgb(252, 8, 23, 0.9);
+    margin-right: 0.5em;
+}
+
+.tweet-min-details {
+    color: rgba(148, 148, 128, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+    .tweet-min-details p, .tweet-min-details a:hover p {
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+
+        .tweet-min-details p span {
+            color: rgb(10, 10, 10, 0.9);
+            margin-right: 3px;
+        }
+
+
+
+.tweet-min-details-top {
+    display: flex;
+}
+
+    .tweet-min-details-top a {
+        display: inline;
+        color: blue;
+        font-family: 'Trebuchet MS';
+        position: relative;
+        top: -1px;
+    }
+
+        .tweet-min-details-top a span {
+            margin-right: 2px;
+        }
+
+.tweet-tweet {
+    width: 100%;
+    text-align: left;
+}
+
+    .tweet-tweet p {
+        color: rgb(4, 4, 1, 0.95);
+        font-family: Calibri;
+        padding: 0;
+        font-weight: 300;
+        text-align: justify;
+        margin: 1px;
+        /*        font-family:Ebrima;
+*/
+        /*            font-family: Tahoma;
+            padding: 0;*/
+    }
+
+        .tweet-tweet p:hover {
+            color: rgb(4, 14, 3, 0.80);
+            border-radius: 0.45em;
+            font-weight: 200;
+        }
+
+
+
+#tweet-action-like:hover, #tweet-action-share:hover, #tweet-action-comment:hover {
+    background-color: transparent;
+}
+
+.tweet-action-svg {
+    padding: 0;
+    color: rgb(4, 1, 3, 1.0);
+    font-size: 0.62rem;
+}
+
+.tweet-action-delete-svg {
+    padding: 0;
+    color: rgb(54, 49, 56, 0.90);
+    font-size: 0.62rem;
+    position: relative;
+    top: 3px;
+}
+
+.tweet-actions a {
+    margin: 0 0.4rem 0 0;
+    display: block;
+    border-radius: 0.2rem;
+    padding: 0 0.3rem 0 0;
+    width: fit-content;
+}
+
+sup {
+    color: rgba(18, 18, 18, 0.9);
+    font-weight: 100;
+    font-size: 0.62rem;
+    margin-left: -3px;
+}
+
+.new-tweet-container, .login-container {
+    width: fit-content;
+    margin: 12% 25%;
+    /*    background-color:red;
+    height:fit-content;*/
+    padding: 1.3rem 1.5rem 1.7rem 1.5rem;
+    border: 1px solid rgba(218, 18, 18, 0.35);
+    border-radius: 1.5rem;
+    background-color: rgb(24, 6, 5);
+}
+
+
+
+.back-link-svg {
+    color: rgb(21, 246, 239);
+    text-decoration: none;
+    margin: 1.15em 0 0 0;
+}
+
+.login-container form {
+    margin: auto;
+    margin-top: 2.17em;
+}
+
+.new-tweet-container form input, .new-tweet-container form label,
+.new-tweet-container form select {
+    display: block;
+    text-align: center;
+}
+
+
+    .new-tweet-container form input:focus, .login-container form textarea, .login-container form textarea:hover, .thought-title-textarea:focus, .new-tweet-container form input:hover, .new-tweet-container textarea:hover, .new-tweet-container input:hover, .thought-title-textarea:hover {
+        background-color: transparent;
+    }
+
+    .new-tweet-container select:hover, .new-tweet-container form select:focus {
+        background-color: black;
+    }
+
+.new-tweet-container form select {
+    background-color: black;
+    color: rgba(250, 248, 255, 0.7);
+    border-radius: 0.51em;
+    border: 1px solid rgba(148, 148, 128, 0.5);
+    margin: 1em auto;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+.login-container form textarea {
+    width: 95%;
+    background-color: transparent;
+    color: rgba(240, 248, 245, 0.9);
+    border-radius: 0.51em;
+    border: 1px solid rgba(148, 148, 128, 0.5);
+    margin: 0.49rem auto;
+    font-family: Tahoma;
+    padding: 7px 5px;
+    text-align: center;
+}
+
+.new-tweet-container form textarea {
+    margin: auto;
+    background-color: transparent;
+    color: rgba(250, 248, 255, 0.8);
+    border-radius: 0.51em;
+    border: 1px solid rgba(148, 148, 128, 0.7);
+    font-family: Verdana;
+    padding: 3px 5px;
+    font-size: 1rem;
+}
+
+    .login-container form textarea::placeholder, .new-tweet-container form textarea::placeholder, .post-index input::placeholder {
+        color: rgba(250, 248, 255, 0.6);
+        font-family: Verdana;
+        text-align: center;
+        font-size: 0.7rem;
+    }
+
+.tweet-form-header {
+    display: flex;
+    width: 73%;
+    margin: auto;
+    position: relative;
+}
+
+    .tweet-form-header h4 {
+        color: rgba(38,38,38, 0.99);
+        margin: 0;
+        padding: 1em 0.1em;
+    }
+
+#submit-input {
+    width: 40%;
+    background-color: rgba(0, 5, 240,0.9);
+    color: rgba(250, 248, 255, 0.9);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 0.3em;
+    margin: auto 30%;
+}
+
+#thought-submit-input {
+    width: fit-content;
+    background-color: rgba(0, 5, 240,0.9);
+    color: rgba(250, 248, 255, 0.9);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0.3em;
+}
+
+    #submit-input:hover, #thought-submit-input:hover {
+        /*    background-color: rgb(234, 6, 5);
+*/
+
+        color: rgb(212, 24, 16);
+        border: 1px solid green;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+h4 {
+    color: white;
+    margin: auto;
+    width: fit-content;
+    padding: 1em 0.1em;
+    text-decoration: underline;
+}
+
+.login-links {
+    width: fit-content;
+    margin-right: 0.51em;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 5px;
+}
+
+    .login-links a {
+        text-decoration: none;
+        margin-right: 5px;
+        background-color: rgb(7, 88, 14, 0.10);
+        color: wheat;
+        border-radius: 0.31em;
+        padding: 5px;
+        width: fit-content;
+    }
+
+        .login-links a:hover {
+            border: 1px solid rgba(148, 148, 128, 0.7);
+            background-color: transparent;
+        }
+
+    .login-links span {
+        color: lightseagreen;
+    }
+
+.signOut-link, .UserName, .sign-in {
+    display: none;
+}
+
+#salute {
+    color: red;
+    font-size: 0.85rem;
+}
+
+#userName {
+    margin-right: 15px;
+}
+
+#more-button-link {
+    color: #366bfe;
+    padding: 0;
+    text-decoration: underline;
+}
+
+
+.word-link {
+    opacity: 50%;
+}
+
+.bro-logo {
+}
+
+.bro-logo-link {
+    color: red;
+    display: block;
+    font-weight: 100;
+    /*    font-family:'Niagara Engraved';
+    font-size:1.5rem;}*/
+    font-size: 1.31rem;
+    font-family: 'Californian FB';
+    padding: 0.4em 0.6rem;
+}
+
+#real-gz {
+    margin-left: 9px;
+}
+
+#logo-svg {
+    position: relative;
+}
+
+    #logo-svg svg {
+        color: red;
+        display: inline;
+        width: 2rem;
+        height: 1.5rem;
+        position: absolute;
+        bottom: 3px;
+        margin-left: -9px;
+    }
+
+.old-bro-svg {
+    display: none;
+}
