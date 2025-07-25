@@ -4,7 +4,6 @@
 a {
     color: blue;
     text-transform: uppercase;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .find_btn {
     background-color: transparent;
@@ -64,7 +63,6 @@ a:hover {
     gap: 1rem;
     padding-right: 1rem;
     z-index: 1;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 button{
     word-wrap:normal;
@@ -73,7 +71,6 @@ button{
     background: none;
     border: none;
     text-decoration: none;
-     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
     padding: 0;
     
@@ -112,7 +109,6 @@ ul li a{
     transform: translateY(-40px);
     transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
     color: #d6d3d1;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /*.dropdown-menu.active{
@@ -129,13 +125,11 @@ ul li a{
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .dropdown.show > .link + .dropdown-menu-vistor {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .navbar {
     display: flex;
@@ -203,7 +197,6 @@ ul li a{
         border: 1px solid wheat;
         width: max-content;
         word-wrap: normal;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
   
     #chevRight {

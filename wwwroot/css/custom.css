@@ -4,7 +4,6 @@
 a {
     color: blue;
     text-transform: uppercase;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
     a:hover {
@@ -74,7 +73,7 @@ select {
     font-weight: 300;
     font-size: 0.95em;
     margin-bottom: 0.2em;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+/*    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;*/
 }
 
 label {
@@ -115,7 +114,6 @@ tr:nth-child(odd) {
 
 tr > th {
     width: max-content;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgb(212 212 212);
 }
 
@@ -235,7 +233,6 @@ input::placeholder {
 
 .student_details {
     font-size: 0.9812rem;
-    font-family: sans-serif;
 }
 
 .data {
@@ -300,6 +297,7 @@ td a, td a span {
         /*font-size: 11px;*/
         /* color: red; */
     }
+
 }
 
 @media (min-width: 1200px) {
@@ -311,7 +309,6 @@ td a, td a span {
 
     td,
     .access_link {
-        font-size: 13px;
     }
 
     .search_form input,
@@ -325,7 +322,6 @@ td a, td a span {
     thead {
         /*        font-size: 19px;
         text-transform: capitalize;*/
-        letter-spacing: normal;
     }
 
     td,
@@ -338,9 +334,11 @@ td a, td a span {
     margin-left: 1.5em;
 }
 
+#requirement-form-id {
+margin-bottom:2rem;}
 
 
-@media (max-width: 451px) {
+@media (max-width: 351px) {
     .login-container form {
         width: 90%;
         margin: auto;
@@ -349,21 +347,54 @@ td a, td a span {
     #login-container {
         width: 14rem;
         margin: 1rem auto;
-    }  
-   
+    }
+    #requirement-form-id{width:90%;    }
+}
+
+@media (min-width: 351px) and (max-width: 451px) {
+    .login-container form {
+        width: 90%;
+        margin: auto;
+    }
+
+    #login-container {
+        width: 14rem;
+        margin: 1rem auto;
+    }
+
+    #requirement-form-id {
+        width: 70%;
+    }
 }
 
 @media (min-width: 451px) and (max-width: 570px) {
     .login-container form {
-        width: 90%;
+        width: 85%;
     }
 
     #login-container {
         width: 15rem;
         margin: 1rem auto;
     }
+    #requirement-form-id {
+        width: 16rem;
+    }
+
 }
-@media (min-width: 570px) and (max-width: 650px) {
+@media (min-width: 570px) and (max-width: 640px) {
+    .login-container form {
+        width: 85%;
+    }
+
+    #login-container {
+        width: 15rem;
+        margin: 1rem auto;
+    }
+    #requirement-form-id {
+        width: 18rem;
+    }
+}
+@media (min-width: 640px) and (max-width: 850px) {
     .login-container form {
         width: 90%;
     }
@@ -372,15 +403,8 @@ td a, td a span {
         width: 15rem;
         margin: 1rem auto;
     }
-}
-@media (min-width: 650px) and (max-width: 850px) {
-    .login-container form {
-        width: 90%;
-    }
-
-    #login-container {
-        width: 15rem;
-        margin: 1rem auto;
+    #requirement-form-id {
+        width: 35rem;
     }
 }
 @media (min-width: 850px) and (max-width: 1000px) {
@@ -392,6 +416,9 @@ td a, td a span {
         width: 15rem;
         margin: 1rem auto;
     }
+    #requirement-form-id {
+        width: 40rem;
+    }
 }
 @media (min-width: 1000px) and (max-width: 1200px) {
     .login-container form {
@@ -402,6 +429,9 @@ td a, td a span {
         width: 15rem;
         margin: 1rem auto;
     }
+    #requirement-form-id {
+        width: 40rem;
+    }
 }
 @media (min-width: 1200px) {
     .login-container form {
@@ -411,5 +441,8 @@ td a, td a span {
     #login-container {
         width: 16rem;
         margin: 1rem auto;
+    }
+    #requirement-form-id {
+        width: 35rem;
     }
 }
