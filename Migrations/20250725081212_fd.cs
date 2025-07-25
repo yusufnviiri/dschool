@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace victors.Migrations
 {
     /// <inheritdoc />
-    public partial class seed : Migration
+    public partial class fd : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -658,16 +658,16 @@ namespace victors.Migrations
                 values: new object[,]
                 {
                     { "253a7f33-4741-4d5d-90ec-c7353f66403d", "253a7f33-4741-4d5d-90ec-c7353f66403d", "Director", "DIRECTOR" },
-                    { "26a0a0a7-a05d-4c46-be67-e4db7cfb7a17", null, "Parent", "PARENT" },
-                    { "27de65a4-ae17-4489-adc4-d7dc98983275", null, "Visitor", "VISITOR" },
-                    { "adabf2db-6bda-4fd2-9e7e-99c1db771a6a", null, "Burser", "BURSER" },
-                    { "df07d952-ba48-4073-8196-2db715d2ec0e", null, "Administrator", "ADMINISTRATOR" }
+                    { "593e4743-c881-4ada-b601-eb3da7365c6d", null, "Parent", "PARENT" },
+                    { "6008fb5e-6d57-4da9-85cb-b798008b26da", null, "Visitor", "VISITOR" },
+                    { "b2dee8ae-78b8-444e-a497-24ad5e5926e5", null, "Burser", "BURSER" },
+                    { "b878bed3-8632-4e7c-a93f-249d13bcfbd7", null, "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Function", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "51009a63-58e3-45f0-b9b3-8442c0c3d847", 0, "bbce9ad0-9b28-4e84-90d7-45e34db245fd", "director@byron", false, "Director", "Director", "Director", false, null, null, "DIRECTOR@BYRON", "AQAAAAIAAYagAAAAEAjtzhi+pPmPuOAn22tIhEJy2WFSFd//8UWCBbyIamZ3o+jFbWjD6zLrVES6nFWNdQ==", null, false, "1ad85a37-87ab-49cc-8d41-c5d27dfc66d4", false, "Director@byron" });
+                values: new object[] { "51009a63-58e3-45f0-b9b3-8442c0c3d847", 0, "a83d0184-b81b-4e31-9bf2-c6a8e11fa69c", "director@byron", false, "Director", "Director", "Director", false, null, null, "DIRECTOR@BYRON", "AQAAAAIAAYagAAAAEBryDPYOvmW+6nz2DiNvmxhJSSE0TI8fUlCfINBMFUfuGo6q/WlVf7TTE9ZA4ezHBQ==", null, false, "1c3e7bec-1b7d-4068-ac42-0f7b06080190", false, "Director@byron" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

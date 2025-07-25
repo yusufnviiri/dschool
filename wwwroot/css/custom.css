@@ -1,4 +1,12 @@
-﻿a {
+﻿
+
+html {
+    font-size: clamp(13px, 1.01vw, calc(11px * 0.2));
+    color: rgba(248,238,255,0.8);
+    font-family: Tahoma;
+}
+
+a {
     color: blue;
     text-transform: uppercase;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -74,14 +82,14 @@ select {
 }
 
 label {
-    font-size: 0.96em;
+    font-size: 0.96rem;
     color: #292524;
     margin-bottom: 0.1em;
     font-weight: 200;
 }
 
 thead {
-    font-size: larger;
+    font-size: 1.2rem;
     text-transform: capitalize;
 }
 
@@ -153,12 +161,12 @@ option:first-child {
 
 p {
     font-weight: 700;
-    font-size: 0.94em;
+    font-size: 0.94rem;
 }
 
 span {
     font-weight: 500;
-    font-size: 0.86em;
+    font-size: 0.94rem;
     margin-left: 0.42em;
 }
 .setUniform{
@@ -172,14 +180,14 @@ span {
     .submit input {
         border-radius: 3px;
         background-color: rgb(21 28 61);
-        font-size:0.99em;
+        font-size:0.99rem;
         padding: 0;
         margin: 0;
     }
 
 .search_form input,
 .search_form button {
-    font-size: 0.84em;
+    font-size: 0.84rem;
     height: 100%;
 }
 
@@ -194,12 +202,12 @@ input::placeholder {
 .pettycash_form select,
 .requirement_form input,
 .requirement_form select {
-    font-size: medium;
+    font-size: 0.94rem;
     font-weight: 600;
 }
 
 .login_form label {
-    font-size: 0.99em;
+    font-size: 0.94rem;
     font-weight: 400;
 }
 
@@ -232,12 +240,12 @@ input::placeholder {
 }
 
 .student_details {
-    font-size: 0.9812em;
+    font-size: 0.9812rem;
     font-family: sans-serif;
 }
 
 .data {
-    font-size: 0.8812em;
+    font-size: 0.8812rem;
 }
 
 .side_menu {
@@ -266,12 +274,11 @@ input::placeholder {
     /* display: none; */
 }
 
-td a,td a span{
-    font-size:1.152em;
+td a, td a span {
+    font-size: 0.94rem;
 }
 @media (max-width: 640px) {
     thead {
-        font-size: 10px;
         text-transform: capitalize;
         letter-spacing: normal;
     }
@@ -282,28 +289,30 @@ td a,td a span{
 
     td,
     .access_link {
-        font-size: 10px;
+        /*        font-size: 10px;
+    }*/
     }
 }
 
 @media (min-width: 640px) {
     thead {
-        font-size: 12px;
+/*        font-size: 12px;
+*/
         text-transform: capitalize;
         letter-spacing: normal;
     }
 
     td,
     .access_link {
-        font-size: 11px;
+        /*font-size: 11px;*/
         /* color: red; */
     }
 }
 
 @media (min-width: 1200px) {
     thead {
-        font-size: 15px;
-        text-transform: capitalize;
+/*        font-size: 15px;
+        text-transform: capitalize;*/
         letter-spacing: normal;
     }
 
@@ -321,14 +330,15 @@ td a,td a span{
 
 @media (min-width: 1300px) {
     thead {
-        font-size: 19px;
-        text-transform: capitalize;
+        /*        font-size: 19px;
+        text-transform: capitalize;*/
         letter-spacing: normal;
     }
 
     td,
     .access_link {
-        font-size: 15px;
+        /*        font-size: 15px;
+    }*/
     }
 }
 #header-vistor {

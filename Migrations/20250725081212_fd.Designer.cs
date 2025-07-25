@@ -12,8 +12,8 @@ using victors.Models.Context;
 namespace victors.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240904161933_seed")]
-    partial class seed
+    [Migration("20250725081212_fd")]
+    partial class fd
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,25 +54,25 @@ namespace victors.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "27de65a4-ae17-4489-adc4-d7dc98983275",
+                            Id = "6008fb5e-6d57-4da9-85cb-b798008b26da",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "26a0a0a7-a05d-4c46-be67-e4db7cfb7a17",
+                            Id = "593e4743-c881-4ada-b601-eb3da7365c6d",
                             Name = "Parent",
                             NormalizedName = "PARENT"
                         },
                         new
                         {
-                            Id = "df07d952-ba48-4073-8196-2db715d2ec0e",
+                            Id = "b878bed3-8632-4e7c-a93f-249d13bcfbd7",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "adabf2db-6bda-4fd2-9e7e-99c1db771a6a",
+                            Id = "b2dee8ae-78b8-444e-a497-24ad5e5926e5",
                             Name = "Burser",
                             NormalizedName = "BURSER"
                         },
@@ -1299,7 +1299,7 @@ namespace victors.Migrations
                         {
                             Id = "51009a63-58e3-45f0-b9b3-8442c0c3d847",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bbce9ad0-9b28-4e84-90d7-45e34db245fd",
+                            ConcurrencyStamp = "a83d0184-b81b-4e31-9bf2-c6a8e11fa69c",
                             Email = "director@byron",
                             EmailConfirmed = false,
                             FirstName = "Director",
@@ -1307,9 +1307,9 @@ namespace victors.Migrations
                             LastName = "Director",
                             LockoutEnabled = false,
                             NormalizedUserName = "DIRECTOR@BYRON",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAjtzhi+pPmPuOAn22tIhEJy2WFSFd//8UWCBbyIamZ3o+jFbWjD6zLrVES6nFWNdQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBryDPYOvmW+6nz2DiNvmxhJSSE0TI8fUlCfINBMFUfuGo6q/WlVf7TTE9ZA4ezHBQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1ad85a37-87ab-49cc-8d41-c5d27dfc66d4",
+                            SecurityStamp = "1c3e7bec-1b7d-4068-ac42-0f7b06080190",
                             TwoFactorEnabled = false,
                             UserName = "Director@byron"
                         });

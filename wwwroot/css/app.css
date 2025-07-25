@@ -15,7 +15,7 @@ a {
     .find_btn input {
         color: wheat;
         background-color:blue;
-        font-size: 14px;
+/*        font-size: 14px;*/
         padding:2px 7px;
         width:100%;
         cursor:pointer;
@@ -42,14 +42,14 @@ a:hover {
 
 @media (min-width: 1300px) {
     thead {
-        font-size: 19px;
+/*        font-size: 19px;*/
         text-transform: capitalize;
         letter-spacing: normal;
     }
 
     td,
     .access_link {
-        font-size: 15px;
+/*        font-size: 15px;*/
     }
 }
 /* site.css */
