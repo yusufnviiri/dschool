@@ -3,7 +3,7 @@
 
 
       <div class="ml-5  text-[10px]">
-        <h4  class=" my-2 font-semibold  underline-offset-2 underline 
+        <h4  class=" my-2   underline-offset-2 underline 
      text-[1.6em] text-center font-sans "
         >
           STAFF SALARY PAYMENT FORM
@@ -12,7 +12,7 @@
           <div class="flex  flex-col sm:flex-row  w-[70%] gap-6 flex-auto flex-grow-1 m-auto">      
             <div class="w-[45%]">
               <div class="mb-1">
-       <label asp-for="Staff.FirstName" class="font-semibold ml-2 block">First Name</label>
+       <label asp-for="Staff.FirstName" class=" ml-2 block">First Name</label>
                 <input     class="bg-sky-100 w-full text-center"
                   type="text"
                  asp-for="Staff.FirstName"
@@ -21,7 +21,7 @@
               </div>
               <input hidden asp-for="Staff.StaffId" />
               <div class="mb-1">
-                <label  asp-for="Staff.JobTitle" class="font-semibold  ml-2 block">Job Title</label>
+                <label  asp-for="Staff.JobTitle" class="  ml-2 block">Job Title</label>
                 <input
                   disabled
                 asp-for="Staff.JobTitle"  class="bg-sky-100 w-full text-center"
@@ -30,14 +30,14 @@
               </div>
 
               <div class="mb-2">
-                <label asp-for="Wage.Balance" class="font-semibold ml-2 block"> Balance Due</label>
+                <label asp-for="Wage.Balance" class=" ml-2 block"> Balance Due</label>
                 <input asp-for="Wage.Balance"  type="number" 
                   class=" w-full text-center "
                   disabled
                 />
               </div>
               <div class="mb-2">
-                <label  asp-for="Wage.Amount" class="font-semibold ml-2 block"> Amount Paid</label>
+                <label  asp-for="Wage.Amount" class=" ml-2 block"> Amount Paid</label>
                 <input asp-for="Wage.Amount"     type="number"
                   class="w-full text-center "
                 />
@@ -45,7 +45,7 @@
             </div>
             <div class="w-[45%]">
               <div class="mb-1">
-           <label asp-for="Staff.LastName" class="font-semibold  ml-2 block">Last Name</label>
+           <label asp-for="Staff.LastName" class="  ml-2 block">Last Name</label>
                 <input
                   disabled
                   asp-for="Staff.LastName"
@@ -55,7 +55,7 @@
               </div>
 
               <div class="mb-2  ">
-                <label  asp-for="Staff.Salary" class="font-semibold ml-2 block"> Salary</label>
+                <label  asp-for="Staff.Salary" class=" ml-2 block"> Salary</label>
                 <input
                   disabled asp-for="Staff.Salary"
                   class="bg-sky-100 w-full text-center "
@@ -63,7 +63,7 @@
                 />
               </div>
               <div class="mb-1">
-                <label asp-for="Wage.Reason"  class="font-semibold ml-2 block">Reason</label>
+                <label asp-for="Wage.Reason"  class=" ml-2 block">Reason</label>
                 <select  asp-for="Wage.Reason"  required               
                   class=" w-full text-center"
                 >
@@ -74,7 +74,7 @@
               </div>
 
               <div
-                class="mt-7 text-white   font-semibold w-full m-auto  
+                class="mt-7 text-white    w-full m-auto  
     text-center  bg-green-700 rounded hover:bg-slate-700"
               >
                 <input class="uppercase text-yellow-100" type="submit" />

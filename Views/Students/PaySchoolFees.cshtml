@@ -4,7 +4,7 @@
 }
 
 
-<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
+<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]
  text-center ">
 
     <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
@@ -18,7 +18,7 @@
           <div class="flex  flex-col sm:flex-row  w-[70%] gap-6 flex-auto flex-grow-1 m-auto">
             <div class="sm:w-[45%]">
                 <div class="mb-1">
-                <label asp-for="Student.FirstName" class="font-semibold ml-2 block">First Name</label>
+                <label asp-for="Student.FirstName" class=" ml-2 block">First Name</label>
                 <input
                  asp-for="Student.FirstName"
                   class="bg-sky-100 w-full text-center"
@@ -29,7 +29,7 @@
               <input hidden asp-for="Student.StudentId" />
 
               <div class="mb-2">
-                <label asp-for="Student.Term" class="font-semibold ml-2 block">Term</label>
+                <label asp-for="Student.Term" class=" ml-2 block">Term</label>
                 <input
              asp-for="Student.Term"        
              disabled
@@ -39,7 +39,7 @@
               </div>
 
               <div class="mb-2">
-                <label  asp-for="SchoolFees.Amount" class="font-semibold ml-2 block"> Amount Paid</label>
+                <label  asp-for="SchoolFees.Amount" class=" ml-2 block"> Amount Paid</label>
                 <input
 asp-for="SchoolFees.Amount"                  type="number"
                  
@@ -47,7 +47,7 @@ asp-for="SchoolFees.Amount"                  type="number"
                 />
               </div>
               <div class="sm:mb-2">
-                <label class="font-semibold ml-2 block"> Balance Due</label>
+                <label class=" ml-2 block"> Balance Due</label>
                 <input
                 asp-for="SchoolFees.Balance"
                   type="number"
@@ -58,7 +58,7 @@ asp-for="SchoolFees.Amount"                  type="number"
             </div>
             <div class="sm:w-[45%]">
               <div class="mb-1">
-                <label asp-for="Student.LastName" class="font-semibold  ml-2 block">Last Name</label>
+                <label asp-for="Student.LastName" class="  ml-2 block">Last Name</label>
                 <input
                   disabled
               asp-for="Student.LastName"
@@ -67,7 +67,7 @@ asp-for="SchoolFees.Amount"                  type="number"
                 />
               </div>
               <div class="mb-2  ">
-                <label class="font-semibold ml-2 block"> Class</label>
+                <label class=" ml-2 block"> Class</label>
                 <input
                   disabled
           asp-for="Student.Grade"              
@@ -77,7 +77,7 @@ asp-for="SchoolFees.Amount"                  type="number"
               </div>
 
               <div class="sm:mb-9 mb-3">
-                <label  asp-for="SchoolFees.RecievedBy" class="font-semibold ml-2 block">Recieved By</label>
+                <label  asp-for="SchoolFees.RecievedBy" class=" ml-2 block">Recieved By</label>
                 <input
                   required
                  asp-for="SchoolFees.RecievedBy"
@@ -85,7 +85,7 @@ asp-for="SchoolFees.Amount"                  type="number"
                   class=" w-full text-center "
                 />
               </div>
-                <div class=" mt-5 text-white   font-semibold w-full m-auto   submit
+                <div class=" mt-5 text-white    w-full m-auto   submit
     text-center  bg-green-700 rounded hover:bg-indigo-800"
               >
                 <input class="uppercase text-yellow-100  px-2" type="submit" />

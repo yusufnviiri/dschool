@@ -3,7 +3,7 @@
     ViewData["Title"] = "new school requirement";
 }
 
-<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
+<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
  text-center ">
     <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Home</a>
 
@@ -16,11 +16,11 @@
 
 
     <form method="post" action="NewSchoolRequirement" class="h-25  row">
-        <div asp-validation-summary="All" class="text-red-700 text-[0.6em] font-semibold list-disc"></div>
+        <div asp-validation-summary="All" class="text-red-700 text-[0.6em]  list-disc"></div>
 
 
         <div class="mb-1">
-            <label asp-for="Name" class="font-semibold text-[0.97em] required_label  ml-2 block">
+            <label asp-for="Name" class=" text-[0.97em] required_label  ml-2 block">
                 Item Description
             </label>
             <input required
@@ -32,7 +32,7 @@
         </div>
 
         <div class="mb-2">
-            <label asp-for="Charge" class="font-semibold text-[0.97em] required_label ml-2 block">
+            <label asp-for="Charge" class=" text-[0.97em] required_label ml-2 block">
                 Amount
             </label>
             <input required
@@ -42,7 +42,7 @@
 
         </div>
 
-        <div class="mt-3 sm:mt-7 text-white   font-semibold w-full m-auto submit
+        <div class="mt-3 sm:mt-7 text-white    w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-slate-700">
             <input class="  text-[0.73em] md:text-[0.8em] px-4 uppercase text-yellow-100  w-[30%]"
                    type="submit" />

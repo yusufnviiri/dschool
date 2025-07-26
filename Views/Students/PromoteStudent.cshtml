@@ -3,7 +3,7 @@
 }
 
 @model Student
-<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
+<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-6 ">
     <h4 class=" "> UPDATE STUDENT INFORMATION</h4>
     <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
@@ -13,14 +13,14 @@
     <div class="flex sm:flex-row flex-col  w-[90%] md:w-[90%] gap-6 flex-auto flex-grow-1 m-auto">
         <div class="sm:w-[45%]">
             <div class="mb-1">
-                <label asp-for="FirstName" class="font-semibold ml-2 block">First Name</label>
+                <label asp-for="FirstName" class=" ml-2 block">First Name</label>
                 <input disabled
                        asp-for="FirstName"
                        class=" w-full text-center"
                        type="text" />
             </div>
             <div class="mb-1">
-                <label asp-for="LastName" class="font-semibold  ml-2 block">Last Name</label>
+                <label asp-for="LastName" class="  ml-2 block">Last Name</label>
                 <input disabled
                        asp-for="LastName"
                        class=" w-full text-center"
@@ -29,7 +29,7 @@
             <input hidden asp-for="StudentId"/>
             <div class="flex justify-between gap-2  w-full">
                 <div class="mb-1 w-[80%]">
-                    <label asp-for="Gender" class="font-semibold ml-2 block">Gender</label>
+                    <label asp-for="Gender" class=" ml-2 block">Gender</label>
                     <select required
                             asp-for="Gender"
                             class=" w-full text-center ">
@@ -40,7 +40,7 @@
                     </select>
                 </div>
                 <div class="mb-2  justify-self-end w-[50%] ">
-                    <label asp-for="Birthdate" class="font-semibold block ">Birth Date</label>
+                    <label asp-for="Birthdate" class=" block ">Birth Date</label>
                     <input required
                            asp-for="Birthdate"
                            type="date"
@@ -50,7 +50,7 @@
 
             <div class="flex justify-between gap-2 w-full">
                 <div class="mb-1 w-[80%]">
-                    <label asp-for="Contact" class="font-semibold ml-2 block"> Contact</label>
+                    <label asp-for="Contact" class=" ml-2 block"> Contact</label>
                     <input required
                            asp-for="Contact"
                            class=" w-full text-center "
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="mb-2  justify-self-end w-[50%] ">
-                    <label asp-for="Status" class="font-semibold ml-2 block">Status</label>
+                    <label asp-for="Status" class=" ml-2 block">Status</label>
                     <select required
                             asp-for="Status"
                             class=" w-full text-center ">
@@ -71,7 +71,7 @@
 
             <div class="flex justify-between gap-2 w-full">
                 <div class="mb-1 w-[80%]">
-                    <label asp-for="Grade" class="font-semibold  ml-2 block">Class</label>
+                    <label asp-for="Grade" class="  ml-2 block">Class</label>
 
                     <select required
                             asp-for="Grade"
@@ -88,7 +88,7 @@
                     </select>
                 </div>
                 <div class="mb-2  justify-self-end w-[50%] ">
-                    <label asp-for="Stream" class="font-semibold  ml-2 block">Stream</label>
+                    <label asp-for="Stream" class="  ml-2 block">Stream</label>
 
                     <select required
                             asp-for="Stream"
@@ -102,7 +102,7 @@
             </div>
             <div class="flex justify-between gap-2 w-full">
                 <div class="mb-1 w-[80%]">
-                    <label asp-for="Section" class="font-semibold ml-2 block">Section</label>
+                    <label asp-for="Section" class=" ml-2 block">Section</label>
                     <select required
                             asp-for="Section"
                             class=" w-full text-center">
@@ -114,7 +114,7 @@
                     </select>
                 </div>
                 <div class="mb-2  justify-self-end w-[50%] ">
-                    <label asp-for="Term" class="font-semibold  ml-2 block">Term</label>
+                    <label asp-for="Term" class="  ml-2 block">Term</label>
 
                     <select required
                             asp-for="Term"
@@ -130,13 +130,13 @@
         </div>
         <div class="sm:w-[45%]">
             <div class="mb-1">
-                <label asp-for="Nationality" class="font-semibold ml-2 block">Nationality</label>
+                <label asp-for="Nationality" class=" ml-2 block">Nationality</label>
                 <input required
                        asp-for="Nationality"
                        class=" w-full text-center " />
             </div>
             <div class="mb-1">
-                <label asp-for="District" class="font-semibold ml-2 block">
+                <label asp-for="District" class=" ml-2 block">
 
                     District Of Residence
                 </label>
@@ -147,21 +147,21 @@
             </div>
 
             <div class="mb-2">
-                <label asp-for="Village" class="font-semibold ml-2 block">Village</label>
+                <label asp-for="Village" class=" ml-2 block">Village</label>
                 <input required
                        asp-for="Village"
                        class=" w-full text-center "
                        type="text" />
             </div>
             <div class="mb-2">
-                <label asp-for="Religion" class="font-semibold ml-2 block">Religion</label>
+                <label asp-for="Religion" class=" ml-2 block">Religion</label>
                 <input asp-for="Religion"
                        class=" w-full text-center "
                        type="text" />
             </div>
             <div class="flex justify-between gap-2 w-full">
                 <div class="mb-1 w-[80%]">
-                    <label asp-for="SchoolFees" class="font-semibold ml-2 block">School Fees</label>
+                    <label asp-for="SchoolFees" class=" ml-2 block">School Fees</label>
                     <input required
                            asp-for="SchoolFees"
                            type="number"
@@ -169,7 +169,7 @@
                 </div>
 
                 <div class="mb-1 w-[30%]">
-                    <label asp-for="fullUniform" class="font-semibold ml-2 block">Uniform</label>
+                    <label asp-for="fullUniform" class=" ml-2 block">Uniform</label>
                     <input type="checkbox"
                            asp-for="fullUniform"
                            class=" m-auto ml-7 w-[20%] text-sm text-center " />
@@ -177,7 +177,7 @@
             </div>
 
             <div id="uniform-amount" class="mb-2  setUniform">
-                <label asp -for="charge" class="font-semibold ml-2 block ">
+                <label asp -for="charge" class=" ml-2 block ">
                     Uniform Charge
                 </label>
                 <input type="number"
@@ -187,7 +187,7 @@
 
             </div>
 
-            <div class="mt-3 sm:mt-7 text-white   font-semibold w-full m-auto submit
+            <div class="mt-3 sm:mt-7 text-white    w-full m-auto submit
     text-center  bg-green-700 rounded hover:bg-slate-700">
                 <input class="  px-4 uppercase text-yellow-100  w-[30%]"
                        type="submit" />

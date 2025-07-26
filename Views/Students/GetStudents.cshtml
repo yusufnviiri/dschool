@@ -18,7 +18,7 @@
 
 
 
-    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-11 ">
         <h4 class=" ">  STUDENT INFORMATION</h4>
 
@@ -27,7 +27,7 @@
     </div>
 }else{
 
-    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]
  text-center ">
 
         <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>
@@ -48,7 +48,7 @@
                 <input class="   "
                        value="Search" type="submit" />
             </div>
-            <div class=" text-white  flex justify-between   font-semibold  m-auto
+            <div class=" text-white  flex justify-between     m-auto
 text-center   rounded">
 
 
@@ -60,7 +60,7 @@ text-center   rounded">
                 </div>
 
             </div>
-            <div class=" text-white  flex justify-between  font-semibold  m-auto
+            <div class=" text-white  flex justify-between    m-auto
 text-center   rounded">
                 <div class="search_form">
                     <input asp-for="@Model.LookUpStudents.LName"
@@ -70,7 +70,7 @@ text-center   rounded">
                 </div>
 
             </div>
-            <div class=" text-white hidden lg:flex justify-between   font-semibold  m-auto
+            <div class=" text-white hidden lg:flex justify-between     m-auto
 text-center   rounded">
                 <div class="search_form">
                     <input asp-for="@Model.LookUpStudents.SGrade"
@@ -80,7 +80,7 @@ text-center   rounded">
                 </div>
 
             </div>
-            <div class=" text-white hidden lg:flex justify-between   font-semibold  m-auto
+            <div class=" text-white hidden lg:flex justify-between     m-auto
                 text-center   rounded">
                 <div class="search_form">
                     <input asp-for="@Model.LookUpStudents.Ssection"
@@ -91,7 +91,7 @@ text-center   rounded">
 
             </div>
 
-            <div class=" text-white hidden xl:flex justify-between   font-semibold  m-auto
+            <div class=" text-white hidden xl:flex justify-between     m-auto
                 text-center   rounded">
                 <div class="search_form">
                     <input asp-for="@Model.LookUpStudents.Sstatus"
@@ -193,17 +193,17 @@ text-center   rounded">
 
 
 
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Sur Name </th>
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Last Name </th>
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize  table_hide"> Grade </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> class </th>
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Section </th>
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Term </th>
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize">Gender </th>
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize table_hide"> Status</th>
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Residance </th>
-                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Details </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Delete </th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Sur Name </th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Last Name </th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize  table_hide"> Grade </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> class </th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Section </th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Term </th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">Gender </th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize table_hide"> Status</th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Residance </th>
+                            <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Details </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Delete </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -264,7 +264,7 @@ text-center   rounded">
                                 </td>
 
                                 <td>
-                                    @* <a asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentId" class=" uppercase bg-red-600 p-1  font-semibold  text-stone-200 text-[0.88em] mt-[2px] rounded  ">
+                                    @* <a asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentId" class=" uppercase bg-red-600 p-1    text-stone-200 text-[0.88em] mt-[2px] rounded  ">
                             Delete
                         </a> *@
                                         <a id="delete_link" asp-controller="Students" asp-action="DeleteStudent" asp-route-id=" @student.StudentId" class="p-2 rounded-full bg-white group transition-all duration-500 hover:bg-red-600 flex item-center">

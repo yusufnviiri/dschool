@@ -6,7 +6,7 @@
 @model StaffIndex
 @if(Model.Staffs.Count ==0)
 {
-    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-11 ">
 
         <h4 class=" ">  STAFF INFORMATION</h4>
@@ -17,7 +17,7 @@
     </div>
 }else{
 
-    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
+    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]
  text-center ">
 
         <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
@@ -41,7 +41,7 @@
                     <input class="   "
                            value="Search " type="submit" />
                 </div>
-        <div class=" text-white  flex justify-between   font-semibold  m-auto
+        <div class=" text-white  flex justify-between     m-auto
 text-center   rounded">
 
 
@@ -53,7 +53,7 @@ text-center   rounded">
             </div>
 
         </div>
-        <div class=" text-white  flex justify-between  font-semibold  m-auto
+        <div class=" text-white  flex justify-between    m-auto
 text-center   rounded">
             <div class="search_form">
                 <input asp-for="@Model.LookUpStaff.LName"
@@ -63,7 +63,7 @@ text-center   rounded">
             </div>
 
         </div>
-        <div class=" text-white hidden lg:flex justify-between   font-semibold  m-auto
+        <div class=" text-white hidden lg:flex justify-between     m-auto
 text-center   rounded">
             <div class="search_form">
                 <input asp-for="@Model.LookUpStaff.SCategory"
@@ -73,7 +73,7 @@ text-center   rounded">
             </div>
 
         </div>
-        <div class=" text-white hidden lg:flex justify-between   font-semibold  m-auto
+        <div class=" text-white hidden lg:flex justify-between     m-auto
                 text-center   rounded">
             <div class="search_form">
                 <input asp-for="@Model.LookUpStaff.SJobTitle"
@@ -84,7 +84,7 @@ text-center   rounded">
 
         </div>
 
-        <div class=" text-white hidden xl:flex justify-between   font-semibold  m-auto
+        <div class=" text-white hidden xl:flex justify-between     m-auto
                 text-center   rounded">
             <div class="search_form">
                 <input asp-for="@Model.LookUpStaff.Sstatus"
@@ -112,15 +112,15 @@ text-center   rounded">
 
                                
 
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Sur Name </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Last Name </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize  table_hide"> Category</th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize">Job Title </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Sur Name </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Last Name </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize  table_hide"> Category</th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">Job Title </th>
                              
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize"> Contact </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize">Gender </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize table_hide"> Status</th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm  font-semibold text-gray-900 capitalize table_hide"> Residence</th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Contact </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">Gender </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize table_hide"> Status</th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize table_hide"> Residence</th>
                             </tr>
                         </thead>
                         <tbody>

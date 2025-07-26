@@ -3,7 +3,7 @@
 }
 
 @model Student
-<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500  font-semibold  px-11   sm:text-[0.81em]   text-[0.61em]
+<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]
  text-center sm:mb-5 lg:mb-6 ">
     <h4 class=" "> NEW STUDENT INFORMATION</h4>
     <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
@@ -12,7 +12,7 @@
 
 <form method="post" action="CreateStudent" >
 
-        <div asp-validation-summary="All" class="text-red-700 text-[0.6em] font-semibold list-disc"></div>
+        <div asp-validation-summary="All" class="text-red-700 text-[0.6em]  list-disc"></div>
 
     <div class="flex sm:flex-row flex-col  md:w-[80%] gap-6 flex-auto flex-grow-1 m-auto">
         <div class="sm:w-[45%]">
