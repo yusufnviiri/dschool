@@ -14,7 +14,7 @@
     <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Students" asp-action="GetStudents">Students</a>
 </div>
 
-<div class=" mt-7 mx-auto w-[70%] ">
+<div id="requirement-form-id" class="w-[90%] m-auto  mt-4 requirement_form">
     <form method="post" action="PayRequirement" class="h-25  row">
         <div class="flex  flex-col sm:flex-row  w-[70%] gap-6 flex-auto flex-grow-1 m-auto">
             <div class="sm:w-[45%]">
@@ -98,7 +98,7 @@
                     <input asp-for="Requirement.RecievedBy" type="text"
                            class="w-full text-center " />
                 </div>
-                <div class="sm:mb-8 mb-3">
+                <div class="sm:mb-7 mb-3">
                     <label asp-for="Requirement.Reason" class=" ml-2 block">Reason</label>
                     <input required
                            asp-for="Requirement.Reason"
@@ -106,9 +106,10 @@
                            value="Shool Requirement"
                            class=" w-full text-center " />
                 </div>
-                <div class=" mt-5 text-white    w-full m-auto   submit
-    text-center  bg-green-700 rounded hover:bg-indigo-800">
-                    <input class="uppercase text-yellow-100  px-2" type="submit" />
+                <div class="text-white    w-full m-auto submit
+    text-center  bg-green-700 rounded hover:bg-slate-700">
+                    <input class="  px-4 uppercase text-yellow-100  w-[30%]"
+                           type="submit" />
                 </div>
             </div>
         </div>

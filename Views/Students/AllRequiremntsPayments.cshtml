@@ -18,63 +18,99 @@
 }
 else
 {
-    <div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
- text-center  ">
-        <a class=" text-white  bg-orange-600 px-2 rounded" asp-controller="Students" asp-action="GetStudents"> Students</a>
-        <h4 class=" "> PAID REQUIREMENTS</h4>
-        <a class=" text-white  bg-orange-600 px-2 rounded " asp-route-id="0" asp-controller="Students" asp-action="NewSchoolRequirement">New Requirement</a>
+   
+
+
+
+
+
+
+
+<div class="flex flex-col">
+    <div class=" overflow-x-auto pb-4">
+        <div class="min-w-full inline-block align-middle">
+            <div class="overflow-hidden  border rounded-lg border-gray-300">
+                <table class="table-auto min-w-full rounded-xl">
+                    <thead>
+
+
+                 
+
+
+
+
+
+
+
+
+
+                        <tr class="bg-gray-50">
+
+
+
+                        <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">student </th>
+                        <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Description </th>
+
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize table_hide">Term </th>
+
+
+                       
+
+
+
+                        <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Date </th>
+                        <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">Grade </th>
+                        <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize "> Amount</th>
+                        <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize "> Recieved By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @item.PaidBy
+                                </td>
+                                <td>
+                                    @item.RequiremntName
+                                </td>
+
+                                    <td class="table_hide">
+                                    @item.Term
+
+                                </td>
+                                <td>
+                                    @item.DateOfPayment
+
+                                </td>
+                                <td>
+                                    @item.Grade
+
+                                </td>
+                                <td>
+                                    @item.Amount
+                                    <span>/=</span>
+                                </td>
+                                <td>
+                                    @item.RecievedBy
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <table class="w-full m-auto text-lime-900  ">
-        <thead>
-            <tr class=" ">
-                <th></th>
-                <th>student</th>
-                <th> Description</th>
-                <th>Term</th>
-                <th>Date</th>
-                <th>Grade</th>
-                <th>Amount</th>
-                <th>Recieved By</th>
-            </tr>
-        </thead>
+</div>
 
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td> </td>
 
-                    <td>
-                        @item.PaidBy 
-                    </td>
-                    <td>
-                        @item.RequiremntName 
-                    </td>
 
-                    <td>
-                        @item.Term
-                   
-                    </td>
-                    <td>
-                        @item.DateOfPayment
-                      
-                    </td>
-                    <td>
-                        @item.Grade
-
-                    </td>
-                    <td>
-                        @item.Amount
-                        <span>/=</span>
-                    </td>
-                    <td>
-                        @item.RecievedBy
-
-                    </td>
-                
-                </tr>
-            }
-
-        </tbody>
-    </table>
 }

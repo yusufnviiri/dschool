@@ -28,47 +28,89 @@ else{
     <a class=" text-white  bg-orange-600 px-2 rounded  " asp-controller="Students" asp-action="CreateStudent">New Student</a>  
 </div>
 
-    <table class="w-full m-auto text-lime-900  ">
-        <thead>
-        <tr class=" ">
-            <th></th>
-            <th>Student</th>
-            <th>Amount Paid</th>
-            <th> Balance</th>
-            <th>Balance Due</th>
-            <th>details</th>
-        </tr>
-    </thead>     
-        
-            <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td> </td>
 
-                    <td >
-                        @item.Student.FirstName  <span class=" px-2 lowercase ">@item.Student.LastName</span>
-                    </td>
-                    <td>
-                        @item.SchoolFees.Amount <span>/=</span>
-                    </td>
 
-                    <td>
-                        @item.SchoolFees.Balance
-                        <span>/=</span>
-                    </td>
-                    <td>
-                        @item.SchoolFees.AmountDue
-                        <span>/=</span>
-                    </td>
-                    <td>
-                        <a asp-controller="Students" asp-action="StudentPayments" asp-route-id=" @item.Student.StudentId" class="underline uppercase  underline-offset-2 text-rose-800 text-[0.88em] px-3 ">
-                            Ledger
-                        </a>
-                    </td>
+    <div class="flex flex-col">
+        <div class=" overflow-x-auto pb-4">
+            <div class="min-w-full inline-block align-middle">
+                <div class="overflow-hidden  border rounded-lg border-gray-300">
+                    <table class="table-auto min-w-full rounded-xl">
+                        <thead>
 
-                </tr>}
-                
-            </tbody>
-            </table>
+
+
+                            <tr class="bg-gray-50">
+
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">student </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Amount Paid </th>
+
+                           
+
+
+
+
+
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Balance </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">Balance Due </th>
+                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize ">details</th>
+                             
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @item.Student.FirstName  <span class=" px-2 lowercase ">@item.Student.LastName</span>
+                                    </td>
+                                    <td>
+                                        @item.SchoolFees.Amount <span>/=</span>
+                                    </td>
+
+                                    <td>
+                                        @item.SchoolFees.Balance
+                                        <span>/=</span>
+                                    </td>
+                                    <td>
+                                        @item.SchoolFees.AmountDue
+                                        <span>/=</span>
+                                    </td>
+                                    <td>
+                                        <a asp-controller="Students" asp-action="StudentPayments" asp-route-id=" @item.Student.StudentId" class="underline uppercase  underline-offset-2 text-rose-800 text-[0.88em] px-3 ">
+                                            Ledger
+                                        </a>
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
