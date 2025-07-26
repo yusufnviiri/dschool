@@ -1,72 +1,68 @@
 ﻿@model CourseJoinExamCache
 
-
-
 @{
     ViewData["Title"] = "All Subjects";
 }
 
-<div class="flex   justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-4  m-auto  sm:text-[0.81em]   text-[0.61em]
- text-center  ">
-   
-
-    <h4 class=" "> ACADEMIC COURSES</h4>
-
-    <a class=" text-white  bg-orange-600 px-4 rounded  " asp-controller="Academic" asp-action="CreateCourse">New Subject</a>
+<!-- Header Section -->
+<div class="flex justify-between items-center font-poppins bg-zinc-900 text-yellow-500 py-3 px-4 w-full text-[0.61em] sm:text-[0.81em]">
+    <h4 class="uppercase tracking-wide font-bold">Academic Courses</h4>
+    <a class="bg-orange-600 text-white px-4 py-1 rounded hover:bg-orange-700 transition" asp-controller="Academic" asp-action="CreateCourse">
+        New Subject
+    </a>
 </div>
 
-@if(Model.courses.Count ==0)
+<!-- No Courses Found -->
+@if (Model.courses.Count == 0)
 {
-    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]
- text-center sm:mb-5 lg:mb-11 ">
-
-        <a class=" text-white  bg-orange-600 px-4 rounded w-[40%] m-auto     " asp-controller="Staffs" asp-action="Create">Click to Add Staff....</a>
+    <div class="flex justify-center font-poppins bg-zinc-900 text-yellow-500 py-4 px-4 text-[0.61em] sm:text-[0.81em]">
+        <a class="bg-orange-600 text-white px-4 py-2 rounded w-[70%] sm:w-[40%] text-center hover:bg-orange-700 transition"
+           asp-controller="Staffs" asp-action="Create">
+            Click to Add Staff...
+        </a>
     </div>
-}else{
-
-<table class="w-full m-auto text-black ">
-    <thead>
-        <tr class=" ">
-            <th>ID</th>
-            <th>Name</th>
-            <th> Code</th>
-            <th>Grade</th>
-            <th>Stream</th>
-            <th> Section</th>
-                @if (Model.examCache.ExamSession == true)
-                {
-                    <th>ASSESS</th>
-
-
-                }
-         
-        </tr>
-    </thead>
-    <tbody>
-            @foreach (var item in Model.courses)
-            {
+}
+else
+{
+    <!-- Courses Table -->
+    <div class="overflow-x-auto mt-5">
+        <table class="min-w-[700px] w-full text-left border-collapse bg-white text-sm font-poppins">
+            <thead class="bg-zinc-800 text-white">
                 <tr>
-                    <td>@item.CourseId</td>
-
-            <td> @item.Name</td>
-            <td>@item.Code</td>
-            <td>@item.Grade</td>
-            <td>@item.Stream</td>
-            <td>@item.Section</td>    
-     
-
-
-                    @if (Model.examCache.ExamSession == true)
+                    <th class="px-4 py-2">ID</th>
+                    <th class="px-4 py-2">Name</th>
+                    <th class="px-4 py-2">Code</th>
+                    <th class="px-4 py-2">Grade</th>
+                    <th class="px-4 py-2">Stream</th>
+                    <th class="px-4 py-2">Section</th>
+                    @if (Model.examCache.ExamSession)
                     {
-                        <td>
-                            <a class=" text-white  bg-orange-600 px-4 rounded  " asp-route-id="@item.CourseId" asp-controller="Academic" asp-action="StoreExamCourse">SELECT</a>
-
-                        </td>
-
+                        <th class="px-4 py-2 text-center">Assess</th>
                     }
-
-           
-        </tr>}        
-    </tbody>
-</table>
+                </tr>
+            </thead>
+            <tbody class="text-zinc-800 divide-y divide-gray-200">
+                @foreach (var item in Model.courses)
+                {
+                    <tr class="hover:bg-gray-100 transition">
+                        <td class="px-4 py-2">@item.CourseId</td>
+                        <td class="px-4 py-2">@item.Name</td>
+                        <td class="px-4 py-2">@item.Code</td>
+                        <td class="px-4 py-2">@item.Grade</td>
+                        <td class="px-4 py-2">@item.Stream</td>
+                        <td class="px-4 py-2">@item.Section</td>
+                        @if (Model.examCache.ExamSession)
+                        {
+                            <td class="px-4 py-2 text-center">
+                                <a class="bg-orange-600 text-white px-3 py-1 rounded hover:bg-orange-700 transition"
+                                   asp-route-id="@item.CourseId" asp-controller="Academic" asp-action="StoreExamCourse">
+                                    Select
+                                </a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }

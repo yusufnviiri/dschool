@@ -1,63 +1,68 @@
 ﻿@model List<ReportCourse>
 
-
 @{
-    ViewData["Title"] = "assessements";
+    ViewData["Title"] = "Assessments";
 }
 
-    @if (Model.Count>0) {  
-     
-<div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-2 sm:px-4  m-auto  sm:text-[0.81em]   text-[0.61em] text-center  ">
-    <a class=" text-white  bg-orange-600 px-2 rounded " aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
-    <h4 class=" ">MODULE ASSESSEMENT REPORT</h4>
-    <a class=" text-white  bg-orange-600 px-2 rounded " asp-controller="Students" asp-action="CreateStudent">New Student</a>
-  
-</div>
-   
-        <div class=" bg-cyan-950 mt-10 pt-5  rounded  text-stone-950  w-[90%] md:w-[80%]  lg:w-[70%] m-auto">
-    <div class="flex py-2 flex-col text-stone-300 w-[95%] m-auto ">
-            <p class=" text-[0.979em] py-1 bg-violet-800 text-white text-center uppercase">
-            @Model.FirstOrDefault().student.FirstName
-            <span class="px-2 capitalize"> @Model.FirstOrDefault().student.LastName </span>
-        </p>
+@if (Model.Count > 0)
+{
+    <!-- Top Header -->
+    <div class="flex justify-between items-center font-poppins bg-zinc-900 text-yellow-500 py-3 px-2 sm:px-4 w-full text-[0.61em] sm:text-[0.81em]">
+        <a class="bg-orange-600 text-white px-3 py-1 rounded hover:bg-orange-700 transition" asp-controller="Students" asp-action="GetStudents">Students</a>
+        <h4 class="font-bold text-center">MODULE ASSESSMENT REPORT</h4>
+        <a class="bg-orange-600 text-white px-3 py-1 rounded hover:bg-orange-700 transition" asp-controller="Students" asp-action="CreateStudent">New Student</a>
+    </div>
 
-        <p class="text-[0.679em] text-xs text-white">            
-            has successfuly completed the following Assessements
-        </p>
-    </div>
-    <div class="flex py-2 justify-between text-yellow-300 w-[95%] m-auto ">
-        <p class=" text-[0.779em] uppercase">Subject </p>
-        <p class=" text-[0.779em] uppercase">Assessement  </p>
-        <p class="text-[0.779em] uppercase"> Final Score</p>
-    </div>
-    @foreach( var item in Model){
-        <div class=" px-2 pt-1  bg-teal-900 pb-1  text-stone-200 w-full m-auto lg:text-[0.8299em]  text-[0.699em]     ">
-            <div class="flex  w-full border-yellow-400 border-2  rounded place-items-center  ">
-                <div class="flex justify-between w-full pl-3">
-                    <p class="w-[18%] self-center  "> @item.course.Name</p>
-                    <div class="  w-[40%] flex justify-between ">
-                         @foreach (var data in item.assessements)
+    <!-- Main Report Container -->
+    <div class="bg-cyan-950 mt-10 pt-5 rounded text-stone-200 w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] m-auto shadow-md">
+        <!-- Student Info -->
+        <div class="flex flex-col py-2 text-stone-300 w-[95%] m-auto">
+            <p class="text-[0.979em] py-1 bg-violet-800 text-white text-center uppercase rounded">
+                @Model.First().student.FirstName
+                <span class="px-2 capitalize">@Model.First().student.LastName</span>
+            </p>
+            <p class="text-[0.679em] text-white">has successfully completed the following assessments</p>
+        </div>
+
+        <!-- Table Header -->
+        <div class="flex flex-wrap justify-between text-yellow-300 w-[95%] m-auto text-[0.779em] font-semibold border-b border-yellow-500 py-2 uppercase">
+            <p class="w-full sm:w-[20%]">Subject</p>
+            <p class="w-full sm:w-[50%] text-center">Assessments</p>
+            <p class="w-full sm:w-[20%] text-right">Final Score</p>
+        </div>
+
+        <!-- Loop Through Courses -->
+        @foreach (var item in Model)
+        {
+            <div class="w-[95%] m-auto py-3 border-b border-teal-800 text-[0.699em] sm:text-[0.8299em]">
+                <div class="flex flex-col sm:flex-row justify-between gap-3 items-center text-stone-200">
+                    <!-- Course Name -->
+                    <p class="sm:w-[20%] w-full text-center sm:text-left font-medium text-cyan-200">@item.course.Name</p>
+
+                    <!-- Assessments -->
+                    <div class="sm:w-[50%] w-full flex flex-wrap justify-center sm:justify-start gap-2">
+                        @foreach (var data in item.assessements)
                         {
-                        <div class=" mr-3  ">
-                            <p class="px-3">@data.PaceNumber</p>
-                            <p class="px-3">@data.PaceScore</p>
-                        </div>
-                        } 
+                            <div class="bg-teal-800 rounded-md px-2 py-1 text-center shadow-sm">
+                                <p class="text-cyan-300 font-medium">@data.PaceNumber</p>
+                                <p>@data.PaceScore</p>
+                            </div>
+                        }
                     </div>
-                    <p class="w-[10%] text-left self-center">@item.score </p>
+
+                    <!-- Final Score -->
+                    <p class="sm:w-[20%] w-full text-right font-bold text-orange-300">@item.score</p>
                 </div>
             </div>
-        </div>
-    }
+        }
     </div>
-
-    } else{
-    <div class="flex justify-between font-poppins  bg-zinc-900 py-2 w-full text-yellow-500    px-2 sm:px-4  m-auto  sm:text-[0.81em]   text-[0.61em] text-center  ">
-        <a class=" text-white  bg-orange-600 px-2 rounded " aria-current="page" asp-controller="Students" asp-action="GetStudents">Students</a>
-        <h4 class=" ">MODULE ASSESSEMENT REPORT</h4>
-        <a class=" text-white  bg-orange-600 px-2 rounded " asp-controller="Students" asp-action="CreateStudent">New Student</a>
-
+}
+else
+{
+    <!-- No Data Message -->
+    <div class="flex justify-between items-center font-poppins bg-zinc-900 text-yellow-500 py-3 px-2 sm:px-4 w-full text-[0.61em] sm:text-[0.81em]">
+        <a class="bg-orange-600 text-white px-3 py-1 rounded hover:bg-orange-700 transition" asp-controller="Students" asp-action="GetStudents">Students</a>
+        <h4 class="font-bold text-center">MODULE ASSESSMENT REPORT</h4>
+        <a class="bg-orange-600 text-white px-3 py-1 rounded hover:bg-orange-700 transition" asp-controller="Students" asp-action="CreateStudent">New Student</a>
     </div>
-    }
-
-    
+}
