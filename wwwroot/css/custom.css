@@ -347,7 +347,14 @@ margin-bottom:2rem;}
         width: 14rem;
         margin: 1rem auto;
     }
-    #requirement-form-id{width:90%;    }
+    #requirement-form-id {
+        width: 90%;
+        background-color: red;
+    }
+    th{
+                 color:red;
+                 
+    }
 }
 
 @media (min-width: 351px) and (max-width: 451px) {

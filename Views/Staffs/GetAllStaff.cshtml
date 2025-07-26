@@ -103,67 +103,52 @@ text-center   rounded">
 
 
     <div class="flex flex-col">
-        <div class=" overflow-x-auto pb-4">
-            <div class="min-w-full inline-block align-middle">
-                <div class="overflow-hidden  border rounded-lg border-gray-300">
-                    <table class="table-auto min-w-full rounded-xl">
-                        <thead>
-                            <tr class="bg-gray-50">
-
-                               
-
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Sur Name </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Last Name </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize  table_hide"> Category</th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">Job Title </th>
-                             
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize"> Contact </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize">Gender </th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize table_hide"> Status</th>
-                                <th scope="col" class="p-2 text-left whitespace-nowrap text-sm   text-gray-900 capitalize table_hide"> Residence</th>
+        <div class="overflow-x-auto pb-4">
+            <div class="inline-block min-w-full align-middle">
+                <div class="overflow-hidden border border-gray-300 rounded-lg">
+                    <table class="min-w-full table-auto text-sm">
+                        <thead class="bg-gray-50 text-gray-900 uppercase text-xs md:text-sm">
+                            <tr>
+                                <th class="p-2 text-left whitespace-nowrap">Sur Name</th>
+                                <th class="p-2 text-left whitespace-nowrap">Last Name</th>
+                                <th class="p-2 text-left whitespace-nowrap hidden md:table-cell">Category</th>
+                                <th class="p-2 text-left whitespace-nowrap">Job Title</th>
+                                <th class="p-2 text-left whitespace-nowrap">Contact</th>
+                                <th class="p-2 text-left whitespace-nowrap">Gender</th>
+                                <th class="p-2 text-left whitespace-nowrap hidden md:table-cell">Status</th>
+                                <th class="p-2 text-left whitespace-nowrap hidden md:table-cell">Residence</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var staff in Model.Staffs)
                             {
-                                <tr class="   text-[0.7em] sm:text-[0.99em] ">
-                                
-                                    <td>
-                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">   @staff.FirstName</a>
+                                <tr class="border-t text-xs sm:text-sm hover:bg-gray-50">
+                                    <td class="p-2">
+                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id="@staff.StaffId">@staff.FirstName</a>
                                     </td>
-                                    <td>
-                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">    @staff.LastName</a>
+                                    <td class="p-2">
+                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id="@staff.StaffId">@staff.LastName</a>
                                     </td>
-                                    <td class="table_hide">
-                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
-                                            @staff.Category
+                                    <td class="p-2 hidden md:table-cell">
+                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id="@staff.StaffId">@staff.Category</a>
+                                    </td>
+                                    <td class="p-2">
+                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id="@staff.StaffId">@staff.JobTitle</a>
+                                    </td>
+                                    <td class="p-2">
+                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id="@staff.StaffId">@staff.Contact</a>
+                                    </td>
+                                    <td class="p-2">
+                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id="@staff.StaffId">@staff.Gender</a>
+                                    </td>
+                                    <td class="p-2 hidden md:table-cell">
+                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id="@staff.StaffId">@staff.Status</a>
+                                    </td>
+                                    <td class="p-2 hidden md:table-cell">
+                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id="@staff.StaffId">
+                                            @staff.Village<span class="pl-1">, @staff.District</span>
                                         </a>
                                     </td>
-                                    <td>
-                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">        @staff.JobTitle</a>
-
-                                    </td>
-                                    <td>
-                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">        @staff.Contact</a>
-
-                                    </td>
-                                    <td>
-                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
-                                            @staff.Gender
-                                        </a>
-                                    </td>
-                                    <td class="table_hide">
-                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">   @staff.Status </a>
-
-                                    </td>
-                                    <td class="table_hide">
-                                        <a asp-controller="Staffs" asp-action="Staff" asp-route-id=" @staff.StaffId">
-                                            <span class="">@staff.Village</span>
-                                            <span class="pl-2">,@staff.District</span>
-                                        </a>
-
-                                    </td>
-
                                 </tr>
                             }
                         </tbody>
@@ -172,8 +157,6 @@ text-center   rounded">
             </div>
         </div>
     </div>
-
-
 
 
 
