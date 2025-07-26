@@ -2,7 +2,7 @@
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
-<ul class="flex justify-between font-sans  bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]">
+<ul class="flex justify-between font-poppins bg-zinc-900 py-2 w-full text-yellow-500    px-11   sm:text-[0.81em]   text-[0.61em]">
     @if (SignInManager.IsSignedIn(User))
     {
         var logged_user = Context.User;
@@ -24,7 +24,7 @@
         if (user_role == "DIRECTOR")
         {
             <li class="login_li">
-                <a class="text-white  hover:bg-green-800  bg-orange-600 px-2 py-1 rounded " asp-controller="Login"
+                <a class="text-white  hover:bg-green-800  bg-orange-600 px-2 py-1 rounded  nav-link btn btn-link text-info" asp-controller="Login"
                    asp-action="Register">Register </a>
             </li>
 
