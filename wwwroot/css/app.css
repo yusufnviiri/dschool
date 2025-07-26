@@ -218,3 +218,7 @@ html {
     font-size:0.85rem;
     padding:0 5px;
 }
+#details_link, #delete_link {
+    display: block;
+    width: fit-content;
+}
