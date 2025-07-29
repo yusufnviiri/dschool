@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace victors.Controllers
 {
+    [IgnoreAntiforgeryToken]
+
     public class StudentsController : Controller
     {
         private readonly ApplicationDbContext _db;

@@ -51,25 +51,25 @@ namespace victors.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6008fb5e-6d57-4da9-85cb-b798008b26da",
+                            Id = "1ecbc5e4-0c8d-41fe-8dcd-4f43b8f44c8f",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "593e4743-c881-4ada-b601-eb3da7365c6d",
+                            Id = "5b0f3844-476d-4eda-b854-d907dae93830",
                             Name = "Parent",
                             NormalizedName = "PARENT"
                         },
                         new
                         {
-                            Id = "b878bed3-8632-4e7c-a93f-249d13bcfbd7",
+                            Id = "df07b566-b68c-4e64-a086-042b29a459c1",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "b2dee8ae-78b8-444e-a497-24ad5e5926e5",
+                            Id = "3637b68d-39b3-4c6e-a939-d7f9c372970d",
                             Name = "Burser",
                             NormalizedName = "BURSER"
                         },
@@ -1296,7 +1296,7 @@ namespace victors.Migrations
                         {
                             Id = "51009a63-58e3-45f0-b9b3-8442c0c3d847",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a83d0184-b81b-4e31-9bf2-c6a8e11fa69c",
+                            ConcurrencyStamp = "0fe3a913-29a8-433d-97f9-a8303a61ec90",
                             Email = "director@byron",
                             EmailConfirmed = false,
                             FirstName = "Director",
@@ -1304,9 +1304,9 @@ namespace victors.Migrations
                             LastName = "Director",
                             LockoutEnabled = false,
                             NormalizedUserName = "DIRECTOR@BYRON",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBryDPYOvmW+6nz2DiNvmxhJSSE0TI8fUlCfINBMFUfuGo6q/WlVf7TTE9ZA4ezHBQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBDcX4P/W6rYfvQHc4mZQp7CMZsrSPkFD5HYIFEe7IR1ciVa0rSX9PmV2sIow9Iurw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1c3e7bec-1b7d-4068-ac42-0f7b06080190",
+                            SecurityStamp = "78f5112f-9e91-485c-b517-ce5154776a40",
                             TwoFactorEnabled = false,
                             UserName = "Director@byron"
                         });

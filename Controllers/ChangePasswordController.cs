@@ -7,6 +7,8 @@ using System.Security.Claims;
 
 namespace victors.Controllers
 {
+    [IgnoreAntiforgeryToken]
+
     public class ChangePasswordController : Controller
     {
         private readonly ApplicationDbContext _db;

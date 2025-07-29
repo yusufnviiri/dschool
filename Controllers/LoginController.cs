@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authentication;
 
 namespace victors.Controllers
 {
+    [IgnoreAntiforgeryToken]
 
     public class LoginController : Controller
     {

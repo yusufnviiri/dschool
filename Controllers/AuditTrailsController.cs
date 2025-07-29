@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace victors.Controllers
 {
+    [IgnoreAntiforgeryToken]
 
     public class AuditTrailsController : Controller
     {

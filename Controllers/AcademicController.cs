@@ -7,6 +7,7 @@ using victors.Models.Helper;
 
 namespace victors.Controllers
 {
+    [IgnoreAntiforgeryToken]
     public class AcademicController : Controller
     {
         private readonly ApplicationDbContext _db;
