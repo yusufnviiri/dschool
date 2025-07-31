@@ -293,7 +293,7 @@ namespace victors.Controllers
                 return View(data);
            
         }
-        [HttpGet("requirents_paid")]
+        [HttpGet("requirentsPaid")]
         public async Task<IActionResult> AllRequiremntsPayments()
         {
             var fees = await _db.RequirementsPayment.Where(p => p.Amount > 0).ToListAsync();

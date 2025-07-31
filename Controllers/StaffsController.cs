@@ -129,7 +129,7 @@ namespace victors.Controllers
                 return RedirectToAction("GetAllStaff");
             }
         }
-        [HttpGet("staff_wages")]
+        [HttpGet("staffswages")]
 
         public async Task<IActionResult> GetAllWages()
         {

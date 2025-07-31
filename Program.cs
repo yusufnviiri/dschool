@@ -11,6 +11,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Hosting;
 using NuGet.Protocol;
 using victors.Factory;
+using victors.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,18 +23,20 @@ var builder = WebApplication.CreateBuilder(args);
 //Using Msql server
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//old cors policy
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowSpecificOrigin",
+//        builder =>
+//        {
+//            builder.WithOrigins("http://localhost:5173")
+//                   .AllowAnyMethod()
+//                   .AllowAnyHeader();
+//            builder.AllowAnyOrigin();
+//        });
+//});
+builder.Services.ConfigureCors();
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowSpecificOrigin",
-        builder =>
-        {
-            builder.WithOrigins("http://localhost:5173")
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
-            builder.AllowAnyOrigin();
-        });
-});
 builder.Services.AddAuthentication(opt => {
     opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -80,8 +83,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
+
+app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 
