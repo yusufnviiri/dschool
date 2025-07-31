@@ -10,7 +10,6 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace victors.Controllers
 {
-    [IgnoreAntiforgeryToken]
     public class WebAffairsController : Controller
     {
         public StudentActions studentActions { get; set; } = new();

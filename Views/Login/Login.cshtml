@@ -1,51 +1,141 @@
-﻿@model UserLoginModel
+﻿
 
 
-@{
-    ViewData["Title"] = "login";
-}
 
-<div class="m-auto  login_formo">
 
-    <h4 class=" my-4    underline-offset-2 underline
- text-center font-sans ">
-        LOGIN
-    </h4>
 
-    <hr />
-    <div class="login-container" id="login-container">
-        <form asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]">
-                <div asp-validation-summary="ModelOnly" class="text-red-700"></div>
-                <div class="form-group  mb-1">
-                    <label asp-for="Email" class="control-label   block"></label>
-                    <input asp-for="Email" class="form-control   w-full   py-3 text-center" />
-                    <span asp-validation-for="Email" class="text-red-700"></span>
+ @model UserLoginModel
+
+
+ @{
+     ViewData["Title"] = "login";
+ }
+
+ <div class="m-auto  login_formo">
+
+     <h4 class=" my-4    underline-offset-2 underline
+  text-center font-sans ">
+         LOGIN
+     </h4>
+
+     <hr />
+     <div class="login-container" id="login-container">
+        <form asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly" class="text-red-700"></div>
+            <div class="form-group mb-1">
+                <label asp-for="Email" class="control-label block"></label>
+                <input asp-for="Email" class="form-control w-full py-3 text-center" />
+                <span asp-validation-for="Email" class="text-red-700"></span>
             </div>
             <div class="form-group">
-                    <label asp-for="Password" class="control-label   block"></label>
-                    <input asp-for="Password" class="form-control w-full   py-3 text-center " />
-                    <span asp-validation-for="Password" class="text-red-700"></span>
+                <label asp-for="Password" class="control-label block"></label>
+                <input asp-for="Password" type="password" class="form-control w-full py-3 text-center" />
+                <span asp-validation-for="Password" class="text-red-700"></span>
             </div>
             <div class="form-group form-check">
-                    <label class="form-check-label   block">
-                    <input class="form-check-input block  " asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                <label class="form-check-label block">
+                    <input class="form-check-input block" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
                 </label>
             </div>
+
+            <div class="mt-1 sm:mt-3 text-white w-full m-auto submit text-center bg-green-700 rounded hover:bg-indigo-800">
+                <input id="submit-input" class="uppercase text-yellow-100" value="Log In" type="submit" />
+            </div>
+        </form>
+    </div>
+ </div>
+ </div>
+ @section Scripts {
+     @{
+         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+     }
+ } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@  @model UserLoginModel
+
+
+ @{
+     ViewData["Title"] = "login";
+ }
+
+ <div class="m-auto  login_formo">
+
+     <h4 class=" my-4    underline-offset-2 underline
+  text-center font-sans ">
+         LOGIN
+     </h4>
+
+     <hr />
+     <div class="login-container" id="login-container">
+         <form asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]">
+                 <div asp-validation-summary="ModelOnly" class="text-red-700"></div>
+                 <div class="form-group  mb-1">
+                     <label asp-for="Email" class="control-label   block"></label>
+                     <input asp-for="Email" class="form-control   w-full   py-3 text-center" />
+                     <span asp-validation-for="Email" class="text-red-700"></span>
+             </div>
+             <div class="form-group">
+                     <label asp-for="Password" class="control-label   block"></label>
+                     <input asp-for="Password" class="form-control w-full   py-3 text-center " />
+                     <span asp-validation-for="Password" class="text-red-700"></span>
+             </div>
+             <div class="form-group form-check">
+                     <label class="form-check-label   block">
+                     <input class="form-check-input block  " asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                 </label>
+             </div>
           
 
 
-                <div class="mt-1 sm:mt-3 text-white    w-full m-auto submit
-    text-center  bg-green-700 rounded hover:bg-indigo-800">
-                <input id="submit-input" class="uppercase text-yellow-100  "
-                           value="Log In" type="submit" />
-                </div>
+                 <div class="mt-1 sm:mt-3 text-white    w-full m-auto submit
+     text-center  bg-green-700 rounded hover:bg-indigo-800">
+                 <input id="submit-input" class="uppercase text-yellow-100  "
+                            value="Log In" type="submit" />
+                 </div>
 
-        </form>
-    </div>
-</div>
-</div>
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+         </form>
+     </div>
+ </div>
+ </div>
+ @section Scripts {
+     @{
+         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+     }
+ }*@

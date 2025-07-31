@@ -37,10 +37,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 //});
 builder.Services.ConfigureCors();
 
-builder.Services.AddAuthentication(opt => {
-    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
+    options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+})
+.AddCookie().AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -100,5 +103,6 @@ if (app.Environment.IsDevelopment())
 {
     _ = app.RunTailwind("tailwind", "./");
 }
+app.UseDeveloperExceptionPage(); //  for development insight
 
 app.Run();

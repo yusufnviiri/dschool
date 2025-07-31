@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace victors.Controllers
 {
-    [IgnoreAntiforgeryToken]
 
     public class StudentsController : Controller
     {

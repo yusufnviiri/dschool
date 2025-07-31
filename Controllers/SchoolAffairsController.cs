@@ -8,7 +8,6 @@ namespace victors.Controllers
 {
 
 
-    [IgnoreAntiforgeryToken]
 
     public class SchoolAffairsController : Controller
     {

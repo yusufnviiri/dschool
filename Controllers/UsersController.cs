@@ -8,7 +8,6 @@ using victors.Models.Helper;
 namespace victors.Controllers
 {
 
-    [IgnoreAntiforgeryToken]
 
     public class UsersController : Controller
     {

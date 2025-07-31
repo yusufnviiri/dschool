@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 namespace victors.Controllers
 {
 
-    [IgnoreAntiforgeryToken]
 
     public class StaffsController : Controller
     {
